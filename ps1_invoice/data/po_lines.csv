@@ -1,0 +1,16 @@
+po_number,line_no,sku,description,qty,unit_price
+PO-4500-0198,1,PAP-A4-80,A4 copy paper 80gsm (case of 5 reams),80,42.50
+PO-4500-0198,2,TON-26A,HP 26A black toner cartridge,12,89.00
+PO-4500-0198,3,CHR-ERG-02,Ergonomic mesh office chair,6,245.00
+PO-4500-0201,1,BRK-COF-1KG,Ground coffee 1kg,30,18.90
+PO-4500-0201,2,BRK-CUP-500,Paper cups (pack of 500),9,24.50
+PO-4500-0201,3,BRK-SNK-MIX,Assorted snack box,10,38.88
+PO-4500-0224,1,MON-ARM-D,Dual monitor arm,20,74.50
+PO-4500-0224,2,DCK-USBC,USB-C docking station,10,92.00
+PO-4500-0217,1,HYD-FIT-12,Hydraulic fitting 1/2in BSP,200,4.20
+PO-4500-0217,2,BRG-6204,Bearing 6204-2RS,150,3.10
+PO-4500-0217,3,BRK-STL-90,Steel mounting bracket 90deg,100,7.50
+PO-4500-0175,1,FRT-CHI-DAL,Pallet shipment Chicago to Dallas,40,310.00
+PO-4500-0175,2,FRT-LIFTGATE,Liftgate delivery service,40,35.00
+PO-4500-0230,1,ITS-MGD-Q3,Managed IT support - Q3 2026,1,18000.00
+PO-4500-0231,1,ITS-MGD-Q4,Managed IT support - Q4 2026,1,18000.00

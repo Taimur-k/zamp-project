@@ -1,0 +1,11 @@
+{
+ "key": "site|https://datadoghq.com",
+ "url": "https://datadoghq.com",
+ "fetched_at": "2026-11-05T17:09:49+00:00",
+ "data": {
+  "url": "https://datadoghq.com",
+  "final_url": "https://www.datadoghq.com/",
+  "title": "Cloud Monitoring as a Service | Datadog",
+  "description": "See inside any stack, any app, at any scale, anywhere."
+ }
+}

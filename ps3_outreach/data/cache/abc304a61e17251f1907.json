@@ -1,0 +1,427 @@
+{
+ "key": "news|\"Datadog\" when:180d",
+ "url": "https://news.google.com/rss/search?q=%22Datadog%22+when%3A180d&hl=en-US&gl=US&ceid=US%3Aen",
+ "fetched_at": "2026-11-05T17:51:20+00:00",
+ "data": [
+  {
+   "title": "Automate root cause analysis across Datadog and Elasticsearch with AWS DevOps Agent | Amazon Web Services",
+   "source": "Amazon Web Services (AWS)",
+   "source_url": "https://aws.amazon.com",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNlRuQ2F5Y0oxSm8xMUtqcnBoSVMtX0ZLZFpraTBxeVZmaVhNMVRtVWh0MUpDRnpHUGd3NG5wNHhrV0tyTkxKWC02dnpaT0x5bW1QZ1ROaTRoaVhkWEVCODFWOFpsM0h4S3R1U2dJZlJ6a0NYVFlHOG44dVZza2hkYkEyOUVRS3VtYWxGUWdLTkhNdzJmVHhXbXM3VVpiZ2ZrX2xhcjhlZTY4bHJlbDFfZHBsWGN4TGlIWHF0NQ?oc=5",
+   "published": "2026-05-19T07:00:00+00:00"
+  },
+  {
+   "title": "Did Datadog really offer $4 billion for Israeli cyber startup Upwind?",
+   "source": "CTech",
+   "source_url": "https://www.calcalistech.com",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9mQm9jQjNVOE5CdWNHZUNjeXMtbWxRdHRxVHBMTWpnTTVJcGRBeFpjZll2cFgydUdQY0VPSkRvdXVDN3kwNXlybjZ6aW5FaWt0N1BFQl8zclJvY2E1Ym5PdGJwMU1vb0E?oc=5",
+   "published": "2026-10-22T07:00:00+00:00"
+  },
+  {
+   "title": "Upwind raises $400M after walking away from Datadog acquisition offer",
+   "source": "TechCrunch",
+   "source_url": "https://techcrunch.com",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOTl9CSENzOGw2a0dXM0xzWnM1RWY2RUpjelY5TndOTmp1VTd3aklseGNnZnRiOXZ6SDdxT21ZemdHRTBQOHRDdWszUnc4cVJrX2NQMEM5U1Jld3JXanJBdV9HVEV1dEtRVG9fdG9NVUJFOUpCQkxzOXNtSG5LSDBDSlNzamxvTHZLNzJ2MnhyMUNVWHRCTmxSY2kyVnJmRUdTb21HcUJB?oc=5",
+   "published": "2026-10-28T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Earnings Top Views. Shares Plunge On Weak Sales Outlook.",
+   "source": "Investor's Business Daily",
+   "source_url": "https://www.investors.com",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNNkZmZTVXSzRtTktXYWV0eEdWbWFta040czV6NHB0TjhVd0RqVUljRnZRN01ELWJXenRwQTZJRFNIUmdHbnhhOXJhT29kbjd6dHJ0bDgzQXhpX3JWYnFSV2ozVzB6NlB2RVpVYWFPdEFEdmFXTVJIdXZUbWFiWmJiMXFOcFM1SXlsUWdLemZjS0I1SE9h?oc=5",
+   "published": "2026-11-04T14:08:00+00:00"
+  },
+  {
+   "title": "Evaluating Datadog’s Reincorporation Proposal and Governance Roadmap",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQd0p5aGx4eXctXzl5SUdySlJMWkU0dXRMT0dtcWE4WTloRW9PZm5GeXhoMzFvUWNtM09GbHV3ajZvR1cwdVJRbjlvZERVOHNJWHNBbDd3OW9DWWJVNWoyb2ZvNmM4VEF1RUZSODNfd3hEOGRoMS1JZkJTWWx6aFdBODVtU0tnZW1ZQVpvNmpkaTVHRzFMNHplVzczX3JuMFlYeG1BUEV5NHdQLWRHV3dBTVhKRnRIN1ByNTE4?oc=5",
+   "published": "2026-08-10T07:00:00+00:00"
+  },
+  {
+   "title": "French Tech Founders Reap $3 Billion Windfall From Datadog Stock",
+   "source": "Bloomberg.com",
+   "source_url": "https://www.bloomberg.com",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNd1lMVWdzblhuVjJqMFZXMVUyT1kyNENFc0xFNWxaZHBla2tXdFZ5TDlWUlVtRWNYamJORk8zbXhDYmd1cVpQWTNWaTlGV21Hb01ncWlRTmROTFdoQW1sbk5FYmxOUHNaV1FUbjFwUEdXQkhvaDBaLWxtYjQ2SFdUV2dIV1phX1psdXpzanJaMlRNN1RQaHQtUzF4MEV1TGRDOTRUeEx5SjhtN0RGaWc3MVM1QlM?oc=5",
+   "published": "2026-08-27T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Says Lower Usage From Major AI Customer Is Weighing on Growth",
+   "source": "WSJ",
+   "source_url": "https://www.wsj.com",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcmp1Rm9XbGFTcnExVl9GRzh3aWJabXprcU5lVzRFYzYwNzR1V3p3VV84M3F0RC13SUMyanlGNElDSDlnTDUxUm8xSW5uSWs4VzdQbzRiOGg0VDI3Y2J6dHFhaTMtTU5zY0Nzc2Flb01ZWkI0SDJDV3l6ZFFMbE9qemRJd0E5TmpCbGhTakU5UDI2YVVhVGFudThlbXEzZmRMUTVWaGRQd0Frcy1oSkhzQzV3UEpLVms?oc=5",
+   "published": "2026-11-04T17:29:05+00:00"
+  },
+  {
+   "title": "Datadog Reportedly Bids Nearly $4B For Cloud Security Startup Upwind To Fortify AI Defenses",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNbGNxNVNYTzBqbE1Ha01jSnpGRVBIVHR5TkhMSVl0SDl4RDlqMDhYd3g2eUdJa1ZkRFhVRFhOT2gwLW5FbGl0bzEwUEt5VEZQOVhUVHB3bjhjZEhGLWlhRzhGcEtWNm5nTnpiT3l3bGk5OFQ3b1FHVFNtRXltVU8ybzlOYXIwc1lxTFFmN19vaE1ReW5aMzhGTGFjSkQydw?oc=5",
+   "published": "2026-10-22T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Named a Leader in the 2026 Gartner® Magic Quadrant™ For Observability Platforms For Sixth Consecutive Year",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQeldJeThsUTYyaXgzNW04U2xOVG1pRTBRa2duUnhxWWZWb0U0bTkySlQxM2oweG9JWng3MmduSnlTRDlVeUpiRko1eU5HZDVoVmR3Tm43aU9PSEFFUDM2VjYycUdmLXg4Vk9XWm5vd2FXMEJ5UVNiVU8wdnVMZTBnSm1oaVYzTGx0ODVhYjd5YUI0UzVtbDRVNkRXZUN1Zw?oc=5",
+   "published": "2026-07-15T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog (DDOG): Capitalizing on AI-Native Adoption and Cloud Observability Demand",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQV0F4SmVOWndocU5nc2hXeldjb3RhQ0VSM1NpV25ac1hjVVMwV3BUcS0tTUlXemFDdUR0SnRJdVVHR2hCLXZzaXVIY0RZVy1UMTNnSEQ3OGFhS3cwSWFUTThVWmRacWREcUNabENqeF9ja2t6QkZwZk80cnlvNzh0d2hkeEFGcFRTckQzQ3lUWnZCYXA3bHhidjBnRUNZM1ph?oc=5",
+   "published": "2026-10-09T07:00:00+00:00"
+  },
+  {
+   "title": "Why Datadog (DDOG) Stock Is Up Today",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcDRqT29qOVRVMTAzVXRBZXJEOXZGbUVOdGo5RWc1S0x1U0FTOGdNZXVWTE44dUZvSFQ1QUN4SDVHaDhkb3J2OXE4QTZMcHNXQ2gzbXRzUXRIRm5FcWVwdFAxMlpJWC11S0N2NEFtRWNoYUV2dGtaeThJd2NJN3BXUGVONVR6OGxkUFpOSnVvWjNHT0ZnaDZJNg?oc=5",
+   "published": "2026-05-28T07:00:00+00:00"
+  },
+  {
+   "title": "3 Reasons We Love Datadog (DDOG)",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMy1mcGJOd3FvUFlOZmtzMnFqQnJJX3ozcnNwNEY5dzJ1SHJHR2RoR3RZbml4Y3BxQXlQT0FMRnJOZV9KaFQwN21xRkVVaENmSGt5Ym9rbFU3SDU2X21mV0trRXpmSDV4VWVLbEJ4ZGFUYkhzMzBzUG5JWmo5NW1yeEtNZVQtZWJpRG5hRjhsT3p2NFRWeDRZ?oc=5",
+   "published": "2026-07-28T07:00:00+00:00"
+  },
+  {
+   "title": "Scotiabank Raises PT on Datadog (DDOG) Stock",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeER3aFVwQkZfYmlIdnNMTkhad0ZDaTgzUGRLUXhURDVEb0prZHN4Z0JFRG9CQmVPQ0txekJzMkUycmswQnJTU3JTVEVOMlBOWVF6VFR6blZXWFllNzZSUFFsQm1hOE9mZEZRejJPZWZNSXBoVFRIczlJWGlfRFRMZTV1YTUzQW85QkJhNFpXSUxqem9UWW94Nk5sLU55OWc?oc=5",
+   "published": "2026-06-27T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog, Amplitude, Zscaler, DocuSign, and Salesforce Shares Skyrocket, What You Need To Know",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPUmQ1QVZrVmxDWDZtT0hTeWpUU0RZNUl1UklvQW9tNXZVVVVlYWs4SE1vdXRISlBsMHJxaXR3ZXVmaW93SUJrcGdRcDFNMmJvczNVb2I2NklNODR1M1p5RlU0azYwUTV6RndsS3R6V3c4dmExWGtyM3hzSF9ad1JjRXhrdExvbDNxdHR1TlNNQ0hEZWtzaUxDYTFjS1otWi1uYlluZDdnRE9iZ3pzbVhz?oc=5",
+   "published": "2026-09-03T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog (DDOG) Shares Skyrocket, What You Need To Know",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQYXVKOWFESGhBNzBnS003NTVOVzNyZ2E4dE12S0hGVFBZUjZzYnFYd290T2NWTlRia1ZvWFhKT29OX21hVHUydVEtN2xGSjBoaUVqallObE5iYXlNSldfNXJ1cF9JNTJJNDg2RjNoLURzbnBJVkQzdFF4eXRXWG0tdExKTHg2dFpnQ2FuUE45YXhsRDlkOHN3a1Q4ci1PVWlw?oc=5",
+   "published": "2026-05-29T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog (DDOG) Grows Fast, Then Gets Punished For Slowing Down",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSWExRE44bDRYLVJRWWd0ZlM0UnJuX3hnLUdhYXNWdG1kNEdiV0xRLTdzekR1RF9rY3RucmdpTVdFVURDOTc1N2R0M0JEUGRtbXplNUhORnpfZzJYcVVSdmpnQ09BN05RdzQtcWlROHVDRE9Pa1dWMGQxQWp1eG1uZXNmaVQ5Qjl5YVkyZ0tIRVpjZjJrenFwVA?oc=5",
+   "published": "2026-08-10T07:00:00+00:00"
+  },
+  {
+   "title": "Should Datadog’s First US$1 Billion Quarter and Higher 2026 Outlook Require Action From DDOG Investors?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPTmNkR1BnVVFTWU9pUXNSdmdNRnNHU09qOG5vdmk5RWptVFV0TWo4SEVKNGZ6MFpZbXkzYndqaGg5bnZyQnE2TGRXWENrek5NY3ZrOUVod0RVdTdhSlhVNk9RbktmdEdEVnJHY01RTzNaWnJWd3RlNUd3S0VsSHRkRmQwOFlyOTN6NzV3N3BXSDJhLXIyRUE?oc=5",
+   "published": "2026-05-26T07:00:00+00:00"
+  },
+  {
+   "title": "Is Datadog, Inc. (DDOG) Overvalued? Goldman Sachs Raises Target but Keeps Sell Rating",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYWJTZEw1dHRGc0lQS1lWU0xOYUhMSWZJNEl0YmVqaDQybWVlR3d3Y1QxSFRTS3puNFlDNnpIa2lsUi0wb3ExVE11RTgxWWIwY2JSS2dHZjM2eWpwZHpMVWZ4MmZvVXBObjB2RnM0WDVLRl9mYkNiRERMU2pfRnZzRkVXUGdjam5UOUh0RWlhVDJXeUpkQWJBOEgtc3VsUEJjdFE?oc=5",
+   "published": "2026-05-28T07:00:00+00:00"
+  },
+  {
+   "title": "Software stocks sink, led by declines from Figma, Datadog",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOaDFDa19mdDVaM1UtYzYxUWROS2dkSWhBMzd4dk5rSjZoQklVc0EyOS1qaU1OSEIyck5uY1dkVGVpX0k2Sm5Va0hnR0gzRGdrTHpPTGJrZWFQQzJsS2Y5RjRWT1BGYnJCWmVHR2xOeW1FQmV5ZXJJeG5jVDdyTURYS2MwMEZydzIwMlR3REdqUERqWEVRSmlIWXN3MnZKNFZiM0hHcDZhb25LY0dqZXRpTWt3?oc=5",
+   "published": "2026-08-06T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog (DDOG): Positioned to Capture Explosive Agentic AI Growth",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVlJHTTBXaElvZXZ3MzVRcFNHTWxISXpaSmg1ZEpnNkM2cS13RERnT1NoakgwMVp1NUtXZTlRQTA5ckZ2QzJ3VEc4NnJWVkJDRVR5WDVOSmgzeDJTUGRJeEFsSVJBOE53U19pUzRNSkt2bTRKRnNPczlYaG9QT3RNR08yRVo5OUxPTzUyTFNUN05QTVJoM3lwWTkxUXlNb1d0VGN1cTM1X2c?oc=5",
+   "published": "2026-10-05T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Says Lower Usage From Major AI Customer Could Dent Growth",
+   "source": "WSJ",
+   "source_url": "https://www.wsj.com",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQmxLdzhpdWNqd0JqREtldlcyTkU5WEtRZmtqQWtGVzRPSVBubEtjYU9CaTJLWlMyNC1wR0xjRXFVMkZRQ2hlaFBsOE1DUkNkVHE2b3pRQldfUl83cjNEalVvUV9SbTY5bnJxalNuU2NNUkxXU0Mxb2JJOHI4UFpZT09NUFJPc09nektsT1FCZjFWcTZDWW14NF9kNUk1b1JLRG5xR0Jray05TERYX09vX29B?oc=5",
+   "published": "2026-08-06T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Announces Third Quarter 2026 Financial Results",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPXzBLaERVVXN5Z0k0Q3VkdmhRUlpMaW05Mk1IN3l1TEF6Rng2MFo5REJWNUtEZ1VtcE91LVZFV1VNcG94aER3WC1vVW9FTG9pUjdwUUxJRzRNWXhHWlE4Q2NMUTRta1VWTTRkMHdENjlibW5KSkdqNlVQS1NTelZqX3B0ZTNQNk0yWmM1bUN0SGtuSzlEREtxVk5lbzhfVnhuNGJv?oc=5",
+   "published": "2026-11-04T12:00:00+00:00"
+  },
+  {
+   "title": "Datadog Acquires Adaptive ML to Accelerate Its Investment in AI Research and Development",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNOHp0bTdZdmpXM2FkX2kxU0lBNTA1MEoyNHljMlFscnN6a2VqX0lRYjRMUERDLUttTXdqcU1PQWl4R3h2dDREU3FGNlFLTnp6eVVweTFLajg3ZlZ0NS1ZTmRLVXFjS29lalBkSXBqUWdGR3BiRWpZZ1ZSeG5Ta2hGazNHU0pMU1JFdXlTc3ZpWGRBaTJySi1rYmVFYVIxb2FncGU4N3J3?oc=5",
+   "published": "2026-06-30T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog: 3 Key Takeaways for Long-Term Investors",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdFVDTjFCR3VmbERxNk5RTGM2ZUxvVzM3QWJUTjhJX3ZhX3pOZVF2Y2ppekhNY3JjY2NtcG5sX2k0bURGUWtpUVJTc2ZJVUlYNG9jRzhIUUN4bHBUZ2drcElpWGlKUmtkZnJuaTlibm1FMlFfTjdJRkUwaDR6WnUyX1JYSDJVNERXZnVLM1A0OE9XU0tSbG9pdA?oc=5",
+   "published": "2026-11-05T02:48:34+00:00"
+  },
+  {
+   "title": "Datadog Before Q3 Earnings: What's in the Cards for the Stock?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPVUw4cENxYllLelhOV04wQkNrV21zSnM4NHBZS2hVU0hiVmlIYWkxWm9Ua09reGhfSWRhTnltNnRJMm5tdEkwNDVwblpMc0hlY2g2MVJodUs2c3RkbnRGMGVoUWFQR1BDWmo1TUVSZV9PVG96TXdoWTBFbmJZd1RJOEt6V2RORFRWUTYxWDVaUGl5eFp3OWgzdzhldV8?oc=5",
+   "published": "2026-11-02T17:03:00+00:00"
+  },
+  {
+   "title": "Datadog Stock Is Having Its Best Year Since 2020. Why an Analyst Sees More Gains.",
+   "source": "Barron's",
+   "source_url": "https://www.barrons.com",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE93SFVrMThBbWxlN2F4Vk1FdDVhaG53aTFpYmJvWjhiYW5Yakc5U2pfOGlMclBqR3M3TVRFSjFHeTVzM09fd0xqWXUyeWhMTi1IdndFNnlidjVac1I3MXNXREcwT3JuYTc1bk04MW44aUJtVi1FeDNZ?oc=5",
+   "published": "2026-10-02T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog shares plummet despite expectation-topping quarterly results",
+   "source": "SiliconANGLE",
+   "source_url": "https://siliconangle.com",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdXdTQTcwTmx4SlYycUh3eldvU1V6SVhYa2xiY0cxc1BXXzhOZHhPUlBCUzVnVmRWLWJFTGpzMXgxbjc5MmpUei03Qlc2VXNaamNVNEFzalpJMnd4bXM2VFAtM1BUeTVidVVVOVNtMkcxX1licUdZWk9rOV9RQWdFNzA1THZGWG1VWVlMNmhCRmY5UXlsSi01SzNrNVEtRkhod2dvTFdLNzc?oc=5",
+   "published": "2026-08-06T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Sniffs At Buy Point. Wall Street Wags Its Tail.",
+   "source": "Investor's Business Daily",
+   "source_url": "https://www.investors.com",
+   "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOaHRJRnNyN0dFU29BWllLdEFwTjhTeUdlTTBIWDZlSWp2T2R6c0ZYeHFpSGRGU2trdGptdFd0QmJTdHRNYVVBS3BtYU5Yb3Nvd1hjRFAydlgtZ2phN0dBcGFPQ3FsVG96ZU9Wck9oUWhwRml3NmNFamk5Z0ROenZWLThMRUJYY1lGNk0xZW8wYWE4OFNFclJUWllwQ3d5cF9zTkFXT0tMa3haTlE1N1NPaXNmOVJZYld3c0g4eUhIT3NiQTJCQnc?oc=5",
+   "published": "2026-10-09T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog: Q3 Earnings Snapshot",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPN1hSWVVmMHd5WWZCZGU0cXkzV0hMT0U5a1dBMmcybWNlc0gyZkNheml1VHBLbkJWZXlHODNKRk1YbTFMUVNEYlc5UGpRMzBsZHRoUlhGakVwb2NyU2tsMHQ0bUo5REVxOTRsWVo3QmdwV2VLMW16YnN5d0lIZUVTYldQbFJvZGVacjZrMkFLR0xNTzk5TXVYZw?oc=5",
+   "published": "2026-11-04T12:12:56+00:00"
+  },
+  {
+   "title": "Datadog, IBD Stock Of The Day, Breaks Away From Software Pack",
+   "source": "Investor's Business Daily",
+   "source_url": "https://www.investors.com",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNYUNIV0luZnNWRzl4YWVfU1kwVmZOQzZHUDVCMWk4UTktWmNNSGttX05DM2ZWbHJGRk1sYU5QWktndDBXNEpmaUF0Zk84a0lYSlNQc1VJR3dmeU5GQ0VZNGI1bTBGLVE4NWVIT0dFMjJxSnNMZTh1bzZVTEZGSTZNRTNENW1IeGJhdDlMZEs5TTlVY2NSejNycUIxXzg3SE1sRGVmNndQNWpCTXNFakZSLW9MZw?oc=5",
+   "published": "2026-07-09T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog’s (DDOG) Expectations Have Outrun Its Earnings. What Lies Ahead?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZ1RiRGVlSHZ2Z3hZMjMwS3Q2SjdPTFBqbzZjTGd2ZXl5RWRtTkt6aFVrZHNGTmRRMktFbkRPd0ZRRExKOVVlTzNUWDBGRjhCeWJNU0xlYldnU3RHU0NVc1hLUTV1ZFJ2ei1BUko2aEswR3V4WXl6ZlNBbHN4X3RSTzFSNGtuYlhDMHF6MHU0YUhmT0xxZFBjLWFtdUhOVXdlYUxndzlTYU9jdw?oc=5",
+   "published": "2026-10-20T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Backs Dust To Link Observability With Multiplayer AI Workloads",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeC12a2xHU01HeHVDUUVLVE5mbmpnUTItcFJSWm9TR2dTd25YdUNQbHFJSEJvZ0o3cXVzb1FEcng2TmJXYjZIeEdjb0xZN29iYVhLNmxtSXIzcFp5RVZNVzZzSW56T1dsZHJwWWlGQjlRNENzTUJRZng4VGFvOE44c2VIbGd5TVFqMkdXdnVjdXpVam1TWjlMZjlicXNkbmh6SUNKT25vR0pXbXk3WEE?oc=5",
+   "published": "2026-05-20T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Beats Earnings Expectations. The Stock Is Acting as If It Didn’t.",
+   "source": "Barron's",
+   "source_url": "https://www.barrons.com",
+   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBLaFNTdTRhY2s4dGpMMjNJYkpqdnkxWEkwRWt6MHR4eHZaSjlIcGNIbjBGbGZXejJHVzNEQ29oMm5TT2VOdVNZS1Nlck11c0NhSTZabkRqSDJvUFR3b3VBUlg5VUxIeG43bDE0Nk9vdk94S2hlS2RRbFhZaGljdw?oc=5",
+   "published": "2026-11-04T13:50:00+00:00"
+  },
+  {
+   "title": "Datadog Sinks 12%, CrowdStrike Falls 4% Despite $6.3 Billion Binance Hack Spotlighting Cyber Defense; Palo Alto and Fortinet Slide 3%",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOc0xmblRQelFMUmppek94anU0dmhteF9ONnZHYUdEanZILWVuTVpCbHFJaXhXY0xTcUhMVEJfS1NOWmVKOHBENG5NM3ZEM05SeU8xemhUSllfTDhjXzRWbW1QYl90NklaRGZGQjBjcXlWVmI4N1pOU0VvcUJJdWpONVVLX2ZXV3FvRk9wVS04TEFkOFBTUVhiMDQ5YXNwVUp3?oc=5",
+   "published": "2026-10-30T16:17:38+00:00"
+  },
+  {
+   "title": "Datadog veterans launch AI coding startup Niteshift on a bet against Big AI lock-in",
+   "source": "TechCrunch",
+   "source_url": "https://techcrunch.com",
+   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNS0dRYnp4QzdXd3RoNVBZeFdlVU9xM2Y5UFNWNVdsMG1VRzlTdGpETklJOUIwTUpnbndYMjNNcHVqanh4MHZIYjVLcVZPMjNQd2VTbkhscFdQMVN4V2xDTVZfYnE1NzdCaUh0Nl9EcGpjdUtQcE9sb2ttb3ZBVldjNDQ4eDRmU2ZndU02a2dkSTA5NnNtVGlPSVV4WHZZVVhFSXZjNFkxS043eWQ4TnVVZ2JWY2xkRU1Ta3c?oc=5",
+   "published": "2026-06-10T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog’s stock extends steep declines in the wake of earnings",
+   "source": "MarketWatch",
+   "source_url": "https://www.marketwatch.com",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOZk1ZNE14YVlPVmg1Qlh6aWNjQi1EMlpUaW1oX3FyVS1USXg3aERoZlF4cDJSalBqVjBTN09SY2NvcFRsczF5MWo4aUdKSzVtYUZFVXRlRnRwRHdTZHpzTXR2SFg1VFUtV1pqaHo0UklnbVNJanlESnlGVXRKenV6ZTZ0RlNkZUJMY21ka2NQWmlxSmQ5bUpXeXk1a19Tc243RThEeW9rRQ?oc=5",
+   "published": "2026-11-04T15:16:00+00:00"
+  },
+  {
+   "title": "Cyber ups and downs: Datadog falls 14% on outlook tied to one customer as Rapid7 jumps and Fastly slides",
+   "source": "SiliconANGLE",
+   "source_url": "https://siliconangle.com",
+   "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZktxRWRFbUYybDB4aUtQQmhpcUttR0tWZlpKRnRGY0F5Um13QjdteXIzaERZZm1FNE5xV0tBaVRqUzZNME5TczhDY0lfc2UzQWFWOHZQcXhfV1g1Vldnd3ZMMWpaLTVTcXdWS1Q3WEF1VkhzWWhWLWxtbXNmZTRQQ2ZxOGZhR1RSaGRjZXVtMGFVMFVNSE9HdUNFYl9xRmhCQWI3dzAzdmNJQjZXUEhUYV93Si1FYlI4UjZV?oc=5",
+   "published": "2026-11-04T23:07:00+00:00"
+  },
+  {
+   "title": "Axon Enterprise vs. Datadog: Does Physical Security or Cyber Security Make for a Better Stock Buy in 2026?",
+   "source": "The Motley Fool",
+   "source_url": "https://www.fool.com",
+   "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNS0tzeS05Q1NsSUlPUXdkZjRqSFBjT3lZMm1OaTdaclg0WmpHdFpSLWRxOVgtVGliODBQMVZsWjlBRzdwX0NZZWowZ3o0XzlLTjhPczVVa2ppcVU5U19nblVvQi05eUlrOWREZndxdjVaNGwwNHBtaDlhdzcxRS1KdjBXMnlwOUxlUWlYYTg1ZjlIWGJrNEQyc2lLbGQ2aG44MTNHVTBVelh1N2tFRlNvREVvSGw0a01WcDdfcVFDU3JXTTJPZXREMWs1b2xqLUdTUUtuMHYwbWxjMlhTUzVHWHhPTExkbHQ5STU5Mg?oc=5",
+   "published": "2026-10-30T15:29:00+00:00"
+  },
+  {
+   "title": "Cloudflare, MongoDB, Datadog, JFrog, and Elastic shares plummet, what you need to know",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOSWZDOVF3ZmlLQl9fRkVUdGlKTmdRdjloOWNXWVNlYUJ5Z0xTa0RlMmN4NFItczY4VnhCdUJtV1ZWYnh1ci1ZNVRuLUNRcDVkb0xqUUJza1k4N2JrTUFjTmM1Vkk0ZnJXWVdpdXpUWlVpUXJ3S0Jzd3JVeUpaaGUydWp2S1ZZMTZfaTdRWE5kU2c2RGExZnhVamJLVzVBQkZYZ0Joa2lIYzQ?oc=5",
+   "published": "2026-11-03T23:41:36+00:00"
+  },
+  {
+   "title": "Datadog Stock: A True Anomaly In The Software Sector (NASDAQ:DDOG)",
+   "source": "Seeking Alpha",
+   "source_url": "https://seekingalpha.com",
+   "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQVi0yREV6WEw3MVBQbm9LcEFSemF3ZTRYMTc3dHloUGFpNl9uakFVc0dJS3o3SUY1Ynd5dkRfaDBPd1g0cGtKbEU1emRkaVFBTFJxT0k3WU02RFl6YllZWnBfcV8wOG12MGcyQU1DQkF5eFV5clI0MXBOU1RPQWlVTWQzR2w5TlJBenhlUTE1aw?oc=5",
+   "published": "2026-06-07T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog (DDOG) Stock Looks Undervalued Even After A 216% Run",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNWG9jeGY4NWxZUmhlVEdkY1lGeC1PNi1VREx1RUhIV3RzTkFYbVhza19lU09iQ3FFdWplcXhZMzJvYkZEcVYySjYxUnJNYU8tUk12WkNxTUxQeWYyMzJFdENkbGxzSnV1ZlNTaTU3bHNQRnpHRElueGhVdUNKY0VJUUt2UTVybjVCRjdVNHR5UXBiMlA0amdtRGdzZTd1NFZIWE53?oc=5",
+   "published": "2026-10-23T07:00:00+00:00"
+  },
+  {
+   "title": "S&P 500 Futures Up in Premarket Trading; Amdocs, Datadog Lag",
+   "source": "Barron's",
+   "source_url": "https://www.barrons.com",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTlptNGMzbHE3blhCZTZPbWdzd0lvS3hfdnUwZDR4Q2RTQnNBYzVwN0IybzM5NVdHVzlUWHZnZzF5b3NBeEdQQmx4TVJaNk9XcWdaeUk0ZlhEWXVmSHNWd3V4QnJhUzFEM1FoMnJtZXc4Y2d2OUZXRWRMLXpoY0MwbTFEVUNFQXE2cXB1YnpnREJ3UzdsdlNoeDBQOEpqMm16aFE?oc=5",
+   "published": "2026-11-04T12:30:00+00:00"
+  },
+  {
+   "title": "3 Big Reasons to Love Datadog (DDOG)",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTkRCMERSeDM0REd5YTRHbUJLODRRMTVUNnc2bkRrR2h2a1FFYl81Z1dtSlJXaC1kMklKeTFha0d6SXBQa2dRazJ5R01VUEdqN1haZnF2RnhNLUpodGtWZlYteFZYcGlBemhGNWV1WEtlV2JEeG8wQjFid0pKc1VsYUsyb3YyQ0JLS0lfdk43cFM4NVF5d2c?oc=5",
+   "published": "2026-10-21T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog (DDOG) Stock Is Up, What You Need To Know",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOYTJKTjJSbTEwckZEUmFCamVvbWJQQUFuMFNIWHR2aDQwMGluTEQ4cGFLcVZmYUhZdFlCVk1OUFp0SU1NcHFreTMyamR3N093b2VYeUNKcFpGSkNRWG1KcFRpYmFRNEVrRWNjbzktTzVOS2djeUpWS18tM2h5Znk3Y1pYRXRQM0RGaGdVQnFXU1g5Zw?oc=5",
+   "published": "2026-10-19T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog (DDOG) Beats Q3 Earnings and Revenue Estimates",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOMDZueEhhX0N4elM5dks0WXpqU0VVTHlrSWhxa0lKendSNFkyWC12bmxFdXJMVUs5NmFiRGl0V3RNWjdDTjZKS3NEWVFtamFndU5OLXhNa3BWM2VxX2FVcGtCZnN6bFFrVTktRVE0XzdSckdMWWduWEFFeEtQWVpyTllubldHaUN1dW5yWklVZDhzSmdFT2VmdlZWbw?oc=5",
+   "published": "2026-11-04T12:55:03+00:00"
+  },
+  {
+   "title": "Datadog Likely to Deliver Another Beat-and-Raise Quarter, Wedbush Says",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPU3N0dGNQUV9pZ2V6bVFjbVFzM1VOWTNWT1FDeGJJbU10bzl2My1Eb2VFS29fLTAwZWtnS0E5NHVRd1psdzQzM1lXVWJFb2JueXQxQUVXdmhjdzRTNmdlQ3ZSbTZTT2lFQ1lxX29fV3F0VHF4cDdCN1VFNUx6SDY3QlB0VFhRaUhaV3VOOVZtZXlnajlnZWxRcExFemhGaFMtR3c?oc=5",
+   "published": "2026-11-02T15:54:42+00:00"
+  },
+  {
+   "title": "Datadog Stock Crashes 14% Despite an Earnings Beat. Is It a Buy?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZWtUakgtYmxSSDBYQm9wNEU4MzZxN0VQTU5XR0lzLVhKZVhNRW5Mb05LQkxrV1J3SW9wd3BmNWlhTkc1c2taelNNVmkteWdmMkJQX3B6am4zVGhURkJ2TDhraktCUGd1ZDRSMWpnS3FxaTRuUTYydkpnZ1c2bk1lUENYNS0tTWlLUUpaZ3liNk51U3lYdmhOYUpZV1VrUQ?oc=5",
+   "published": "2026-11-04T19:47:55+00:00"
+  },
+  {
+   "title": "Datadog stock drops despite earnings beat as a top AI customer cuts usage",
+   "source": "Quartz",
+   "source_url": "https://qz.com",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1FbTUzSlNqT3gya21FelVzWkJRU2xUeFdncDdtWVJyNVlKeUVYdEhRdXRSRHZHMkQxaHdEcHhTQkwyYk1wWE41b1VyX2NFclkxa3ZjeEFFR1k2OXozb0d4OXFDTHdrVWVkTC1CSW9CUy0tSjlnSXB3?oc=5",
+   "published": "2026-11-04T18:35:26+00:00"
+  },
+  {
+   "title": "Will Datadog (DDOG) Beat Estimates Again in Its Next Earnings Report?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOSUM1Sk1nbTlmdzFlTDVMLUxrMDJSb0FGQ3hxaFNFcXAzcmp6ZktZd3Fnd09RdnBzbk1hQTFZTWZETTBOM2JXeXVrZ2VsemNuVEpBTnAwc3JrbkEza012Mmo5WDZHMlpPRDNDWXFuSEZWeFZMZFctMnAwa2xlQ1lvNTZvakR5ODFWcmRnbkVJZngwdXN3Y0hDemRLbEFTbnM?oc=5",
+   "published": "2026-11-03T16:10:02+00:00"
+  },
+  {
+   "title": "MongoDB, Datadog, Snowflake, Bandwidth, and DigitalOcean stocks trade down, what you need to know",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTUFuR3JXQXMzNEhqbW13aUFNLWFKR29Gb19KOXJoVHJXTS1DQ3FOcnM3RkRLVldXUW83LXJhVWNvN0FKZUc4OXR4TDdocEFHZ1hTUmtpZ25yWFlPWThHRXd0aVRYNFVfMmxuY1hfdFg4ZVRKSWg3QWZ6TGVqOF9GYXYyTFpUMVB6NVlyclZMUFlxT254cGhiLVdvWkJ5WWJDVzNVWmpYQTlJd0VnZDJjaE82MA?oc=5",
+   "published": "2026-10-31T09:15:29+00:00"
+  },
+  {
+   "title": "Datadog: Good AI Story, But I Still Need Proof (NASDAQ:DDOG)",
+   "source": "Seeking Alpha",
+   "source_url": "https://seekingalpha.com",
+   "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPZzR3VS1EdEtvTnJNa3ZSeDFpSjVOcmFSVjFZNDB1VU5UZTNaQnFTMGNIRllBb3V5LS0zS0JqYzlhdDNBQ2Y1TFB0SDlHaEFOVXNLWVVzaG5LdXZPdDQ5RG9HcDBtRXJGc2oxakRpbFZFOERhSzkzYVNjVUl4Q0RxSjVDZWdhUXBXVU0wY2FMVWQyaG9fZXc?oc=5",
+   "published": "2026-11-02T13:16:58+00:00"
+  },
+  {
+   "title": "Datadog Guides Q4 Sales Flat After 35% Growth: Rapid Earnings Reaction",
+   "source": "The Motley Fool",
+   "source_url": "https://www.fool.com",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTkh2NDFWSmZyR2NzUGhMTk1sVDVKbTlXbnBxNzFZTU1lNTdzbkx3RFdCeTBTRkJkTi1aTnNlbzFvV2JGR0pSQVdOeFdPbVlzSVBuYm1wV0lURDBZQmJ2aXZYMHgzZkJOLThsLXNsQk41ZmVFM2tYOFhDSkp4Wmo3Z3ZDWGU0WC1laHBGX1lBZXpRMHFXYWRkbTBVdTdIZ29mTXRvLUFhbktHS3FmX3JNUg?oc=5",
+   "published": "2026-11-04T14:29:00+00:00"
+  },
+  {
+   "title": "Datadog Tumbles 11% Despite Earnings Beat as Soft Revenue Outlook Weighs; MongoDB Slides 3%, Snowflake Dips",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOdkMwWGdvNXVzQzFCc3pkRXZrMWpZMzlwc2hodkJyOERFSEtrcXpHUnE2dV9LMnZwR3hZSFpIX3Z6OTlENXU2czl5dE1xMG1WRDlFeTdhOEp5Q21zYTQwVk1RTGZpUUhyZjh5RXNZcGNjTlZtUkEyWGpDdnZEMlBlc1dLd1owSXdIN3BwT1hxcDdlMGpDNXhwbkItSF96Y0V3MVE?oc=5",
+   "published": "2026-11-04T14:47:06+00:00"
+  },
+  {
+   "title": "Datadog Inc Stock (DDOG) Moved Up by 3.38% on Oct 9: What Signal Does It Send?",
+   "source": "TradingKey",
+   "source_url": "https://www.tradingkey.com",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQlpKUHQyU2tDS1hYcmtnWTE5eXJ2emw0UFZiRVMzcFV1OUVZc3hLaVFJZkVNdjR1NlVudVY0Uk9sUk42RU1aR2ZxUExWRVFfNnI5aUw2czZXdnhxcjE0SndmT0tuZUdieldhRGFxNWpHeXNtTFE0WVFhMFU0M2xnNHg2NGpUdUR0OXN3?oc=5",
+   "published": "2026-10-09T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog: AI Story Priced For Perfection (Rating Downgrade) (NASDAQ:DDOG)",
+   "source": "Seeking Alpha",
+   "source_url": "https://seekingalpha.com",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNmh1UzBXS0YxWVFxbXlrenpMSm5QQnVyWUpkamV3T3VBcFpyd3RjYXlXTG04eGNSaGFoR1Zaek5xT3drNTFJUklaYzdyYUNFTTZzQVNLRDFicVl2NWhFQ3ZMbHFfSDJMVUI3c3U3WWhtNzVIeUxEdkc4VEstdEZjdW83ZF9EdWFWWC1Gb2xFOFJUT2lWZHN3YVdNM1Y?oc=5",
+   "published": "2026-11-05T13:45:00+00:00"
+  },
+  {
+   "title": "Palo Alto Networks, Datadog, Zscaler, and SentinelOne shares skyrocket, what you need to know",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZUVjcGVHTXpQOVJiTXIzMURCNUVFbDBialk1WkJIZ2hRV01IaW8yaXRYb1pQZ3ZzRVlOVXJWbS11aEVGMXJYUFQydmhvUW5tQ0NYU3UyNm1WcHJOQmIzLTdEeldOZVhCd2lCZnY0cldUMEhQTVhJRmhhZmZUbGFZbmlEaEZIMjg3QnBDX1ZiNkVpMUNBRDJXa25NRVcyVXpk?oc=5",
+   "published": "2026-10-23T07:00:00+00:00"
+  },
+  {
+   "title": "Datadog Reports 35% Revenue Growth to $1.2 Billion in Q3 2026 and Issues Full-Year Guidance",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWG5CQndWX18wU2dUNGQ5RHpDazZaV05SNlFHZFRlZ0xNZjJ4dWR5cURwWWZjNmNRSDRacFA1T05jV0N4eExMZEZGc2JrckUwNkZhV2FBbldLTTQ1cnJBc2xoQmpJRl8wQzRNQk5MNEtKa2FZemFNYTMzQ0p0VUh2cUpjUjVPbU4waWFjMEVySFlzbE1NUmZUV0xYTDRXcjg?oc=5",
+   "published": "2026-11-04T15:30:20+00:00"
+  },
+  {
+   "title": "Scripted tests can’t keep up with AI-written code. Datadog is betting agents can.",
+   "source": "The New Stack",
+   "source_url": "https://thenewstack.io",
+   "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAxMmVrSkRBUjN6WWkwQlloRmxlVzhSN04zSEI2bzNtTVhPUEp4aUo4YWp2TXpZUUJhNWcyLS1ydWlDdFFDZDhxdzU5eW05aHhCV2M3VlltRlRjR0ZvR1I1M1FXYUJZLVE?oc=5",
+   "published": "2026-10-20T07:00:00+00:00"
+  },
+  {
+   "title": "Why Datadog Stock Took a Dive Today",
+   "source": "The Motley Fool",
+   "source_url": "https://www.fool.com",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdXVwNFVNTl9qMEx3MVVXRkpuaWlEVHF2NUIyQ1FsY3VIV2tvWW9hTWNHV2RCazdXT0FxUTJULVpCZ0t5dEdyb1AwRkRmTGdYNDhhdFlzaVFwTmpWMjQyU29uY1FZbTUxZzBYZUh3c1B2WWVVVi1MTkpwV3ZjRFp6WlBCU2w?oc=5",
+   "published": "2026-11-04T16:25:00+00:00"
+  },
+  {
+   "title": "Palantir Falls 6% Despite Earnings Beat and Raised Outlook; Datadog Drops 3%, Snowflake Slides 2%",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNMGRIS0NjNkdxMkFZcGdDSldXVWJvM2htaFMzbGQ1d3AwN0hJRXhidkNyNzYzNkFRX2RNVmJ1RFJ5UmVHYVltUWFYQXc0cWszalpsbkpQMlRxb2ZCZEExNEVmSUJxckZBMGRXOGQzajJFZVRzbWx2aU1hLXAwZHNTaERGcElEOXJMeGhIZVcySVR1aG9Ec0xzLU5HeG1kNU0?oc=5",
+   "published": "2026-11-03T13:44:25+00:00"
+  }
+ ]
+}

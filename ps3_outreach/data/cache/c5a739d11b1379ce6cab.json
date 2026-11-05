@@ -1,0 +1,13 @@
+{
+ "key": "wiki|mercury technologies",
+ "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Mercury_Technologies",
+ "fetched_at": "2026-11-05T17:19:41+00:00",
+ "data": {
+  "type": "standard",
+  "title": "Mercury Technologies",
+  "description": "American financial technology company",
+  "extract": "Mercury Technologies Inc., commonly known as simply Mercury, is an American fintech company that provides banking services to start-up companies and small businesses. The company is not a bank, but works with banking service providers to provide bank accounts and other financial services. The company was founded in 2017 in San Francisco, California. As of May 2026, Mercury has a $5.2 billion valuation.",
+  "wikibase_item": "Q108554731",
+  "url": "https://en.wikipedia.org/wiki/Mercury_Technologies"
+ }
+}

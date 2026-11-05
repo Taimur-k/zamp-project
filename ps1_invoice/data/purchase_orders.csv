@@ -1,0 +1,8 @@
+po_number,vendor_id,issue_date,currency,total_amount,status,buyer,description
+PO-4500-0198,V001,2026-09-28,USD,5938.00,open,Priya Nair (Workplace),Q4 office consumables + chairs
+PO-4500-0201,V001,2026-08-30,USD,1176.30,closed,Priya Nair (Workplace),Breakroom supplies
+PO-4500-0224,V001,2026-10-12,USD,2410.00,open,Priya Nair (Workplace),Monitor arms and docking stations
+PO-4500-0217,V002,2026-09-15,GBP,2055.00,open,Tom Becker (Plant Ops),Hydraulic fittings and bearings - Line 3 refit
+PO-4500-0175,V003,2026-07-01,USD,13800.00,open,Dana Ortiz (Supply Chain),Chicago-Dallas pallet freight Q3-Q4
+PO-4500-0230,V004,2026-07-01,USD,18000.00,open,Marcus Lee (IT),Managed IT support Q3 2026
+PO-4500-0231,V004,2026-10-01,USD,18000.00,open,Marcus Lee (IT),Managed IT support Q4 2026

@@ -1,0 +1,20 @@
+{
+  "run_id": "201ff24d5a",
+  "decided_at": "2026-11-05T22:25:17",
+  "decision": "APPROVE",
+  "file": "01_northwind_INV-10611.pdf",
+  "sha256": "303c8b3e522a08b0",
+  "vendor_id": "V001",
+  "invoice_number": "INV-10611",
+  "invoice_date": "2026-10-18",
+  "po_number": "PO-4500-0198",
+  "currency": "USD",
+  "net": 5938.0,
+  "tax": 489.89,
+  "total": 6427.89,
+  "issues": [],
+  "payment_due": "2026-11-17",
+  "actions": [
+    "Posted to AP ledger (data/ledger_posted.csv) and scheduled payment for 2026-11-17"
+  ]
+}

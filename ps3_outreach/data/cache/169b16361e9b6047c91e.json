@@ -1,0 +1,11 @@
+{
+ "key": "site|https://fedex.com",
+ "url": "https://fedex.com",
+ "fetched_at": "2026-11-05T17:12:44+00:00",
+ "data": {
+  "url": "https://fedex.com",
+  "final_url": "https://www.fedex.com/global/choose-location.html",
+  "title": "FedEx Global Home - Select Your Location",
+  "description": "Welcome to FedEx.com - Select your location to find services for shipping your package, package tracking, shipping rates, and tools to support shippers and small businesses"
+ }
+}

@@ -1,0 +1,8 @@
+{
+ "key": "greenhouse|american-express",
+ "url": "https://boards-api.greenhouse.io/v1/boards/american-express/jobs",
+ "fetched_at": "2026-11-05T17:12:25+00:00",
+ "data": {
+  "exists": false
+ }
+}

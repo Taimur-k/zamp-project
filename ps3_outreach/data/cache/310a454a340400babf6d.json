@@ -1,0 +1,8 @@
+{
+ "key": "ashby|fedex",
+ "url": "https://api.ashbyhq.com/posting-api/job-board/fedex",
+ "fetched_at": "2026-11-05T17:12:57+00:00",
+ "data": {
+  "exists": false
+ }
+}

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prospect → Draft</title>
+  <link rel="stylesheet" href="/common/shell.css" />
+  <style>
+    .cite { font-size: 10.5px; vertical-align: super; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 4px; padding: 0 3px; margin-left: 1px; }
+    .score-bar { display: inline-block; width: 46px; height: 6px; border-radius: 99px; background: var(--neutral-soft); vertical-align: middle; margin-left: 6px; overflow: hidden; }
+    .score-bar i { display: block; height: 100%; background: var(--accent); }
+    tr.ineligible td { color: var(--faint); }
+    tr.ineligible td a { color: var(--faint); }
+    tr.is-hook td { background: var(--good-soft); }
+    tr.is-support td { background: #f3f7ff; }
+    .hook-card { border: 1px solid #bfe5cf; background: var(--good-soft); border-radius: 9px; padding: 12px 14px; }
+    .hook-card .ht { font-weight: 650; }
+    .kv2 { display: grid; grid-template-columns: 120px 1fr; gap: 4px 10px; font-size: 13px; }
+    .kv2 div:nth-child(odd) { color: var(--muted); }
+    .flag { border-left: 3px solid #f59e0b; background: var(--warn-soft); padding: 8px 10px; border-radius: 6px; margin-bottom: 6px; font-size: 13px; }
+    .src-list { font-size: 12.5px; margin: 0; padding-left: 0; list-style: none; }
+    .src-list li { padding: 4px 0; border-bottom: 1px dashed var(--border); }
+    .src-list li:last-child { border-bottom: 0; }
+    .cand { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .cand:last-child { border-bottom: 0; }
+    .cand .cb { flex: 1; min-width: 0; }
+    details.seller summary { cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--muted); margin-top: 12px; }
+    .review-bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; padding: 10px 14px; border-top: 1px solid var(--border); background: var(--panel-2); border-radius: 0 0 9px 9px; }
+    .why-list { margin: 6px 0 0; padding-left: 18px; font-size: 13px; }
+    .why-list li { margin: 2px 0; }
+    .sm-note { font-size: 12px; color: var(--muted); }
+    textarea.edit { font-family: inherit; font-size: 13.5px; min-height: 220px; }
+  </style>
+</head>
+<body>
+<script src="/common/shell.js"></script>
+<script>
+(function () {
+  const esc = (s) => Shell.esc(s);
+  let CTX = null;
+
+  const TONE = {
+    READY_FOR_REVIEW: "good", REVIEW_SENSITIVE: "warn", LOW_CONFIDENCE: "warn",
+    NEEDS_INPUT: "info", NEEDS_RESEARCH: "warn", DO_NOT_CONTACT: "bad",
+  };
+  const LABEL = {
+    READY_FOR_REVIEW: "Ready for review", REVIEW_SENSITIVE: "Ready · sensitive context", LOW_CONFIDENCE: "Low confidence",
+    NEEDS_INPUT: "Needs input", NEEDS_RESEARCH: "Needs research", DO_NOT_CONTACT: "Do not contact",
+  };
+  const BANNER = {
+    READY_FOR_REVIEW: ["Draft ready for a rep to review", "Grounded in public sources. Nothing has been sent."],
+    REVIEW_SENSITIVE: ["Draft ready — but handle with care", "There is a sensitive recent event at this company. The draft avoids it; the rep decides on timing."],
+    LOW_CONFIDENCE: ["Low confidence — role-level draft only", "Public research didn't find a strong, specific reason to reach out. The draft is honest about that, not faked."],
+    NEEDS_INPUT: ["Need the rep to confirm the company", "The name matches several different companies. Research stopped rather than guessing."],
+    NEEDS_RESEARCH: ["Contact record looks stale", "Public sources say this person is no longer in the role. No draft — re-target first."],
+    DO_NOT_CONTACT: ["Do not contact", "CRM guardrail: this account or person must not receive cold outreach."],
+  };
+
+  function startCustom(body) {
+    const p = fetch("/api/prospect/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    if (CTX && document.getElementById("live")) return CTX.startRun(p);
+    p.then((r) => r.json()).then((b) => { if (b.run_id) location.hash = "#/run/" + b.run_id; });
+  }
+
+  // ------------------------------------------------------------ custom input
+  async function renderCustomInput(el, ctx) {
+    CTX = ctx;
+    el.innerHTML = `
+      <form id="pf">
+        <div class="row">
+          <div><label class="f">Prospect name *</label><input type="text" name="name" placeholder="e.g. David Obstler" required></div>
+          <div><label class="f">Title *</label><input type="text" name="title" placeholder="e.g. CFO" required></div>
+        </div>
+        <div class="row">
+          <div><label class="f">Company *</label><input type="text" name="company" placeholder="e.g. Datadog" required></div>
+          <div><label class="f">Domain</label><input type="text" name="domain" placeholder="e.g. datadoghq.com"></div>
+        </div>
+        <label class="f">LinkedIn URL <span class="muted">(stored for the rep, not scraped)</span></label>
+        <input type="text" name="linkedin" placeholder="https://www.linkedin.com/in/…">
+        <label class="f">Rep notes <span class="muted">(optional, treated as unverified)</span></label>
+        <input type="text" name="context" placeholder="e.g. regional distributor, ~200 employees">
+        <label class="f">Research mode</label>
+        <select name="research_mode">
+          <option value="auto">Live sources, fall back to cache if a source fails</option>
+          <option value="cache">Cache only (reproducible demo, works offline)</option>
+          <option value="live">Live only</option>
+        </select>
+        <details class="seller"><summary>Seller profile (who is reaching out)</summary>
+          <label class="f">Seller name</label><input type="text" name="s_name">
+          <label class="f">What we sell (one-liner)</label><input type="text" name="s_one_liner">
+          <label class="f">Short version (for the LinkedIn note)</label><input type="text" name="s_short">
+          <label class="f">Rep signing the email</label><input type="text" name="s_rep_name">
+          <div class="sm-note" style="margin-top:6px">Default is a fictional seller, Ledgerline. Edits apply to this run only.</div>
+        </details>
+        <div style="margin-top:14px; display:flex; gap:8px"><button class="btn primary" type="submit">Research &amp; draft</button></div>
+      </form>`;
+    const f = el.querySelector("#pf");
+    try {
+      const s = await (await fetch("/api/seller")).json();
+      f.s_name.value = s.name || ""; f.s_one_liner.value = s.one_liner || ""; f.s_short.value = s.short || ""; f.s_rep_name.value = s.rep_name || "";
+    } catch (e) { /* defaults stay server-side */ }
+    f.onsubmit = (ev) => {
+      ev.preventDefault();
+      const v = (n) => f[n].value.trim();
+      startCustom({
+        name: v("name"), title: v("title"), company: v("company"), domain: v("domain"), linkedin: v("linkedin"), context: v("context"),
+        research_mode: f.research_mode.value,
+        seller: { name: v("s_name"), one_liner: v("s_one_liner"), short: v("s_short"), rep_name: v("s_rep_name") },
+      });
+    };
+  }
+
+  // ------------------------------------------------------------ result
+  function citeify(text, cites) {
+    const byN = {};
+    (cites || []).forEach((c) => (byN[c.n] = c));
+    return esc(text).replace(/\[(\d+)\]/g, (m, n) => {
+      const c = byN[n];
+      return c ? `<a class="cite" href="${esc(c.url)}" target="_blank" rel="noopener" title="${esc(c.source + ': ' + c.title)}">${n}</a>` : `<span class="cite" title="unknown source">${n}?</span>`;
+    });
+  }
+
+  function header(res, run) {
+    const p = res.prospect || {}, id = res.identity || {};
+    const t = TONE[run.decision] || "info";
+    const [title, sub] = BANNER[run.decision] || [run.decision, ""];
+    let h = `<div class="result-banner ${t}"><div><div class="rb-title">${esc(title)}</div><div class="rb-sub">${esc(run.summary || sub)}</div>
+      ${run.summary ? `<div class="sm-note" style="margin-top:4px">${esc(sub)}</div>` : ""}</div></div>`;
+    h += `<div class="section"><div class="kv2">
+      <div>Prospect</div><div><b>${esc(p.name)}</b> · ${esc(p.title)} · ${esc(p.company)}</div>
+      <div>Persona</div><div>${esc(res.persona_label || res.persona || "—")}</div>
+      ${id.description || id.domain ? `<div>Company</div><div>${esc(id.description || "")}${id.domain ? ` · <a href="https://${esc(id.domain)}" target="_blank" rel="noopener">${esc(id.domain)}</a>` : ""}${id.wiki_url ? ` · <a href="${esc(id.wiki_url)}" target="_blank" rel="noopener">Wikipedia</a>` : ""}</div>` : ""}
+      ${res.role_check && res.role_check.status ? `<div>Role check</div><div>${esc(res.role_check.status)}</div>` : ""}
+      <div>Engine</div><div>${esc(res.engine || "")}${res.research ? ` · sources: ${res.research.live} live, ${res.research.cache + res.research.fallback} cached${res.research.fallback ? ` (${res.research.fallback} after a failed live fetch)` : ""}${res.research.miss ? `, ${res.research.miss} unavailable` : ""}` : ""}</div>
+    </div></div>`;
+    if (res.flags && res.flags.length) h += `<div class="section"><h4>Flags for the reviewer</h4>${res.flags.map((f) => `<div class="flag">${esc(f)}</div>`).join("")}</div>`;
+    return h;
+  }
+
+  function stopViews(res, run) {
+    let h = "";
+    if (run.decision === "NEEDS_INPUT" && res.candidates) {
+      h += `<div class="section"><h4>Which “${esc(res.prospect.company)}” did you mean?</h4>
+        ${res.candidates.map((c, i) => `<div class="cand"><div class="cb"><b>${esc(c.title)}</b><div class="sm-note">${esc(c.description)}${c.domain ? " · " + esc(c.domain) : ""}</div></div>
+          <button class="btn sm" data-cand="${i}">Use this</button></div>`).join("") || `<div class="muted small">No company candidates found — add a domain.</div>`}</div>`;
+    }
+    if (run.decision === "NEEDS_RESEARCH" && res.role_check) {
+      const rc = res.role_check;
+      h += `<div class="section"><h4>Evidence the contact is stale</h4><ul class="src-list">
+        ${(rc.evidence || []).map((e) => `<li><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a> <span class="muted">— ${esc(e.source)}, ${esc(e.date)}</span></li>`).join("")}</ul>
+        ${rc.successor ? `<div style="margin-top:10px">Suggested new target: <b>${esc(rc.successor)}</b> <button class="btn sm" id="retarget">Research ${esc(rc.successor)} instead</button></div>` : ""}</div>`;
+    }
+    if (run.decision === "DO_NOT_CONTACT" && res.crm) {
+      h += `<div class="section"><h4>CRM record</h4><table class="t"><thead><tr><th>Match</th><th>Account / contact</th><th>Status</th><th>Owner</th><th>Note</th></tr></thead><tbody>
+        ${res.crm.map((c) => `<tr><td>${esc(c.match)}</td><td>${esc(c.account || c.contact_name)}</td><td>${Shell.pill ? `<span class="pill bad">${esc(c.status.replace(/_/g, " "))}</span>` : esc(c.status)}</td><td>${esc(c.owner)}</td><td class="small">${esc(c.note)}</td></tr>`).join("")}
+        </tbody></table></div>`;
+    }
+    if (res.next_steps && res.next_steps.length && !res.draft) h += `<div class="section"><h4>Next steps</h4><ul class="why-list">${res.next_steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ul></div>`;
+    return h;
+  }
+
+  function hookView(res) {
+    const sig = (res.signals || []);
+    const hook = sig.find((s) => s.role === "hook"), sup = sig.find((s) => s.role === "support");
+    let h = `<div class="section"><h4>The hook</h4>`;
+    if (hook) {
+      h += `<div class="hook-card"><div class="ht">${esc(hook.type_label)} · score ${hook.score}</div>
+        <div style="margin-top:3px"><a href="${esc(hook.url)}" target="_blank" rel="noopener">${esc(hook.title)}</a> <span class="muted small">— ${esc(hook.source)}, ${esc(hook.date)}</span></div>
+        ${sup ? `<div class="small" style="margin-top:6px">Supporting: <a href="${esc(sup.url)}" target="_blank" rel="noopener">${esc(sup.title)}</a> <span class="muted">(${esc(sup.type_label)}, ${sup.score})</span></div>` : ""}
+      </div>`;
+    } else {
+      h += `<div class="flag">No company-specific signal cleared the bar (score ≥ 45). The draft uses a role-level angle instead of pretending to know something.</div>`;
+    }
+    if (res.hook_rationale) h += `<div class="small" style="margin-top:8px"><b>Why this one:</b> ${esc(res.hook_rationale)}</div>`;
+    if (res.missing_info && res.missing_info.length) h += `<div class="small" style="margin-top:8px"><b>What's missing:</b><ul class="why-list">${res.missing_info.map((m) => `<li>${esc(m)}</li>`).join("")}</ul></div>`;
+    return h + `</div>`;
+  }
+
+  function draftView(res, run) {
+    const d = res.draft;
+    if (!d) return "";
+    const rv = res.review || { status: "pending" };
+    const rvPill = { pending: "info", approved: "good", edited: "warn", rejected: "bad" }[rv.status] || "info";
+    return `<div class="section"><h4>Draft email <span class="pill ${rvPill}" style="margin-left:6px">review: ${esc(rv.status)}</span></h4>
+      <div class="msg-box" id="draftbox">
+        <div class="mh">To <b>${esc(res.prospect.name)}</b> · Subject: <b id="subj">${esc(d.subject)}</b></div>
+        <div class="mb" id="dbody">${citeify(d.body, d.citations)}</div>
+        <div class="review-bar">
+          <button class="btn sm primary" data-act="approve">Approve</button>
+          <button class="btn sm" data-act="edit">Edit</button>
+          <button class="btn sm" data-act="reject">Reject</button>
+          <span class="sm-note" style="margin-left:auto">Never auto-sent · saved to <code>${esc((res.files || {}).md || "")}</code></span>
+        </div>
+      </div>
+      ${rv.problems && rv.problems.length ? `<div class="flag" style="margin-top:8px">Edited copy has unsupported claims (approval blocked): ${rv.problems.map((p) => esc(p.sentence)).join(" · ")}</div>` : ""}
+      <div class="small" style="margin-top:6px"><span class="muted">Citation markers are for the reviewer and are stripped from the .eml file.</span></div>
+      <div class="section"><h4>Sources cited</h4><ul class="src-list">
+        ${(d.citations || []).map((c) => `<li><span class="cite">${c.n}</span> <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a> <span class="muted">— ${esc(c.source)}${c.date ? ", " + esc(c.date) : ""} · ${esc(c.type_label)}</span></li>`).join("") || `<li class="muted">None — role-level draft makes no company-specific claims.</li>`}
+      </ul></div>
+      <div class="section"><h4>LinkedIn connection note</h4><div class="msg-box"><div class="mb">${esc(d.linkedin)}</div></div></div>
+    </div>`;
+  }
+
+  function checksView(res) {
+    if (!res.checks) return "";
+    const g = (res.grounding || []).filter((r) => r.status !== "no factual claim");
+    return `<div class="section"><h4>Quality &amp; grounding checks</h4>${Shell.checks(res.checks)}
+      ${g.length ? `<details style="margin-top:8px"><summary class="small muted" style="cursor:pointer">Claim-by-claim grounding (${g.length})</summary><ul class="src-list" style="margin-top:6px">
+        ${g.map((r) => `<li><span class="pill ${r.status === "supported" ? "good" : "bad"}">${esc(r.status)}</span> ${esc(r.sentence)}${r.missing && r.missing.length ? ` <span class="muted">(missing: ${esc(r.missing.join(", "))})</span>` : ""}</li>`).join("")}
+      </ul></details>` : ""}</div>`;
+  }
+
+  function signalTable(res) {
+    const sig = res.signals || [];
+    if (!sig.length) return `<div class="section"><h4>Signals found</h4><div class="muted small">No public signals found.</div></div>`;
+    return `<div class="section"><h4>Ranked signals <span class="muted small" style="font-weight:400">— ${res.signal_count} distinct events · score = 30% recency + 35% relevance + 20% role fit + 15% credibility</span></h4>
+      <div style="overflow-x:auto"><table class="t"><thead><tr><th>#</th><th class="num">Score</th><th>Type</th><th>Signal</th><th>When</th><th>Use</th></tr></thead><tbody>
+      ${sig.map((s) => `<tr class="${s.eligible ? "" : "ineligible"} ${s.role === "hook" ? "is-hook" : s.role === "support" ? "is-support" : ""}">
+        <td class="small">${esc(s.id)}</td>
+        <td class="num" style="white-space:nowrap" title="recency ${s.parts.recency} · relevance ${s.parts.relevance} · role fit ${s.parts.role_fit} · credibility ${s.parts.credibility}">${s.score}<span class="score-bar"><i style="width:${s.score}%"></i></span></td>
+        <td class="small">${esc(s.type_label)}</td>
+        <td><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a><div class="sm-note">${esc(s.source)}${s.corroboration > 1 ? ` · ${s.corroboration} sources` : ""}</div></td>
+        <td class="small" style="white-space:nowrap">${esc(s.date)}</td>
+        <td class="small">${s.role === "hook" ? `<span class="pill good">Hook</span>` : s.role === "support" ? `<span class="pill info">Support</span>` : s.eligible ? `<span class="muted">eligible</span>` : `<span title="${esc(s.why_not)}">✕ ${esc(s.why_not)}</span>`}</td>
+      </tr>`).join("")}
+      </tbody></table></div></div>`;
+  }
+
+  function wire(el, res, run) {
+    el.querySelectorAll("[data-cand]").forEach((b) => (b.onclick = () => {
+      const c = res.candidates[+b.dataset.cand], p = res.prospect;
+      startCustom({ name: p.name, title: p.title, company: p.company, domain: c.domain || "", wiki_title: c.title, research_mode: res.research_mode, scenario: run.scenario });
+    }));
+    const rt = el.querySelector("#retarget");
+    if (rt) rt.onclick = () => {
+      const p = res.prospect;
+      startCustom({ name: res.role_check.successor, title: p.title, company: p.company, domain: p.domain, research_mode: res.research_mode, scenario: "custom" });
+    };
+    el.querySelectorAll("[data-act]").forEach((b) => (b.onclick = async () => {
+      const act = b.dataset.act;
+      if (act === "edit") return openEditor(el, res, run);
+      await sendReview(el, run, { action: act });
+    }));
+  }
+
+  function openEditor(el, res, run) {
+    const box = el.querySelector("#draftbox");
+    box.innerHTML = `<div class="mb" style="white-space:normal">
+        <label class="f" style="margin-top:0">Subject</label><input type="text" id="ed-subj" value="${esc(res.draft.subject)}">
+        <label class="f">Body <span class="muted">(keep [n] markers on factual claims; edits are re-checked)</span></label>
+        <textarea class="edit" id="ed-body">${esc(res.draft.body)}</textarea></div>
+      <div class="review-bar"><button class="btn sm primary" id="ed-approve">Save &amp; approve</button><button class="btn sm" id="ed-save">Save edits</button><button class="btn sm" id="ed-cancel">Cancel</button></div>`;
+    const payload = (action) => ({ action, subject: el.querySelector("#ed-subj").value, body: el.querySelector("#ed-body").value });
+    el.querySelector("#ed-approve").onclick = () => sendReview(el, run, payload("approve"));
+    el.querySelector("#ed-save").onclick = () => sendReview(el, run, payload("save"));
+    el.querySelector("#ed-cancel").onclick = () => renderResult(el, run);
+  }
+
+  async function sendReview(el, run, body) {
+    const r = await fetch(`/api/runs/${run.id}/review`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    if (!r.ok) { alert("Review failed: " + r.statusText); return; }
+    const fresh = await (await fetch(`/api/runs/${run.id}`)).json();
+    renderResult(el, fresh);
+  }
+
+  function renderResult(el, run) {
+    const res = run.result || {};
+    let h = header(res, run) + stopViews(res, run);
+    if (res.draft) h += hookView(res) + draftView(res, run) + checksView(res) + signalTable(res);
+    el.innerHTML = h;
+    wire(el, res, run);
+  }
+
+  Shell.init({
+    mark: "P3",
+    decisionTone: TONE,
+    decisionLabel: LABEL,
+    customTitle: "Research a prospect",
+    renderCustomInput,
+    renderResult,
+    kpis(runs) {
+      const res = runs.map((r) => r.result || {});
+      const drafts = runs.filter((r) => r.decision === "READY_FOR_REVIEW" || r.decision === "REVIEW_SENSITIVE");
+      const scored = res.filter((x) => typeof x.personalisation === "number");
+      const avg = scored.length ? Math.round(scored.reduce((a, x) => a + x.personalisation, 0) / scored.length) : null;
+      const researched = res.filter((x) => "strong_signal" in x);
+      const strong = researched.filter((x) => x.strong_signal).length;
+      const approved = res.filter((x) => x.review && x.review.status === "approved").length;
+      const stopped = runs.filter((r) => ["DO_NOT_CONTACT", "NEEDS_INPUT", "NEEDS_RESEARCH"].includes(r.decision)).length;
+      return [
+        { label: "Drafts ready", val: drafts.length, sub: `${approved} approved by a rep` },
+        { label: "Avg. personalisation", val: avg == null ? "—" : avg + "/100", sub: "across drafted runs" },
+        { label: "Strong signal found", val: researched.length ? Math.round((100 * strong) / researched.length) + "%" : "—", sub: "of fully researched prospects" },
+        { label: "Stopped before drafting", val: stopped, sub: "CRM, ambiguity or stale contact" },
+      ];
+    },
+  });
+})();
+</script>
+</body>
+</html>

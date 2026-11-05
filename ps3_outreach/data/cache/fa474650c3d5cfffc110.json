@@ -1,0 +1,8 @@
+{
+ "key": "greenhouse|datadoghq",
+ "url": "https://boards-api.greenhouse.io/v1/boards/datadoghq/jobs",
+ "fetched_at": "2026-11-05T17:51:39+00:00",
+ "data": {
+  "exists": false
+ }
+}

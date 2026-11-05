@@ -1,0 +1,8 @@
+{
+ "key": "lever|datadoghq",
+ "url": "https://api.lever.co/v0/postings/datadoghq?mode=json",
+ "fetched_at": "2026-11-05T17:51:40+00:00",
+ "data": {
+  "exists": false
+ }
+}

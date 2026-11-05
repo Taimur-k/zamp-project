@@ -1,0 +1,51 @@
+{
+  "submission_id": "SUB-2026-1046",
+  "submitted_at": "2026-11-01",
+  "resubmission_of": null,
+  "vendor_type": "company",
+  "category": "goods",
+  "company": {
+    "legal_name": "Volkov Industrial Supplies GmbH",
+    "trading_name": "",
+    "registration_number": "HRB 154872",
+    "country": "DE",
+    "address": {
+      "line1": "Hafenstraße 12",
+      "city": "Hamburg",
+      "state": "",
+      "postal_code": "20457"
+    },
+    "website": "https://www.volkov-industrial.de"
+  },
+  "tax": {
+    "tax_id": "DE284639177"
+  },
+  "contact": {
+    "name": "Anna Becker",
+    "title": "Buchhaltung",
+    "email": "a.becker@volkov-industrial.de",
+    "phone": "+49 40 5555 0188"
+  },
+  "bank": {
+    "account_holder": "Volkov Industrial Supplies GmbH",
+    "bank_name": "Commerzbank AG",
+    "bank_country": "DE",
+    "currency": "EUR",
+    "iban": "DE83370400440817264500",
+    "swift": "COBADEFFXXX"
+  },
+  "documents": [
+    {
+      "type": "tax_document",
+      "file": "docs/volkov/vat_confirmation.pdf"
+    },
+    {
+      "type": "bank_proof",
+      "file": "docs/volkov/bank_letter.pdf"
+    },
+    {
+      "type": "incorporation",
+      "file": "docs/volkov/handelsregister.pdf"
+    }
+  ]
+}

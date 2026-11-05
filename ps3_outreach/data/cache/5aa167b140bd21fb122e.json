@@ -1,0 +1,13 @@
+{
+ "key": "wiki|mercury",
+ "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Mercury",
+ "fetched_at": "2026-11-05T17:34:54+00:00",
+ "data": {
+  "type": "disambiguation",
+  "title": "Mercury",
+  "description": "Topics referred to by the same term",
+  "extract": "Mercury most commonly refers to:Mercury (planet), the closest planet to the Sun\nMercury (element), a chemical element\nMercury (mythology), a Roman deity",
+  "wikibase_item": "Q48397",
+  "url": "https://en.wikipedia.org/wiki/Mercury"
+ }
+}

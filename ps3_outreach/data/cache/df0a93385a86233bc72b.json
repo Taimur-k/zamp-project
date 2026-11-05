@@ -1,0 +1,8 @@
+{
+ "key": "lever|brightwaterprovisions",
+ "url": "https://api.lever.co/v0/postings/brightwaterprovisions?mode=json",
+ "fetched_at": "2026-11-05T17:13:38+00:00",
+ "data": {
+  "exists": false
+ }
+}

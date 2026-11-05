@@ -1,0 +1,28 @@
+{
+  "run_id": "78fb11c708",
+  "decided_at": "2026-11-05T22:21:43",
+  "decision": "REVIEW",
+  "file": "02_apex_scanned_APX-56102.pdf",
+  "sha256": "bfaa1c58c77a9d89",
+  "vendor_id": "V002",
+  "invoice_number": "APX-56102",
+  "invoice_date": "2026-10-24",
+  "po_number": "PO-4500-0217",
+  "currency": "GBP",
+  "net": 2085.0,
+  "tax": 417.0,
+  "total": 2502.0,
+  "issues": [
+    {
+      "severity": "review",
+      "code": "PO_OVERBILLED",
+      "message": "Cumulative billing 2,085.00 would exceed PO value 2,055.00 (101.5%).",
+      "stage": "lines"
+    }
+  ],
+  "assigned_to": "Tom Becker (Plant Ops)",
+  "actions": [
+    "Created review task for Tom Becker (Plant Ops)",
+    "Suggested partial approval: GBP 2,085.00 is backed by goods received; hold the rest"
+  ]
+}

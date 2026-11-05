@@ -1,0 +1,13 @@
+{
+ "key": "wiki|american express",
+ "url": "https://en.wikipedia.org/api/rest_v1/page/summary/American_Express",
+ "fetched_at": "2026-11-05T17:11:38+00:00",
+ "data": {
+  "type": "standard",
+  "title": "American Express",
+  "description": "American multinational financial services corporation",
+  "extract": "American Express Company (Amex) is an American bank holding company and multinational financial services corporation that specializes in payment cards. It is headquartered at 200 Vesey Street, also known as American Express Tower, in the Battery Park City neighborhood of Lower Manhattan; in 2026, the company announced that it would develop and be the sole occupant of the new 2 World Trade Center skyscraper in the nearby World Trade Center complex.",
+  "wikibase_item": "Q194360",
+  "url": "https://en.wikipedia.org/wiki/American_Express"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "key": "wiki|fedex",
+ "url": "https://en.wikipedia.org/api/rest_v1/page/summary/FedEx",
+ "fetched_at": "2026-11-05T17:12:34+00:00",
+ "data": {
+  "type": "standard",
+  "title": "FedEx",
+  "description": "American multinational conglomerate",
+  "extract": "FedEx Corporation is an American multinational transportation, e-commerce, and business-services company headquartered in Memphis, Tennessee. Founded in 1971 by Frederick W. Smith as Federal Express Corporation, it began operations in 1973 as an express delivery company centered on an air-and-ground network based at Memphis International Airport. FedEx now provides parcel delivery, express transportation, freight forwarding, logistics, customs brokerage, supply-chain services, and retail printing and shipping services worldwide. In fiscal 2026, the company reported revenue of $94.7 billion and employed about 452,000 people.",
+  "wikibase_item": "Q459477",
+  "url": "https://en.wikipedia.org/wiki/FedEx"
+ }
+}

@@ -1,0 +1,427 @@
+{
+ "key": "news|(\"Mercury\" OR \"Mercury Technologies\") (CFO OR finance OR acquisition OR funding OR earnings OR hiring) when:180d",
+ "url": "https://news.google.com/rss/search?q=%28%22Mercury%22+OR+%22Mercury+Technologies%22%29+%28CFO+OR+finance+OR+acquisition+OR+funding+OR+earnings+OR+hiring%29+when%3A180d&hl=en-US&gl=US&ceid=US%3Aen",
+ "fetched_at": "2026-11-05T17:18:32+00:00",
+ "data": [
+  {
+   "title": "Fintech firm Mercury hits $5.2 billion valuation after funding round, up 49% in 14 months",
+   "source": "CNBC",
+   "source_url": "https://www.cnbc.com",
+   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNb3Yxc0U3UVNFTWVNdURiSHlEa0ZXMHJmM18yeWlxaW1OUDFoRGNaRWVoMHZtblFoSEZxSVdrem5YTEVuampkRURUYXRtZXpLcXlLaEJ3V2JnVGlZZ0JQcEIyblBfODRzV3pNQnVBQjM1dGJ0Z21FbUFDWXBId3dFYXEySjJHMDZuRlFHalRB0gGTAUFVX3lxTE4xcG92WHdCaEVwcVVVdTU0alVQOUR1ejkzazRLVGx1bTlDTXRlTmdORXctcnpSY0R6YlBuSXVDNkdvbFEydGNPN29wS0hxMHUzaUpaanI0Z2prT2RoQ1RQOFBrUjkycmdIbHBGQ0dhSEQybWktVVV2WnZwVTRvOTRJS0dRWjdKTlRiUGxCYVNPU1JVdw?oc=5",
+   "published": "2026-05-20T07:00:00+00:00"
+  },
+  {
+   "title": "Virginia confronts $1.7 billion shortfall in highway maintenance funding",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQRWNwaVlOalQzM1F1WndGZzd6dWk4SEJKOUFqbmNaNUFLc2FSSWRQb3pFMUtWT2p3TFRXNUdNTmNtVkh6Z2ZkRkxRUGhodjFHV2UxQ1VVbXgzdHRtNXhnVnloUGZjZ0VqUzBydjkxUE5wV1RhU05ET1R1RnpHWE1xVHVlaDZzazVxM2lZUVZWWVFpdDRJRklsd2FCb1lPWnJRbXdGcGxGb0pqTGUwaEF2MA?oc=5",
+   "published": "2026-09-18T07:00:00+00:00"
+  },
+  {
+   "title": "Cool Job Alert: The Mercury is Hiring a Music Section Editor!",
+   "source": "Portland Mercury",
+   "source_url": "https://www.portlandmercury.com",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNV3AzVW5LNEVhbnR6TzM2azFKbnNXV2htbFFjQmZYY05QSGhVM1ZjcjdxbC1nTjlvdzdnUy1JVnBMdzJEOHZDR1N6WGtIa0xmSXJLdWtFSkxzcGx4RzRWaTlwLUVOSXpIQnNTWFdUTXVTMnF2MTFSZzh5UDFuS2g5SmNkdXRhVEdmbnpwT2pUemtSZlZDcS1yNHI4NFFETXVpLUdROXBuUGs?oc=5",
+   "published": "2026-06-15T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems (MRCY) Q2 Earnings Report Preview: What To Look For",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNUEg1XzJtSzdBdkVrV2FUTHFCdnpQSUs0RGVva2FJeWFRZ0JDOEV3UUdLcGxEZkdnOHRBX0dBWWpNWFJmV0J6OFREazNVREpRNlRVNnpYbUhvSFZ5VUxUd01SQmo0aFNfcFg3dzZtV0oyOGp5Y2RxWTQ0RE02UW1ONmUxTW9icTdncHJnWVp3b0ZrTjVPcmtwdWlQSHNGQQ?oc=5",
+   "published": "2026-08-16T07:00:00+00:00"
+  },
+  {
+   "title": "Digital Banking Startup Mercury Lands $200M At $5.2B Valuation Amid Fintech Funding Uptick",
+   "source": "Crunchbase News",
+   "source_url": "https://news.crunchbase.com",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPLTItcWp6dUNEUXZ2SUJvVTlKdUZSdFZROWd4bHFkblF6cDFnZkpXZEpXdlpSdWdDRTZ3ZUw5M3o0UEJULWxnNlN2UktzeHZpY3RRbWR0OWJSNzJFc3czTk41LW1EQ1Z2YTFqTjdtRldKRU9BSkVVTjh3MWFhTTc5V0p0SUF1c0hLYVlIV3JoVWJCTFcxcTJyRzhESQ?oc=5",
+   "published": "2026-05-20T07:00:00+00:00"
+  },
+  {
+   "title": "Virginia governor pledges overhaul of outdated K-12 school funding formula",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQN2VBMGtzZHlwRUlWc0VYc2s1REpIVmlRZm4tSklaRW9SR1p6Y18wa3BCbUYtU19OTjRuU0JTaHVMYkFCa1RiUElrUkZuN2xRSEREVFJSckNfYklhd1p2SFBwajhfdUZSMGRfMnIzSXR6Rzk1Y2ZGdUpzUElhbW1rVlpJUmp3RXdGcVdoWFlvcnNjaWZhVTJ6SWtGQTNnMHVWTERBUzA1LWhNSHloN2xWOFRNRmI?oc=5",
+   "published": "2026-11-02T10:32:10+00:00"
+  },
+  {
+   "title": "Mercury Systems Inc (MRCY) (Q4 2026) Earnings Call Highlights: Record Bookings and Backlog ...",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRHZ2eWdKMUhSV2FNemNLU3E1SXJaTVVNMjg2OTdsRkUweTZHd0tNazZTV1RWTDZaeFlRU2s5S1lEY29NdkxFalcyQ1oyN3VqQ1pNLTlZTDFYNEUwWElrY3ZSU0xiaGhhMlBFbUczVWhlZ1UxTXMtaHBsZXJpZkhTb2dmbHR6ZUtTcDR6eHlxYjRoTEdCVVhZ?oc=5",
+   "published": "2026-08-19T07:00:00+00:00"
+  },
+  {
+   "title": "Commentary: Public utilities shouldn’t be funding the campaigns of the people who govern them",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNM3FHNFN3YlBmZC1iQ3ZSeVlzTkZZaVF2UHo2S25seHRzTnJGVXBNbGh6Q1FnekJzdDAwSDZXbkdPdmJRTmtwUTVOTno2MlVfWDN2MTdIM0VIZDJ3M3M0N2RNNFNfU0ppRllBek02NTJhUFYxYTJ2Q2hxR0hzeUQyclR0TDdsWk5oOEYycjlXUVR3ZWE5ZVN1NVNqM1cyMTdKaWtlQWlZYTdZdlRTUHJUMTh2NWF1YkNyN2pXTw?oc=5",
+   "published": "2026-08-31T07:00:00+00:00"
+  },
+  {
+   "title": "Why Is Mercury General (MCY) Down 6.1% Since Last Earnings Report?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOS2VHQXNpVzc2aEhxOEt4Ujhha19rd2h0TVV4VGNTdmJnMzVSMk9kSjhmS2U1V2lDcVlBUUoweTVyRmlOTTNwbjVLREw3ZnlnbjJIZjF3aW9BRXpLUHJ6UUgwNTRsQkpWaS0tLUFWR1NJOFlJelJkZ2ltYlA1UUxtQnAwWllURWFqOUJsTEJsdmFFMVNZdjF4MA?oc=5",
+   "published": "2026-09-03T07:00:00+00:00"
+  },
+  {
+   "title": "Is Mercury Systems (MRCY) Fully Priced Following Strong Earnings And Record Backlog?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQVjJuY0c2VDB3allOTnhsX3RTY2JrTzJLZGZHQnZNNTlOZ0ZwaW5HYUZBMDhUMFQ1b2ozUVg4ZVdiZEs3dlN2aHMwQ0RLMENDZnFtaG9jd29EdzAtNGdGdW4zWGZyYThqdWg0TnZGS3hsbnBWR01ZN2MzS21XaWFUSWt2X3drem9xSERqMktSTk85Ny1uWjF0UlVzNEhYb0E?oc=5",
+   "published": "2026-08-19T07:00:00+00:00"
+  },
+  {
+   "title": "Virginia lawmakers approve plan to advance new K-12 school funding formula",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPcFRRYnFpWEZ2Tl9DWUlZcktQSWR3czA4ZG14czNXZENGNVk3eWlUUFRxZk1IT2ljMkpVZzBReFA2RDNfeG9oRk5WZUEzd1JabFRfaF8tLWhmNE1DeF80aU5NOWJrYlJLUkRndUp0cWk2eUM0a25Oakh5RlFIVEV6YUh0NExGYjZJSVNEbGs4OWw0UHkzR3h3azBjMFNSQUR1WEdiZlBHNVVSd0E?oc=5",
+   "published": "2026-10-27T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems (MRCY) Down 13.8% Since Last Earnings Report: Can It Rebound?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxObHZNX1VhQmRRNGt3RjRVTjJ2QU53RUdXNUVtVXhKTV93MFJLQU4tdjBrWWR3b1V3VnFoNWJWclBDZzkzMHVnbkM3VUpsdk9TVGNPcWt0VGF6ZldXQXJ3cDduVHgxY01LR1hzR2hPUm1Ga05Zd2ZQU056YVZOWkhFcHVwN3FZUmV6a1NoWWFfZEFwV2FWMDBpeA?oc=5",
+   "published": "2026-09-17T07:00:00+00:00"
+  },
+  {
+   "title": "Eight school-based health clinics close in Southwest Virginia as federal funding pressures mount",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVWhYRXFTd2FrWl9vVU5SSm5YNUJZX0g1eXpLSWUtWl9BQ1Zad01ULVRISVhVeXMzanlmSEk0eUZTckR6d3E4emdpb2lRekpUeGlDc3FnMFZpS1JXcXVmdElzX2Vma0lBRFRPQVBqWjN5c0FLY1dTVmNUaEYwSzlVc2tnNUhqaWpZMlBLMGRsWHdLbFJoYnNsajQtZGNscTZTSXdqNTdORXRJc0JtZUh1aHJqZE5LeVhCemdleGRJMVlTNGlDX3FMREtkU29TWl9UMHc?oc=5",
+   "published": "2026-07-10T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems (MRCY) Expected to Beat Earnings Estimates: Should You Buy?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWWtLc3ItcTZIUlNPN05WZlFjbWtvZVkzTVJhZU54MHM2WDZhMHNkbjRRTzYzcUYyMUlEWWljQi1VQWxFY19PcnBXdTlqSXM5WFVjMjM0dG5BRjFYWEg3MGhNdm52bVNaZ1V0Z0RabmkwdjNIQ3VYMTJnWG1mNUxnZTI1RkNrX0huQ1ctaFZ2cXpzU2ZjN1NFckRWVTZuUW5z?oc=5",
+   "published": "2026-08-11T07:00:00+00:00"
+  },
+  {
+   "title": "As Va. officials weigh data center pushback, report details industry’s public service funding",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNempoMFBrX2Y3YjZhOE5ZN1pZRlVGYm9EQ09JTUNvM1QyTGtrRVFETUJyVTB4VURDTkwzMWtZcVNoWWI1SHN2NFljdFAzdUdaWlFWejdVSVNiN1l0UU1ocXlvQjlkdGdWRVFfd2dtQmoxeFRJNFFmcGI4bVFLR3NJV1FmU2J2UDB4TjBncHlaWHViT25lSzFuakR3UnNVRnZkc2xoeF9LSUhvWV9DMVRZTklsMWV6cGttZU1INDFkUElXVktEYzZFdExR?oc=5",
+   "published": "2026-08-17T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems Q4 Earnings in Line, Revenues Top on Bookings",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQk1rODZtUnBueURRQ1pmcVdadEFQZGxrZGVoaGx3QW93a1F5TTZmd2JZQ21zN3lic1lZVEJWWTNLQ3VWMW1YUEZtNnRGY3VrVHI5VXJrdElWVi1sWmhUbzBORXlaV2ZBanZ6SHpSUFVHczVZcTlrYVYwVm8yb21oVDd6UHhSMWtwV3BSN01sWHdacDdtSUlkR2ZycU5MQQ?oc=5",
+   "published": "2026-08-19T07:00:00+00:00"
+  },
+  {
+   "title": "Virginia voters to decide on 1% sales tax for school construction, NoVa transit funding",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRERNTDRwWktYVlRZX2tZbUFWMHRJYjRRby1zWThIOEhKUXJNX1ltY0thSDJsaG01bm9fSnNCbGpzckM2Rnk2VEpGZUdLZkJ3NlJDSzItZnI5QzZWeHJIRnd6ckNsbFd6am41RGdqSnB6VmMwSnFRbjhUVXoxeUI0cFREY3c4M01FdkZYeDd2Q0FhcHYwU3BfWURHSGFqeGlvSWpkeUpsUGdFME5xbmpWODNiM0l0bEVZUHJMQV9RRkh1SlE?oc=5",
+   "published": "2026-08-31T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems (MRCY) Up 21.7% Since Last Earnings Report: Can It Continue?",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOS05rWXY0Yk1IS1JmLXdTbWMtMmdFOTFoSmVDSXA0VjB0eGFod0EyamNndEY5ZWlrSF9lalQ0eFFUSlRvS3ZlNHM2dWlySURzbEc1ZjRLRDhXWHJwZS1fXzVkaC02U2VJazZpd0R2Nm95OEFSZHlfdkE0NHlVV0NyVlZaWVpndm9NbktTYW1TM3BTeVdH?oc=5",
+   "published": "2026-06-04T07:00:00+00:00"
+  },
+  {
+   "title": "Analysts Revise Price Targets on Mercury Systems, Inc. (MRCY) Following Q3 Earnings Report",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQR3AydEhBeXBYNGVWVHMycVF1ZHFKUjRydEk3cktCZmp5TGNRQkVUajV4Z3lMMW4tc3NDMG1ROGJNN1ozNS1KdGFJd3cycWlHbl9fbWJ3cVVZMnE1Rk55N29XdmxjOTdJdFpSUHdDa2FWcWNHbHcxOGVoUGZLUDdxN0pQcHUxWFlFM0xRdl9DQ0wwVHFkc05hT01xYmt3NWpPbkY1Ng?oc=5",
+   "published": "2026-05-27T07:00:00+00:00"
+  },
+  {
+   "title": "Why Mercury Systems (MRCY) Could Beat Earnings Estimates Again",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNMU90WkZPa3dYdEtQZC0xNXZaeUNvZWxJalB0em5lZWpMMTByTU1VNjl2R0JGSWRKSGg3N0YzcUVuX0VjUGhZaTF6c0h6M2FVWTNiLWtacURBU3lDb1pTb0tIbnpLMEQ1VGRXQVdSMXkyOGJaMkxMSnltMG5KRXdtUC1kalNMcVctU3RFSk5LQm03ZWRXcjVJTW5NZw?oc=5",
+   "published": "2026-07-22T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury General (MCY) Reports Earnings Tomorrow: What To Expect",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPV0wycm9CSkxyMC1YbURVa2cyZm4xWGpJZ3FHangtSkJTcTBERlRYQWRWQ1NQZFNZU3JtWHo3eGh4UGVYSGFrTGQ5ZjhwYVpXQXlKR3UwMXE0eDl1ODVZeWxZb3h0NXhSY2p2NHM0TnM2aXFIdDl2SUM4Z05TQlE1SjVHeGg3SzgwNVlIbU1JTGR4UnlWQXQtTjlIWldRcEtiSHdz?oc=5",
+   "published": "2026-08-03T07:00:00+00:00"
+  },
+  {
+   "title": "Reflecting On Property & Casualty Insurance Stocks’ Q1 Earnings: Mercury General (NYSE:MCY)",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOWWJlbHZsbWZ0SEZvUlh4bWJGYkNlY1paWHVTODJDbEhRRkVGdXlLTVIyaURuNWJOMzJQZVRqTHd6WlZmcFd2dkNuTmdOT2p1OTlWaVduSDJSMUdGNmhqM0R4azYxMmVZNk5pbU1vSF9EWF9lWlppWDg3Qm5NQXZlWmtTWEY3YnJaZjhmNmlvWTMxck9PWWw5X2hocXlMVXFEU2tsN2NUeHk3QWZpaV9z?oc=5",
+   "published": "2026-07-08T07:00:00+00:00"
+  },
+  {
+   "title": "Unpacking Q2 Earnings: Mercury Systems (NASDAQ:MRCY) In The Context Of Other Defense Contractors Stocks",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOX2d0eFJBQ3pGQVRMVTJZS1RtYWVxMGgtUmpncWJvazIyeTQ0dUxhUnBBeEFpRXh1SjdNQ3RPQ2poclRfajRybC1xVTAtZnR6RzljaHVLcU5yTENqbmpVWWZucnBwM1FpdTlVaFJ2Mkl0QkY0aFdhRU8xRDl5MTFIZkZzVDlTNHN3akstT25ua1NsU3lEUUNhcGx6SXFMSEZ6bnVMaQ?oc=5",
+   "published": "2026-09-18T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems Q4 Earnings Call Highlights",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQ2psbnZPRnVES3JKSjNyb0RmY0ZHZW5vSzdZaGZMM0oxbVptTWd5eXAzcVh4NlVRajNXc0ZSZnJGWEU2N2hOMHh2SFJzVU5aSno2OGxlUjdreTVjZVctT3Rxb0VBLU90dGQ3bGh6MzFiSENmQW5aZW1mUnNfS3VWTURsUExpcXFGQkU1Y2s1Y2NBOGtJa2FabjgzVnlEQQ?oc=5",
+   "published": "2026-08-18T07:00:00+00:00"
+  },
+  {
+   "title": "Gavi’s vaccine transition was never about RFK's fixation on mercury",
+   "source": "Devex",
+   "source_url": "https://www.devex.com",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNLTRxYWxJS1g2N1ZQUFVVUy1palBNMHpJUnl4bnZyR21pU0J2Y3lYWV90c0F3cktzVzZHRUNlTVRpdEszWTBlenpMR19oTmRnOHl5ZlR5dE5sSVBRWHB6S19OQjZNN0plZnZqVnh1UjlrTHJIR2FyX3ZJTUJJRzRQbnF0Sl9La0c0Ql80NGIxTE9oWUZoY0NFdTNzZ2NGWXo0MXJv?oc=5",
+   "published": "2026-09-09T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems (NASDAQ:MRCY) Reports Upbeat Q2 CY2026 But Stock Drops 12.1%",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxORk4tTmUzMktJUXpIbHRnR0wyQUVDRG9YckV5R3JaVjd6RXBaSEl1b19kYlRJMWt2WFQwaHlPVmUwT21QaVB0WGx1Y245TF9KSjQzVmF2dXpZX0FUNlVCVTRaeUl3ZzhESnZkU0tDSGVZMkgyY2JFcnprdVcwNG1HSUJoY29sd2hXbWdYR2FOa1d0d3Vxdmtjci1DQXV3Qy1JZ3c?oc=5",
+   "published": "2026-08-18T07:00:00+00:00"
+  },
+  {
+   "title": "Atlanticus Q2 Earnings Call Spotlights Mercury Progress and Credit",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNX0RLNDlIQUFsS0xHQWZwNk0xUWJueVZOWWdIRkJ4VzkxYUFycV9GZ1FBUm1kY05PQkp6Q24za0Vrd2tMaWhPQjJ0NE1vVlVacVM4aW1SV1hqT1ZKbjVxNWRkYnJFQzJrYk1UTHdaNzNka0plbFJGYXExRGtFX1FnMHZheXluTjVrSWxyODJaZlRncmUzbThGb3p4RXBMalBFbVg0T3lB?oc=5",
+   "published": "2026-08-13T07:00:00+00:00"
+  },
+  {
+   "title": "Why Mercury Systems (MRCY) Is Down 9.3% After Record Backlog And Narrowing Losses And What's Next",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOVWIxRnBUSmNwNUNISDFrN2ZsQktXcnNBa3YtSGlkQzVtcTEyMllVVzA2UUZRcTVPdWl0ZlRtTWZzRTNteEs5eUtHalR2em1LQ0JUenQ1Wl9vejhJLW9qMGZJbmRCdHlHWVowMUVIcXUtRTlVOF9YZUplZTJZOFpILU5fSlZ4dVF4b3g0WnE5ajlRQlQteDU2WjZB?oc=5",
+   "published": "2026-08-20T07:00:00+00:00"
+  },
+  {
+   "title": "The 5 Most Interesting Analyst Questions From Mercury Systems’s Q2 Earnings Call",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOXzVKcVhKU0gwaFpyc2R2MUlsc2p0aTVhZ1JpbW5ZN2VUNWRtdDNhd05YTnA3ZVFsTmswNEk1M0dBLW82RGZZNHBjMEtLNkV3bV96YTJ5dFEwQUdnNzRjbjljaGhhT0xkdzRYVFI3bHBIdUVFalM0WnUycEpsbFVBMjhGWm1mOVFsczQ4dGhpYkJmVHhXYTJnY3hvbzUxRnRXR3Rj?oc=5",
+   "published": "2026-08-25T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury General (MCY) reports Q3: everything you need to know ahead of earnings",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNUFFZaWtSWmw3TXFBTGM1ZktBUEYwdDl4VklReS12Qk9qOW9FODdCUVJmUFVzNmxzaWhySTgxOTk1M2xvV3hibjZsZjg5UFFqbUZ6YUZKcTk0cmx5Y2gwSUU0N0lBWi1MNTZHTGZJbjVJVEs2N2RJRVE4RmhEdDdXbGRoemdxcTBON1U1Uk1sVU5lUUNZcGpqNGJvNA?oc=5",
+   "published": "2026-11-02T08:05:36+00:00"
+  },
+  {
+   "title": "Mercury Systems (MRCY) Earnings Expected to Grow: What to Know Ahead of Next Week's Release",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQb0R0b0xrZUtYSXpvQ2ZTYno0UTI5ZDVoSDhpSHlOZFpybnkwVWJETUtpandWbGYxZ1l6SWt5c194NGhkbHRoUDZtQUt5VTIyNFgtYlVfTzFaTGtCN2hNNDBodlZxdHFrZmZRb1N4Y2hXMGhySHVWYko2Ulo4ZVhUc1FYR1B2T3R3cHlNWDJIT1JpLVdxQTBGYlB1UmRwbFAwTnhKZW1R?oc=5",
+   "published": "2026-11-03T14:00:04+00:00"
+  },
+  {
+   "title": "Mercury General (MCY) Q3 Earnings and Revenues Beat Estimates",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV19MMnROS19oWkNMVUNma3VPNjUxMXdmRFl6c3hjVmN3Z0RVNnZaazZkX2duMktOc0RwNTZKUVppM3lubFhmSDhmbHBER3pzaDVKaHpKNDVhTndiUUFBbHBYaUVxV01nNGN5dy1kLXo4eGNocWYzUWxvZ1dseU1HZHdrU0h1RHgtSDYzMkhZOGhlY3VQQVhKT2F2aWU?oc=5",
+   "published": "2026-11-03T21:50:05+00:00"
+  },
+  {
+   "title": "Here's What Key Metrics Tell Us About Mercury Systems (MRCY) Q4 Earnings",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNS3lkblZ1ZVNhd1pwbS1DbV9RZERTdWxYSmZ3OW50Q3FTRjNQWnlhRnBqaFpUMm9RUUJZaE5MYkwyc0R3R3EyMHhWTW55V1pzelFCV2lTV091SVJrZlVoMC1FRHZ6QXNkYXlYRm9zMnFvRFQ1TFhILXB4VVRicE8xeXhBRnljRWd1aVI1MjM1YmhzLTly?oc=5",
+   "published": "2026-08-18T07:00:00+00:00"
+  },
+  {
+   "title": "How Much Did Mercury Raise? Funding & Key Investors",
+   "source": "Clay",
+   "source_url": "https://www.clay.com",
+   "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBpVjBIQ001UnRwOGRHblFZMnBvT191YlRFcTI4dnNqcXhFR3dHUlR1TGdpM1FKb1pDdEgzZEYyNEpDV3lGSklZZV9HMW5jWWhrbEN5N1plSQ?oc=5",
+   "published": "2026-09-02T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury General Q3 Operating Earnings, Total Revenues Fall",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPLWpDWGhPNWh0LUNuUFl1Zldwd0tjQ0w5WlNpVjFmNHZmbmNlMWlGRU1MVEoyZzBEdURtYnhtTkdyNTRGb3docW9rQ2VhUllWNVgwTFRuRjRXSkV5QTJ1bXllYTNBbFZsQVRjb0k0Y001V3hHOXdQWkd4MEhTTmJFOTNjYWhicV9QS1ZfWVpLQ0RoVWd5SUZpX0FVVlAxcnNsLVdxbg?oc=5",
+   "published": "2026-11-03T22:06:27+00:00"
+  },
+  {
+   "title": "Q1 Defense Contractors Earnings: Mercury Systems (NASDAQ:MRCY) Impresses",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUndIVG96aWkybVFDUDZVSVIwXy1PRUZINVBCOS1LUDZEOGpxRHZwaDFydEVFQm9zMzBLaEx5MFJWQ0JRS1dIYklIUWFpb2RRV0FiTE5FZmVZTVBxd1hHbVJyUW9PRXZ4QXBFRW1xX2NoVFMtS1dRYjJXV3dzVXV6dGhRdG5zREFkdl9KR1Q4dW04cGFRUGZOUGJGM1h1RGhCSWE2clQ0OA?oc=5",
+   "published": "2026-07-10T07:00:00+00:00"
+  },
+  {
+   "title": "Stay Ahead of the Game With Mercury Systems (MRCY) Q4 Earnings: Wall Street's Insights on Key Metrics",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOYXlaUmZ4VE9Bd1BzdnlzRmQ3Qmk2QUFIc3FhN1dybGtRdFZZbzZkc1EwMTdrd3d0OHRuYXpTVFVGZ1JVa3NxeXFWTDVjYkFvdVVvMDlJb1BFbVo0X21TN1NtR0M4OTZ6eEZvYmtJV1hVVEZhQ2lJNTdXYU9JdzFLdkc0ZXdKbHlNdW8tUEZhc0lTb1ZhcmRabWQ2amI?oc=5",
+   "published": "2026-08-13T07:00:00+00:00"
+  },
+  {
+   "title": "Virginia legislators advance $205 billion budget including new tax on data centers",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPY3lWcUNKLXFQWDJNNHQwZ1NJZGRTSzlKN3FFeGg1TktvUXFrdVItT1hJUU9lQVVrOUNlcDZIcWNtdGRYSUhvRjRjMDV3SHctaUxod1ktLXk1M0JwVzlhRnFkTzViamlkald2NHhjWE9oQlBBdzJkYTZ0UGkwcWZ2Nml6akYweWQ5T2RyT1I3S2UtakF0OUJUVVRmWEp2YnBmdm12RWRfNWFSazVxYi1xMnVsek5KNWlheXB5Mm9R?oc=5",
+   "published": "2026-06-22T07:00:00+00:00"
+  },
+  {
+   "title": "Virginia’s new pay transparency law changes the rules for job postings",
+   "source": "Virginia Mercury",
+   "source_url": "https://virginiamercury.com",
+   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNeDNZdmkzMFRKdEhoNXZ0Q1JOVXg5RkNLbmNKZG0xWXExQ0ktbnJHRGFPTmIzOVlaYldpQll6UkhscVczVnZNOXlkNGZwdzRDN2Z4NDFUbFZHRU0zOFF3Q3hKYWZhVm4zc25WZm1wYVdBd2pzUjkwc3dvR0ZBdGM4Y1o4c0hCVVktdXM5YjlLelBaaTd3ME1LUDM0Ym5IX3VoWEtuOFNscEp3NFZPRFE?oc=5",
+   "published": "2026-07-27T07:00:00+00:00"
+  },
+  {
+   "title": "US job postings jumped sharply in September, potentially a good sign for anyone seeking employment",
+   "source": "The Mercury News",
+   "source_url": "https://www.mercurynews.com",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5Xell1Y0h0Q08xU0F5TnY5Yld2UmN3NF9EVFpWQWNjblhDY2xPY3FhaWtoUXFvVXlEWUFWZzdETTJaa3l6VFJwQ1B3TU9LN3k1TjdjUnJ5SFY2YVhQdk5sMHNlZllxdnVRRE5FX19rUk5KZ0k?oc=5",
+   "published": "2026-11-03T15:21:30+00:00"
+  },
+  {
+   "title": "Mercury General: Q3 Earnings Snapshot",
+   "source": "10tv.com",
+   "source_url": "https://www.10tv.com",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPQzU4RzR2d0l5eFhEUDR1TVpZRzBBTUVTbTlTamRRaUhJSFZHYlFiV2N0czQ4S2R3UGZEaWRBN3BDX0JqdmZYNEpfYVlKVGVBOVlZWEpYTGpOX3pIMTJ2bmIwcGhDa3NNM1pLcWVNbzZIdHhQRzNIaGlKRXRUOXpsOWd0dHNPcHJLVTJnbDc1bEY1UXAwbW1veFVwS3dtclRzTUt0c3RNWmZNS2l4VGF2VWMzanhlUTlfcFpva0o0SlJSd1BMVW1YeXVRbVJaWkE?oc=5",
+   "published": "2026-11-03T21:28:00+00:00"
+  },
+  {
+   "title": "Curious about Mercury Systems (MRCY) Q1 Performance? Explore Wall Street Estimates for Key Metrics",
+   "source": "Yahoo Finance",
+   "source_url": "https://finance.yahoo.com",
+   "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNbjN5aVVNaUlHMmJqSktxbmZ3ek1LZXlVWjhVRkR0NmhpcTBBdFQtaEdtRllWQzNvOEZDTk42Q3B4RGtHM0hWa1pDSEJtLTlVUUZOUk5jdDExb2NVMkFjOElkV25PX0x0QlkycFhDYlJ0VVowbkJ0MDdjenVwRnB3VGtJMEREWjVrY2VZZHM4UEFwWFFwVHA4dW9HX3I?oc=5",
+   "published": "2026-11-05T13:15:10+00:00"
+  },
+  {
+   "title": "Mercury Raises $200 Million Series D at $5.2B Valuation",
+   "source": "Business Wire",
+   "source_url": "https://www.businesswire.com",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPblctMGhwMDNQVnZpdXFqWTc0Wnc3RERwYVFYM0dzaEVtRFlLZzFXWi1XellHRlp2YjNKT3p0bTBsUDVrVjdFQWZWM1lTckN0VFFwRFF2ZWVNdExYZk9sWkQzb1JXN1R5cDB4Nm44OWgzV2J1UXkyUTZ2cWJ4d1ltWHpGVlA2TVlybmw5eGIwQVVYQy1tS0JGS1dKemVIWEl4VDlZZVVaLUU4TE56VGtQRGl0emxPTm8?oc=5",
+   "published": "2026-05-20T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury Systems Stock Falls on Q4 Earnings - Mercury System (NASDAQ:MRCY)",
+   "source": "Benzinga",
+   "source_url": "https://www.benzinga.com",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQcGdjR21CRjlhZXJKRzFvaWQyb0pWbEhYZlZDbmtvdE5KSFRoYkJ1WGJqbGJkYklWUFhLaEtqc2dpTmo1a2Y1cDBEb3FVVlJReGwxTWctdi1YTWhJX2tIRERMUmZwT25JRFNPazl6M1U4RTdTU0UyZExKU1lCUzh1elhtdE95NHR0V2NZX2pVNlltcUo0NnRBZTJtTXRjdnRM?oc=5",
+   "published": "2026-08-18T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury General in the spotlight: Earnings test California pricing By Investing.com",
+   "source": "Investing.com Nigeria",
+   "source_url": "https://ng.investing.com",
+   "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdE1rU3Q4SG5oM1NTS2VfZWJ1S3VYSUFsQzgxZFktd0JELS1NLU1xVjlmMkNZSVpVYWRGYmVIbEduU3NiOVNjSWxheWpUZk96NXVMcHBxUzJSNERPam90bUxFcXlXcGNCSlRSU01YR3h1d1NiN0Y0ZGw5aVVnYkNSTmJoR3N5OUVLbk4ydWlvZUpiQVY0NDdsZmh1ZkFMZlA1NFFIQ1kxU18zRW5KMHRnTGNQUnZld2JFQ0ZZejJuR0dyUmtW?oc=5",
+   "published": "2026-11-03T16:13:21+00:00"
+  },
+  {
+   "title": "Mercury General earnings beat by $0.39, revenue fell short of estimates",
+   "source": "Investing.com",
+   "source_url": "https://www.investing.com",
+   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeVRxNVFwNHdEZVl4Z2EtT3JOQklNazNvQjhudmhqNXF0aC1kNmlKZ2xNQWV2d29UQ2NVdmZaa0J5TkxPZ25aZFZzLUpySzVPQkN1RnN6bWtGYTlQZ01aelhrblJGenBUR015TlFkNXE0ZnlxbVpoZ0szQ1ZCUXdudmFET0RoYjdtQWRuVTlDY283MnVsbWc3QkJGT1dJWDJNbkFUVVNHOTRwczhWbm82eF9pdW5iSjQ?oc=5",
+   "published": "2026-11-03T22:14:51+00:00"
+  },
+  {
+   "title": "Mercury General Q3 Operating Earnings, Total Revenues Fall",
+   "source": "marketscreener.com",
+   "source_url": "https://www.marketscreener.com",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUEpsUXdOZVY1YmU0M0dIS0J0TGRXUDlvcUh3aWMxd2RlYk9CSWNxME5ldXZtVk9HMUYwekdURFY5UjZXRFlES2QyRGRaZ3NjRFkxMUVGaUg2QWNMUXkyUDJ2UTRWd3h3NGlHNS1RS0lTQ0NIVkc3clpnXzM1R2poRUpUbksxXzV1UmFaRFVKZnNhc05qTERDX1czMm5adkhhVDFkX0owWXp2elJuZk1r?oc=5",
+   "published": "2026-11-03T22:15:10+00:00"
+  },
+  {
+   "title": "Mercury General Corporation Reports Earnings Results for the Third Quarter and Nine Months Ended September 30, 2026",
+   "source": "www.marketscreener.com",
+   "source_url": "https://www.marketscreener.com",
+   "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQS1ZSanBUQXBqWFNNSG9BbTBpLWV6MW4yVmZOZEw1QmMwMXB0cGF0SlRyNFpzeUxUbHlyUkRETUsyZHZMRkVjSF9yUV8yYkVaSk9tUG83bmNIdHppdEJaSVl4WTc4VTc5a3V3MzdaRFh6bFdpT2xJMnVZNWZ0YXd5enJSeFRha1pEWXlUcm4zUTEwN0hadUpJVXJiN2NLYlY5ZlN4UTRSOG9BdU4xOG93RjVJSWdsYWY0MUloWVotdkczLTMzbzFLODhXYTJMeGlab3YtSmY1ODYwWUxlVW1jdmhpN0IwaVVW?oc=5",
+   "published": "2026-11-03T21:09:00+00:00"
+  },
+  {
+   "title": "Mercury Systems Slides After Earnings Despite Record Bookings and Backlog | MRCY Stock News",
+   "source": "Quiver Quantitative",
+   "source_url": "https://www.quiverquant.com",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNMW5JbmUwTWozbGplTldISkd1UW1MangzeWFDeG5walhJZHRraGlwMGRSMHlMeXFVbEtBT2V5bUVhTldLekxSZHJuTndWUzZiRDA2bEZ2clY0QUtaMzY2RUlOUHJmcHZxN3lEb0x4V2VtdlJTV2dGMm9ETndQZFJ5djhZSGNMZC03bVpaYWtSc2NJWVN3dGY0V0M2am5XcGVreXZpbVJMOWUwQQ?oc=5",
+   "published": "2026-08-18T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury - 2026 Funding Rounds & List of Investors",
+   "source": "Tracxn",
+   "source_url": "https://tracxn.com",
+   "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOX0lSdDZzd1M2QjJ6dk9SR1BZVXpsLWZrNVBKblppRS1wSkJEcTlJU1dXTG1RZm5vaUhJV1ZnZnIzdFh4MTBiWjl4eTBxS3NUQVk3cDNFcWpBbVVIWjdrSUNXSXN3Mml4VkJCTXMxdVFVYXVZV0FtNWY1azdrR3JTVC1DMVZlc2NoT3ZWdlhwZ1A5cmtWRlI1a1NDSzFraWNsLXVnSDd3dHBIUQ?oc=5",
+   "published": "2026-10-22T10:59:00+00:00"
+  },
+  {
+   "title": "MERCURY GENERAL ($MCY) Releases Q3 2026 Earnings",
+   "source": "Quiver Quantitative",
+   "source_url": "https://www.quiverquant.com",
+   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbUdDR083MU1zVnFNZXlWNVdkN3hNZEFxeWR3Z1NDTWY1ZTFEQXpwV0phMFFzZkhiaTJOYVpTUWk0ZWJJVG9nTThZenpEek02VS1lbXVMRWRTYUFtV1plbnVpV2ZCZXZPdkNSNmQ3bF9VNjNTX215QUh6cEl6dzRaWXBjTUZ5bTd2dmx5dVQ3S3Q?oc=5",
+   "published": "2026-11-03T22:51:00+00:00"
+  },
+  {
+   "title": "Mercury Systems Stock Gains Attention Ahead Of Expected Earnings Beat",
+   "source": "Simply Wall St",
+   "source_url": "https://simplywall.st",
+   "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNVDZUX2FWVTFSTWJqMzZ0LUZKY0UwMFlQbkZZQzhGWHF5cWpySXBlM0FuWnU2UkZ1aGc0dFdfWkNRbmxnX1k0QlNkVDZnSVM1ZVUybU9QZnZwVHFDNFFqcXNraGtYZVJFVVRyZUZ4QWdSOWtYUVRGMmt5ZWI2eE54U2hIWFItaTBfaTF4bVJOQ21PbEN3NWNTQU1sOUx3ZkV6YndqOEV5YjBMdmhTNXp5UzlDNXRiMTR6aU42VkRmcTZ6X2pRWEtpRGtjZFdhanJKR3NFaFVR0gHbAUFVX3lxTFBHWi0wdVE2MFowSjlQVllLLTVPT19zamVGWUtXbUVJVUJENnVZV0ozUWtDOHVTSnBqX1Zpd0IwbFNLRGVSMHh1OVBzMmtRekYwckdsRVp6ZzlMa0hNMzR2TFVid2ZtUjBoSDJnUTV1VWpfcW90Sk8wVmVQVDhtbmxTSVRnUU1tS3VTZjBhXzhteDA3WlhRSkRjMTRhNlF3akpkM3Z2YU1WVlJaeGZEOUlUZzlacTJXX2FJT2RnM0ZqNTdUQWlNUXdqbHRkb3pNdUVaNW1ISF84SkpRMA?oc=5",
+   "published": "2026-11-05T07:24:13+00:00"
+  },
+  {
+   "title": "Shapoorji Pallonji’s Mercury Finance plans $125 million bond reissue",
+   "source": "BusinessLine",
+   "source_url": "https://www.thehindubusinessline.com",
+   "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOY1JpODQ2Y0FuVS01QmpTUFFIVVliLTNZN05OU2VUX3g2R3ZUT3YyMk44SUllcDNpYTFUWWp1a0NiUUdKR1ROeFFVMko3TXpRWjdnaV8wRC1HeGZJNDhXV3RMdDEwRTRFQmNVSzJ6aDBqbkhyQ2VvdDc5a1NwdkRMeHZBbUdLSGdNMDNpMDhBVzFBTGdiRVhNWXM4MEs2S3VNNV9rSmM2eWpVdTFxNTNHU3V0aE0xRlFmb2h0RWhUNHNHVEtkRVdFTm54NzhZamdWeG5GSkUzU3FtRzJsSGhlMXlR0gHoAUFVX3lxTE1ObmplWURqbXh2cGF2OFY5N0VfZkxvMUFiUXpDMi1uSGVVWVloenc3LW5QZ0tMM0N0Q3pGZzc4bXhZTF9nSjFwUDhPYTFMWURWT0lfTV91YnhDRlRENXY3bExPZFR6Nnp5YUtMaWtvRHM1T1doeGZFdkg0NDRDaG1UOVFTOEtZSkg4eDBlc3I3TWE1ZENyUVJ2d2hMbXNmUENMLXNWcjdpNXBBbHFnS3NwMk5TbC16QnRYcUJQZG5kalNPU0ZzM3ZWSktMQWF6all4VFVCMjFldlludzdmUC1HV3NhZTl3c2g?oc=5",
+   "published": "2026-09-29T07:00:00+00:00"
+  },
+  {
+   "title": "Mercury General (NYSE:MCY) Posts Earnings Results",
+   "source": "MarketBeat",
+   "source_url": "https://www.marketbeat.com",
+   "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQTUE2eXh4RElBTXVLeUVxNWxpTkVncGZpdzhqQWFQZURDRzZXVk95R2lmWXVDSHJrRUJJbkZJd1IzVHR5WGlWSV9NbkE0RmxMRlRPR2d3cGNlT3ZIdW0zeXZCWlpCbW1pUnRIVnRPLU04UDJ2dGR3dXRZS0x6aHNMQ0RFUmx2bmNlajNXRkFYdDRob3gwWHNYNWw3b2ZjcUxLdnprSF8yS1g1cXRuYlMw?oc=5",
+   "published": "2026-11-04T00:59:51+00:00"
+  },
+  {
+   "title": "Mercury Systems (MRCY) Set to Announce Quarterly Earnings on Tuesday",
+   "source": "MarketBeat",
+   "source_url": "https://www.marketbeat.com",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ3ZjQWhKZU1ucnhURFUzNXdvYzYxN3ZkeEp0LUNNQUJEZ2NRR01BRWRWakhYUllwVjJzZVJfYnVJZTJyblZtdElpUWVXYjNwY2dnb243bG5ETWFmVndqa214dkxydEg1M1VlS1JJckJDSGVlREQ5bU8zc25RSlJjZE5md2FIcDdYR1JPVXM1YnBNMC1KcGJKbFVDQ0x2ZnZqYlpDc0kxTkpDeVpnVEVOY1dDNjA5bG92a3NzZHVEbmsxc3RyYzJwWg?oc=5",
+   "published": "2026-11-03T07:46:02+00:00"
+  },
+  {
+   "title": "Mercury Energy posts $1 billion in earnings on strong hydro generation",
+   "source": "RNZ",
+   "source_url": "https://www.rnz.co.nz",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZ0JBb1hqeldtYVk0NUhINWttSmp2Uml1ZGpBcmo4N2pfZ2hiRWZ4RzA2VWZOTklobkxiY3hISDR2Z3FkODZxNUEwNnhDYm03aWNFT05NVFpVc09ZM2lHYkFoVl8yVmZMWEgyLWNnU1lrUFIyNFZOZXhTb214enZabTZ2cnlVeUhqTUpGeVV4NnQ3RnR3SktVOEpNVlRMUzlTb1RnY0hWQ2EweUM3aWFUM2Y1Yw?oc=5",
+   "published": "2026-08-18T07:00:00+00:00"
+  },
+  {
+   "title": "Learn Why The Bull Case For Mercury General (MCY) Could Change Following Value Stock Recognition",
+   "source": "Simply Wall St",
+   "source_url": "https://simplywall.st",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPUEpsZWRRT1NOMTlHeGo5V3NQNFhUdmVJdEx0NzNheWxyUFJHa0JRZlc0MXBSR0U0SlRlZVphZmpLcXVqc0MwRzgtZGZEeUtzSmJJNXZFRlJtTGZ3ejZYN3RfNGc3N2dIYWdGdmNQdnJlaG00WUpJbmJLMXMzWVVrU0Jvb2x2dGxyc09sRzdxQkFGM19JM3U2QjVVYVZlTWVBV0JiMDVCQ3ZFVWlsWnp3c2pqbnhLOG13LXh0TWhPTWZFek5TSFVLTDF4dlbSAdIBQVVfeXFMUHRvazlqeWlpam1fU2R6R0lWOV9RX2hlTFRwc1N6dWNHU2lTYV9pSnVvZUxBOGRiZWhWbmpCZldXWEtVNUhDeHVRQTdjLWc3WWZPR0phOTczc3FiMFVtNlU0NHVPbWcwMDViWDBEYno1aExwd2xmWXQ3UDlKM2FRZ0JRRDcwQVRocFB1VXRsa19ObUV6cVVCR0dweE4tSXg3dlNxV3NyeDVNeUhVMm1QMHh4di1KVWNjWUxmWWpUMDh3RWVCdkhBUndoYTNPWjJHSmpn?oc=5",
+   "published": "2026-11-01T17:32:47+00:00"
+  },
+  {
+   "title": "RTÉ informed of funding cut hours before Budget, committee told",
+   "source": "Stowmarket Mercury",
+   "source_url": "https://www.stowmarketmercury.co.uk",
+   "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPNHJ4b0ZZOW9udlhyOVRpZTVRTWtNYk1Kb0pjeUtYQmt5WlJkZzlJNlBnRU5Bak96bjF6Ylo2YlRacDAwNFpDUXNqSlhmekk2TEhWYU5wM2NxbWE3c1RvejQ2dmpxSEZHWXVDRjhCX2YtRno1bE9MRk5JVHVuNTBwYVVKM0RyYl9YYXRlMkZ6clNMZE9VdnpvVXFwdjNnbHROS20yMTBnWDd2WWNUeEdybUp3?oc=5",
+   "published": "2026-11-04T17:12:15+00:00"
+  },
+  {
+   "title": "World's oldest model village secures 100th anniversary funding through itsu",
+   "source": "Stowmarket Mercury",
+   "source_url": "https://www.stowmarketmercury.co.uk",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPaHh5Y2NORW1fVlFReElHNnVQSkhKOHJqNUpSN24yTkRQcGZRbHBFd29zeDVkai1tejhDd25oYnlhS20yX0Rha1lzSkd5dThSQ29OMk50a3ltWlFDeUdTaVNKbG1iaTdQZlFCOE1GYThNSEJIdERVckN3V0VSM2I0UlE4VUVPN3dYMDBOYTdsRUlES0I3aGRWWGN1bldSeFkwTmdlUFBZWFl0bm5xcDBnSlRuNkxReW1xb3ZXQnNB?oc=5",
+   "published": "2026-11-05T14:31:16+00:00"
+  },
+  {
+   "title": "Calvary cleared to buy state’s biggest aged care provider",
+   "source": "The Mercury",
+   "source_url": "https://www.themercury.com.au",
+   "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNdXo3cTl3VEZFc3AzbXdVZzJCSzhwUVNsZExLSnRpTUpXaXJXdjZDNHEzbkNyVzdiNUZieTNFVWU4a29ZbTRkSHA0S3ZYQ2F3X09LMUNfdS1KbFloYUl0bEtJQUI3cS1laFZHTGlkOENXU0kwODhJVmRGczlwT3lGTmNkOGtBN1AwRE5PV2FCbGRJNHVvcHUzTTJrVWttUFFIeVliSTdBZXhieHpaVWVCV3ZXMG15QUx0NHhBakZBNFJuZXh0V3VnRnF3RWhoVDhYckVLcmF6Rk1pYU0zbkxfclIyTmlOS3dGa01oVDlUZENmSUtIcW91dXByaVVNcDhGODZUUUVB?oc=5",
+   "published": "2026-11-05T16:11:29+00:00"
+  }
+ ]
+}

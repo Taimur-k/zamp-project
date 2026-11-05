@@ -1,0 +1,52 @@
+{
+  "run_id": "0ca348970e",
+  "decided_at": "2026-11-05T22:21:49",
+  "decision": "REVIEW",
+  "file": "03_brightline_BL-2318.pdf",
+  "sha256": "0b68a99d4fdd06f6",
+  "vendor_id": "V003",
+  "invoice_number": "BL-2318",
+  "invoice_date": "2026-10-29",
+  "po_number": "PO-4500-0175",
+  "currency": "USD",
+  "net": 6210.0,
+  "tax": 0.0,
+  "total": 6210.0,
+  "issues": [
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "FRT-CHI-DAL: cumulative billed qty 46 exceeds PO qty 40.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "FRT-CHI-DAL: billing 18 more but only 8 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "FRT-LIFTGATE: cumulative billed qty 46 exceeds PO qty 40.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "FRT-LIFTGATE: billing 18 more but only 8 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "PO_OVERBILLED",
+      "message": "Cumulative billing 15,870.00 would exceed PO value 13,800.00 (115.0%).",
+      "stage": "lines"
+    }
+  ],
+  "assigned_to": "Dana Ortiz (Supply Chain)",
+  "actions": [
+    "Created review task for Dana Ortiz (Supply Chain)",
+    "Suggested partial approval: USD 2,760.00 is backed by goods received; hold the rest"
+  ]
+}

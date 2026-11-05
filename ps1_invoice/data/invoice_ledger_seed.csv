@@ -1,0 +1,5 @@
+vendor_id,invoice_number,invoice_date,po_number,currency,net_amount,total_amount,status,file_hash,posted_at,line_qty,source
+V001,INV-10482,2026-09-14,PO-4500-0201,USD,1176.30,1273.34,paid,seed-a91f,2026-09-18,BRK-COF-1KG:30|BRK-CUP-500:9|BRK-SNK-MIX:10,seed
+V003,BL-2291,2026-09-05,PO-4500-0175,USD,9660.00,9660.00,paid,seed-b220,2026-09-12,FRT-CHI-DAL:28|FRT-LIFTGATE:28,seed
+V002,APX-55710,2026-08-11,PO-4500-0188,GBP,940.00,1128.00,paid,seed-c331,2026-08-20,,seed
+V004,QCS-2026-0612,2026-06-30,PO-4500-0160,USD,18000.00,18000.00,paid,seed-d442,2026-07-05,,seed

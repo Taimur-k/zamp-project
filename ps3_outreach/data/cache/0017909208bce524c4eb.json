@@ -1,0 +1,8 @@
+{
+ "key": "ashby|americanexpress",
+ "url": "https://api.ashbyhq.com/posting-api/job-board/americanexpress",
+ "fetched_at": "2026-11-05T17:12:25+00:00",
+ "data": {
+  "exists": false
+ }
+}

@@ -1,0 +1,6 @@
+vendor_id,name,aliases,country,tax_id,currency,status,payment_terms_days,bank_account,remit_email
+V001,Northwind Office Supplies Inc.,Northwind Office Supplies|Northwind Supplies,US,12-3456789,USD,approved,30,****4421,ar@northwind-supplies.com
+V002,Apex Industrial Components Ltd,Apex Industrial|Apex Industrial Components,GB,GB 284 5591 07,GBP,approved,45,****8812,accounts@apexindustrial.co.uk
+V003,Brightline Logistics LLC,Brightline Logistics|Brightline,US,47-2098811,USD,approved,30,****3307,billing@brightlinelogistics.com
+V004,Quantum Cloud Services Inc.,Quantum Cloud|Quantum Cloud Services,US,83-1147720,USD,approved,30,****5520,finance@quantumcloud.io
+V005,Meridian Facilities Management,Meridian Facilities,US,61-7730042,USD,blocked,30,****0911,ap@meridianfm.com

@@ -1,0 +1,75 @@
+{
+  "run_id": "1270f9d1bd",
+  "decided_at": "2026-11-05T22:29:05",
+  "decision": "REJECT",
+  "file": "04_northwind_INV10482-R_reminder.pdf",
+  "sha256": "5006ebd4e7df58b1",
+  "vendor_id": "V001",
+  "invoice_number": "INV10482-R",
+  "invoice_date": "2026-09-14",
+  "po_number": "PO-4500-0201",
+  "currency": "USD",
+  "net": 1176.3,
+  "tax": 97.04,
+  "total": 1273.34,
+  "issues": [
+    {
+      "severity": "review",
+      "code": "PO_CLOSED",
+      "message": "PO-4500-0201 is closed.",
+      "stage": "po"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "BRK-COF-1KG: cumulative billed qty 60 exceeds PO qty 30.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "BRK-COF-1KG: billing 30 more but only 0 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "BRK-CUP-500: cumulative billed qty 18 exceeds PO qty 9.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "BRK-CUP-500: billing 9 more but only 0 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "BRK-SNK-MIX: cumulative billed qty 20 exceeds PO qty 10.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "BRK-SNK-MIX: billing 10 more but only 0 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "PO_OVERBILLED",
+      "message": "Cumulative billing 2,352.60 would exceed PO value 1,176.30 (200.0%).",
+      "stage": "lines"
+    },
+    {
+      "severity": "reject",
+      "code": "DUPLICATE",
+      "message": "Duplicate of invoice INV-10482 already paid on 2026-09-18 (invoice number 'INV10482-R' is a variant of 'INV-10482', same amount 1,273.34, date within 0 day(s)).",
+      "stage": "duplicate"
+    }
+  ],
+  "actions": [
+    "Drafted vendor email to ar@northwind-supplies.com (outbox/1270f9d1bd_V001.eml) \u2014 address taken from vendor master, not the invoice",
+    "Invoice blocked from payment run"
+  ]
+}

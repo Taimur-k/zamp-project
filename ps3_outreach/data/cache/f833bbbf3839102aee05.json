@@ -1,0 +1,82 @@
+{
+ "key": "wikisearch|mercury company",
+ "url": "https://en.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=Mercury+company&gsrlimit=15&prop=description%7Cpageprops&ppprop=wikibase_item&format=json&formatversion=2",
+ "fetched_at": "2026-11-05T17:34:56+00:00",
+ "data": [
+  {
+   "title": "Mercury",
+   "description": "Topics referred to by the same term",
+   "wikibase_item": "Q48397"
+  },
+  {
+   "title": "Mercury (automobile)",
+   "description": "Automobile marque of the Ford Motor Company",
+   "wikibase_item": "Q613883"
+  },
+  {
+   "title": "Mercury Records",
+   "description": "American record label",
+   "wikibase_item": "Q165745"
+  },
+  {
+   "title": "Mercury Marine",
+   "description": "Company",
+   "wikibase_item": "Q1468438"
+  },
+  {
+   "title": "Mercury General",
+   "description": "American insurance organization",
+   "wikibase_item": "Q16981897"
+  },
+  {
+   "title": "Mercury Aviation Company",
+   "description": "Aviation company in California, United States",
+   "wikibase_item": "Q107072136"
+  },
+  {
+   "title": "Mercury Technologies",
+   "description": "American financial technology company",
+   "wikibase_item": "Q108554731"
+  },
+  {
+   "title": "Mercury Cyclecar Company",
+   "description": "Defunct American motor vehicle manufacturer",
+   "wikibase_item": "Q767318"
+  },
+  {
+   "title": "Mercury Marauder",
+   "description": "Motor vehicle",
+   "wikibase_item": "Q763495"
+  },
+  {
+   "title": "Mercury Montego",
+   "description": "Motor vehicle",
+   "wikibase_item": "Q762335"
+  },
+  {
+   "title": "Mercury Theatre",
+   "description": "Former independent repertory theatre company in New York City",
+   "wikibase_item": "Q442909"
+  },
+  {
+   "title": "Mercury Drug",
+   "description": "Pharmacy chain in the Philippines",
+   "wikibase_item": "Q6818610"
+  },
+  {
+   "title": "Mercury Eight",
+   "description": "Motor vehicle",
+   "wikibase_item": "Q1921516"
+  },
+  {
+   "title": "Mercury Capri",
+   "description": "Motor vehicle",
+   "wikibase_item": "Q887416"
+  },
+  {
+   "title": "Mercury (planet)",
+   "description": "First planet from the Sun",
+   "wikibase_item": "Q308"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+  "submission_id": "SUB-2026-1043",
+  "submitted_at": "2026-10-28",
+  "resubmission_of": null,
+  "vendor_type": "company",
+  "category": "onsite_services",
+  "company": {
+    "legal_name": "Kestrel Facilities Management Ltd",
+    "trading_name": "Kestrel FM",
+    "registration_number": "09876543",
+    "country": "GB",
+    "address": {
+      "line1": "18 Wharf Road",
+      "city": "Manchester",
+      "state": "",
+      "postal_code": "M1 2AB"
+    },
+    "website": "https://www.kestrelfm.co.uk"
+  },
+  "tax": {
+    "tax_id": "GB284719326"
+  },
+  "contact": {
+    "name": "Daniel Hughes",
+    "title": "Finance Director",
+    "email": "d.hughes@kestrelfm.co.uk",
+    "phone": "+44 161 555 0175"
+  },
+  "bank": {
+    "account_holder": "Kestrel Facilities Management Ltd",
+    "bank_name": "NatWest",
+    "bank_country": "GB",
+    "currency": "GBP",
+    "sort_code": "56-00-36",
+    "account_number": "47218390",
+    "iban": "GB93NWBK56003647218390",
+    "swift": "NWBKGB2L"
+  },
+  "documents": [
+    {
+      "type": "tax_document",
+      "file": "docs/kestrel/vat_certificate.pdf"
+    },
+    {
+      "type": "bank_proof",
+      "file": "docs/kestrel/bank_letter.pdf"
+    },
+    {
+      "type": "insurance",
+      "file": "docs/kestrel/insurance_certificate.pdf"
+    },
+    {
+      "type": "incorporation",
+      "file": "docs/kestrel/certificate_of_incorporation.pdf"
+    }
+  ]
+}

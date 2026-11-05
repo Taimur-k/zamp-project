@@ -1,0 +1,52 @@
+{
+  "submission_id": "SUB-2026-1045",
+  "submitted_at": "2026-10-31",
+  "resubmission_of": null,
+  "vendor_type": "company",
+  "category": "goods",
+  "company": {
+    "legal_name": "Meridian Agro Exports Private Limited",
+    "trading_name": "",
+    "registration_number": "U01100MH2018PTC309876",
+    "country": "IN",
+    "address": {
+      "line1": "5th Floor, Nariman Bhavan, Nariman Point",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "postal_code": "400021"
+    },
+    "website": "https://meridianagro.in"
+  },
+  "tax": {
+    "tax_id": "29AAMCM7314K1Z2"
+  },
+  "contact": {
+    "name": "Farah Sheikh",
+    "title": "Finance Manager",
+    "email": "farah.sheikh@meridianagro.in",
+    "phone": "+91 22 5555 0123"
+  },
+  "bank": {
+    "account_holder": "Meridian Agro Exports Pvt Ltd",
+    "bank_name": "ICICI Bank",
+    "bank_country": "IN",
+    "currency": "INR",
+    "account_number": "000405012345",
+    "ifsc": "ICIC0000456",
+    "swift": "ICICINBB"
+  },
+  "documents": [
+    {
+      "type": "tax_document",
+      "file": "docs/meridian/gst_certificate.pdf"
+    },
+    {
+      "type": "bank_proof",
+      "file": "docs/meridian/bank_letter.pdf"
+    },
+    {
+      "type": "incorporation",
+      "file": "docs/meridian/certificate_of_incorporation.pdf"
+    }
+  ]
+}

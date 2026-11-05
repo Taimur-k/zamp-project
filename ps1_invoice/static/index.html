@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invoice Desk</title>
+  <link rel="stylesheet" href="/common/shell.css" />
+  <style>
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .fact { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+    .fact .fl { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+    .fact .fv { font-weight: 650; margin-top: 1px; word-break: break-word; }
+    .sev { font-size: 10.5px; font-weight: 700; text-transform: uppercase; padding: 2px 7px; border-radius: 99px; margin-right: 8px; white-space: nowrap; }
+    .sev.reject { background: var(--bad-soft); color: var(--bad); }
+    .sev.hold { background: var(--bad-soft); color: var(--bad); }
+    .sev.return { background: var(--info-soft); color: var(--info); }
+    .sev.review { background: var(--warn-soft); color: var(--warn); }
+    .issue { display: flex; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .issue:last-child { border-bottom: 0; }
+    .st-pass { color: var(--good); font-weight: 650; } .st-warn { color: var(--warn); font-weight: 650; } .st-fail { color: var(--bad); font-weight: 650; }
+    .billbar { display: flex; height: 14px; border-radius: 99px; overflow: hidden; background: var(--neutral-soft); margin: 8px 0 6px; position: relative; }
+    .billbar span { height: 100%; }
+    .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+    .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+    details.ev summary { cursor: pointer; color: var(--muted); font-size: 12.5px; }
+    .ev td code { font-size: 11.5px; color: var(--muted); }
+    ul.actions { margin: 0; padding-left: 18px; } ul.actions li { margin: 3px 0; }
+  </style>
+</head>
+<body>
+<script src="/common/shell.js"></script>
+<script>
+const E = Shell.esc;
+const fmt = (v) => (v === null || v === undefined ? "—" : Number(v).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+const TONE = { APPROVE: "good", REVIEW: "warn", RETURN_TO_VENDOR: "info", REJECT: "bad" };
+
+function renderCustomInput(el, ctx) {
+  el.innerHTML = `
+    <div class="drop" id="drop">Drop an invoice PDF or image here, or <u>browse</u>
+      <div class="small" style="margin-top:4px">Try editing a sample, or any real invoice — unknown vendors are handled too.</div></div>
+    <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg" class="hidden" />
+    <div class="row" style="margin-top:12px">
+      <button class="btn" id="reset" title="Remove invoices approved during demo runs, so the happy path can be re-run without being caught as a duplicate">Reset demo ledger</button>
+      <button class="btn" id="ref">View PO / vendor data</button>
+    </div>
+    <div id="refbox" class="hidden" style="margin-top:12px; max-height:340px; overflow:auto"></div>`;
+  const drop = el.querySelector("#drop"), file = el.querySelector("#file");
+  const send = (f) => { const fd = new FormData(); fd.append("file", f); ctx.startRun(fetch("/api/run", { method: "POST", body: fd })); };
+  drop.onclick = () => file.click();
+  file.onchange = () => file.files[0] && send(file.files[0]);
+  drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
+  drop.ondragleave = () => drop.classList.remove("over");
+  drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); e.dataTransfer.files[0] && send(e.dataTransfer.files[0]); };
+  el.querySelector("#reset").onclick = async () => { await fetch("/api/reset-ledger", { method: "POST" }); alert("Demo ledger reset — invoices approved during demo runs were removed. Seed history (paid invoices) is kept."); };
+  el.querySelector("#ref").onclick = async () => {
+    const box = el.querySelector("#refbox");
+    if (!box.classList.contains("hidden")) return box.classList.add("hidden");
+    const r = await (await fetch("/api/reference")).json();
+    box.innerHTML = `
+      <p class="eyebrow">Purchase orders</p>
+      <table class="t"><tr><th>PO</th><th>Vendor</th><th class="num">Value</th><th>Status</th></tr>
+      ${r.pos.map((p) => `<tr><td>${E(p.po_number)}<div class="small muted">${E(p.description)}</div></td><td>${E(p.vendor_id)}</td><td class="num">${E(p.currency)} ${fmt(p.total_amount)}</td><td>${E(p.status)}</td></tr>`).join("")}</table>
+      <p class="eyebrow" style="margin-top:12px">AP ledger (already processed)</p>
+      <table class="t"><tr><th>Invoice</th><th>Vendor</th><th>PO</th><th class="num">Total</th><th>Status</th></tr>
+      ${r.ledger.map((l) => `<tr><td>${E(l.invoice_number)}</td><td>${E(l.vendor_id)}</td><td>${E(l.po_number)}</td><td class="num">${fmt(l.total_amount)}</td><td>${E(l.status)} <span class="small muted">${E(l.source)}</span></td></tr>`).join("")}</table>
+      <p class="eyebrow" style="margin-top:12px">Policy</p><pre class="small">${E(JSON.stringify(r.policy, null, 2))}</pre>`;
+    box.classList.remove("hidden");
+  };
+}
+
+function renderResult(el, run) {
+  const r = run.result, inv = r.invoice, cur = inv.currency || "";
+  const facts = [
+    ["Vendor", r.vendor ? `${r.vendor.name}` : "Not in vendor master"],
+    ["Invoice #", inv.number || "missing"],
+    ["Invoice date", inv.date || "missing"],
+    ["PO", inv.po ? inv.po + (inv.po_inferred ? " (inferred)" : "") : "none"],
+    ["Net", `${cur} ${fmt(inv.net)}`],
+    ["Tax" + (inv.tax_inclusive ? " (embedded)" : ""), `${cur} ${fmt(inv.tax)}`],
+    ["Total", `${cur} ${fmt(inv.total)}`],
+    ["Read via", inv.read_method === "text-layer" ? "PDF text layer" : "OCR (scanned)"],
+  ];
+  let html = `
+    <div class="result-banner ${TONE[run.decision] || "info"}">
+      <div><div class="rb-title">${E(r.headline)}</div><div class="rb-sub">${E(r.reason)}</div></div>
+    </div>
+    <div class="section"><div class="facts">${facts.map(([l, v]) => `<div class="fact"><div class="fl">${E(l)}</div><div class="fv">${E(v)}</div></div>`).join("")}</div></div>`;
+
+  if (r.issues.length) {
+    html += `<div class="section"><h4>Why — rule hits (most severe first)</h4>
+      ${r.issues.map((i) => `<div class="issue"><span class="sev ${E(i.severity)}">${E(i.severity)}</span><span>${E(i.message)}</span></div>`).join("")}</div>`;
+  }
+
+  if (r.billing) {
+    const b = r.billing, pv = b.po_value || 1, scale = Math.max(pv, b.cumulative);
+    html += `<div class="section"><h4>PO consumption</h4>
+      <div class="billbar">
+        <span style="width:${(100 * b.previously_invoiced) / scale}%;background:#9ca3af" title="Previously invoiced"></span>
+        <span style="width:${(100 * Math.min(b.this_invoice_net, Math.max(pv - b.previously_invoiced, 0))) / scale}%;background:var(--accent)" title="This invoice (within PO)"></span>
+        <span style="width:${(100 * Math.max(b.cumulative - pv, 0)) / scale}%;background:var(--bad)" title="Over PO value"></span>
+      </div>
+      <div class="legend"><span><i style="background:#9ca3af"></i>Previously invoiced ${fmt(b.previously_invoiced)}</span>
+        <span><i style="background:var(--accent)"></i>This invoice ${fmt(b.this_invoice_net)}</span>
+        ${b.cumulative > pv ? `<span><i style="background:var(--bad)"></i>Over PO by ${fmt(b.cumulative - pv)}</span>` : `<span>Remaining ${fmt(b.remaining_after)}</span>`}
+        <span>PO value ${cur} ${fmt(pv)} · ${b.pct_billed}% billed</span></div>
+      ${run.decision === "REVIEW" && b.approvable_now && b.approvable_now < b.this_invoice_net ? `<div class="small" style="margin-top:6px"><b>Suggested:</b> approve ${cur} ${fmt(b.approvable_now)} now (backed by goods/services received), hold ${cur} ${fmt(b.this_invoice_net - b.approvable_now)}.</div>` : ""}
+    </div>`;
+  }
+
+  if (r.line_match && r.line_match.length) {
+    html += `<div class="section"><h4>3-way match — invoice vs PO vs receipt</h4><div style="overflow-x:auto"><table class="t">
+      <tr><th>Invoice line</th><th class="num">Qty</th><th class="num">PO qty</th><th class="num">Recv'd</th><th class="num">Prev. billed</th><th class="num">Unit (net)</th><th class="num">PO unit</th><th>Result</th></tr>
+      ${r.line_match.map((l) => `<tr><td>${E(l.invoice_line)}${l.sku ? `<div class="small muted">${E(l.sku)} · match ${l.match_score}</div>` : ""}</td>
+        <td class="num">${l.qty ?? ""}</td><td class="num">${l.po_qty ?? "—"}</td><td class="num">${l.received ?? "—"}</td><td class="num">${l.previously_billed ?? "—"}</td>
+        <td class="num">${fmt(l.unit_price_net)}</td><td class="num">${l.po_unit_price != null ? fmt(l.po_unit_price) : "—"}</td>
+        <td class="small st-${E(l.status)}">${E(l.note)}</td></tr>`).join("")}
+    </table></div></div>`;
+  }
+
+  if (r.email) {
+    html += `<div class="section"><h4>Vendor email (drafted, saved to outbox)</h4><div class="msg-box">
+      <div class="mh">To: <b>${E(r.email.to)}</b><br>Subject: <b>${E(r.email.subject)}</b></div><div class="mb">${E(r.email.body)}</div></div></div>`;
+  }
+
+  html += `<div class="section"><h4>Actions taken</h4><ul class="actions">${r.actions.map((a) => `<li>${E(a)}</li>`).join("")}</ul></div>`;
+
+  const stages = [...new Set(r.checks.map((c) => c.stage))];
+  html += `<div class="section"><h4>Controls run</h4>${stages.map((s) => `<p class="eyebrow" style="margin:10px 0 0">${E(s)}</p>${Shell.checks(r.checks.filter((c) => c.stage === s))}`).join("")}</div>`;
+
+  html += `<div class="section"><details class="ev"><summary>Extracted fields &amp; evidence (engine: ${E(r.engine)})</summary>
+    <table class="t" style="margin-top:8px">${Object.entries(r.fields).map(([k, f]) => `<tr><td>${E(k)}</td><td><b>${E(f.value ?? "—")}</b><br><code>${E(f.evidence || "")}</code></td></tr>`).join("")}
+    ${r.line_items.map((li, i) => `<tr><td>line ${i + 1}</td><td>${E(li.description)} — ${li.qty} × ${fmt(li.unit_price)} = ${fmt(li.amount)}<br><code>${E(li.evidence || "")}</code></td></tr>`).join("")}
+    </table></details></div>`;
+  el.innerHTML = html;
+}
+
+Shell.init({
+  mark: "AP",
+  decisionTone: TONE,
+  decisionLabel: { APPROVE: "Approve", REVIEW: "Review", RETURN_TO_VENDOR: "Return to vendor", REJECT: "Reject" },
+  customTitle: "Upload an invoice",
+  renderCustomInput,
+  renderResult,
+  kpis(runs) {
+    const done = runs.filter((r) => r.decision && r.decision !== "ERROR");
+    const auto = done.filter((r) => r.decision === "APPROVE").length;
+    const stopped = done.filter((r) => r.decision === "REJECT").length;
+    return [
+      { label: "Touchless rate", val: done.length ? Math.round((100 * auto) / done.length) + "%" : "—", sub: "approved with no human touch" },
+      { label: "Payments stopped", val: stopped, sub: "duplicates / blocked / unknown vendors" },
+    ];
+  },
+});
+</script>
+</body>
+</html>

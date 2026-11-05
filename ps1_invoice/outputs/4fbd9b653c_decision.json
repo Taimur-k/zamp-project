@@ -1,0 +1,69 @@
+{
+  "run_id": "4fbd9b653c",
+  "decided_at": "2026-11-05T22:29:19",
+  "decision": "REJECT",
+  "file": "01_northwind_INV-10611.pdf",
+  "sha256": "303c8b3e522a08b0",
+  "vendor_id": "V001",
+  "invoice_number": "INV-10611",
+  "invoice_date": "2026-10-18",
+  "po_number": "PO-4500-0198",
+  "currency": "USD",
+  "net": 5938.0,
+  "tax": 489.89,
+  "total": 6427.89,
+  "issues": [
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "PAP-A4-80: cumulative billed qty 160 exceeds PO qty 80.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "PAP-A4-80: billing 80 more but only 0 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "TON-26A: cumulative billed qty 24 exceeds PO qty 12.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "TON-26A: billing 12 more but only 0 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_PO",
+      "message": "CHR-ERG-02: cumulative billed qty 12 exceeds PO qty 6.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "QTY_OVER_RECEIPT",
+      "message": "CHR-ERG-02: billing 6 more but only 0 received and not yet billed.",
+      "stage": "lines"
+    },
+    {
+      "severity": "review",
+      "code": "PO_OVERBILLED",
+      "message": "Cumulative billing 11,876.00 would exceed PO value 5,938.00 (200.0%).",
+      "stage": "lines"
+    },
+    {
+      "severity": "reject",
+      "code": "DUPLICATE",
+      "message": "Duplicate of invoice INV-10611 already approved on 2026-11-05 (identical file, same invoice number, same amount 6,427.89, date within 0 day(s)).",
+      "stage": "duplicate"
+    }
+  ],
+  "actions": [
+    "Drafted vendor email to ar@northwind-supplies.com (outbox/4fbd9b653c_V001.eml) \u2014 address taken from vendor master, not the invoice",
+    "Invoice blocked from payment run"
+  ]
+}

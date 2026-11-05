@@ -1,0 +1,479 @@
+{
+ "key": "greenhouse|mercury",
+ "url": "https://boards-api.greenhouse.io/v1/boards/mercury/jobs",
+ "fetched_at": "2026-11-05T17:20:03+00:00",
+ "data": {
+  "exists": true,
+  "board_name": "Mercury",
+  "jobs": [
+   {
+    "title": "Account Executive",
+    "location": "New York, NY or San Francisco, CA",
+    "updated": "2026-10-28T16:39:43-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6235209004"
+   },
+   {
+    "title": "AML Investigator III",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6190457004"
+   },
+   {
+    "title": "Business Continuity Management Lead",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6230246004"
+   },
+   {
+    "title": "Business Risk Officer",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6193419004"
+   },
+   {
+    "title": "Corporate Development Lead",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-11-05T11:46:53-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6250477004"
+   },
+   {
+    "title": "Customer Support Specialist",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6226462004"
+   },
+   {
+    "title": "Emerging Talent & Onboarding Program Manager",
+    "location": "San Francisco, CA",
+    "updated": "2026-11-04T16:46:08-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6249882004"
+   },
+   {
+    "title": "Engineering Manager - Bank Accounts",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6217141004"
+   },
+   {
+    "title": "Executive Producer - Brand Creative",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6140395004"
+   },
+   {
+    "title": "Group Creative Director - Brand Narrative",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-11-04T14:45:45-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6225753004"
+   },
+   {
+    "title": "Head of Enterprise and Strategic Partnerships",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-11-05T11:40:30-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6113876004"
+   },
+   {
+    "title": "Head of Market & Liquidity Risk",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6199427004"
+   },
+   {
+    "title": "Head of Media",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6221007004"
+   },
+   {
+    "title": "Head of Product - Business Banking",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6187763004"
+   },
+   {
+    "title": "Head of Product - Personal Banking",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6187759004"
+   },
+   {
+    "title": "Head of Social & Community",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-11-05T10:48:22-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6209147004"
+   },
+   {
+    "title": "Lead Compliance Risk Manager, Product Compliance - AI",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6218703004"
+   },
+   {
+    "title": "Marketing Engineer",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-11-02T16:22:07-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6194248004"
+   },
+   {
+    "title": "Model Risk Manager",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6222117004"
+   },
+   {
+    "title": "Open Call for Founders / Founding Teams - Product Management and Engineering",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6107075004"
+   },
+   {
+    "title": "Payroll Operations Specialist",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-11-04T16:35:56-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6199653004"
+   },
+   {
+    "title": "Recruiter - Sales",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6233009004"
+   },
+   {
+    "title": "Recruiter - Technical",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T18:16:19-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6233585004"
+   },
+   {
+    "title": "Relationship Manager",
+    "location": "San Francisco, CA",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6224597004"
+   },
+   {
+    "title": "Research Operations Lead",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6218808004"
+   },
+   {
+    "title": "Revenue Enablement Manager - Product",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6111944004"
+   },
+   {
+    "title": "Risk UX Specialist",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6230088004"
+   },
+   {
+    "title": "Sales Development Representative",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-11-03T16:49:21-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6167220004"
+   },
+   {
+    "title": "Senior Account Executive - Credit & Lending Products",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6220946004"
+   },
+   {
+    "title": "Senior Analytics Engineer",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6217794004"
+   },
+   {
+    "title": "Senior Associate - Venture Ecosystem Sales",
+    "location": "New York, NY or San Francisco, CA",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6149284004"
+   },
+   {
+    "title": "Senior Backend Engineer - Product",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6101148004"
+   },
+   {
+    "title": "Senior Compliance Risk Manager - Securities Compliance",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6193310004"
+   },
+   {
+    "title": "Senior Customer Support Service Delivery Program Manager",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6227550004"
+   },
+   {
+    "title": "Senior Data Analyst - Reconciliation",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6186428004"
+   },
+   {
+    "title": "Senior Data Scientist - Credit and Lending ML",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-11-04T11:35:42-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6248613004"
+   },
+   {
+    "title": "Senior Data Scientist - Growth",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6221254004"
+   },
+   {
+    "title": "Senior Data Scientist - Risk ML",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6179231004"
+   },
+   {
+    "title": "Senior Design Manager - Business Banking & Investments",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:35-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6236623004"
+   },
+   {
+    "title": "Senior Engineering Manager - Credit Cards",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6201177004"
+   },
+   {
+    "title": "Senior Engineering Manager - Custody",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6196335004"
+   },
+   {
+    "title": "Senior Engineering Manager - GTM",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:35-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6235277004"
+   },
+   {
+    "title": "Senior Engineering Manager - Mobile",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6216179004"
+   },
+   {
+    "title": "Senior Full-Stack Engineer",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6101151004"
+   },
+   {
+    "title": "Senior Machine Learning Operations Engineer",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6186862004"
+   },
+   {
+    "title": "Senior Manager - Compliance Governance",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6218803004"
+   },
+   {
+    "title": "Senior Operational Risk Manager",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6220965004"
+   },
+   {
+    "title": "Senior Procurement Business Partner",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6211401004"
+   },
+   {
+    "title": "Senior Product Designer - Cards & Credit",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6143552004"
+   },
+   {
+    "title": "Senior Product Manager - Business Lending",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6098827004"
+   },
+   {
+    "title": "Senior Product Manager - Consumer Credit Card",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6218705004"
+   },
+   {
+    "title": "Senior Product Manager - Fraud",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:35-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6236462004"
+   },
+   {
+    "title": "Senior Product Manager - Reconciliation",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6181121004"
+   },
+   {
+    "title": "Senior Product Manager - Users",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-29T20:25:40-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6148371004"
+   },
+   {
+    "title": "Senior Product & Regulatory Counsel - Investment Products",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6135821004"
+   },
+   {
+    "title": "Senior Recruiter - Compliance",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T18:10:38-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6238063004"
+   },
+   {
+    "title": "Senior Recruiter - Executive and Leadership",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-29T15:53:31-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6238499004"
+   },
+   {
+    "title": "Senior Recruiter - GTM",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T18:18:35-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6233007004"
+   },
+   {
+    "title": "Senior Relationship Manager",
+    "location": "San Francisco, CA",
+    "updated": "2026-10-28T14:13:35-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6236906004"
+   },
+   {
+    "title": "Senior Risk Program Manager - Fraud & Disputes Enablement",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6221555004"
+   },
+   {
+    "title": "Senior Sales Manager - Technology",
+    "location": "New York, NY or San Francisco, CA",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6214788004"
+   },
+   {
+    "title": "Senior Software Engineer - Cards",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-30T13:09:50-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6233820004"
+   },
+   {
+    "title": "Senior Software Engineer - Investments",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6183014004"
+   },
+   {
+    "title": "Senior Software Engineer - Mercury Command",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/5803347004"
+   },
+   {
+    "title": "Senior Software Engineer - SRE",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6184992004"
+   },
+   {
+    "title": "Senior Software Engineer - Treasury",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-30T13:08:48-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6212437004"
+   },
+   {
+    "title": "Senior Technical Program Manager - Credit & Lending",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6190280004"
+   },
+   {
+    "title": "Software Engineer - Infrastructure",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6150432004"
+   },
+   {
+    "title": "Software Engineer - Mercury Command",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6233238004"
+   },
+   {
+    "title": "Software Engineer - Product",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6101145004"
+   },
+   {
+    "title": "Staff Brand Designer",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/5995303004"
+   },
+   {
+    "title": "Staff Data Scientist - Credit and Lending ML",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-11-04T11:44:21-05:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6248646004"
+   },
+   {
+    "title": "Staff Software Engineer - Fraud",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/5847987004"
+   },
+   {
+    "title": "Strategic Partnerships Manager - VC & Accelerator Ecosystem",
+    "location": "San Francisco, CA",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6114207004"
+   },
+   {
+    "title": "Tech Communications Lead",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6223723004"
+   },
+   {
+    "title": "Trading Operations Lead",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:33-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6192352004"
+   },
+   {
+    "title": "Treasury Operations Analyst",
+    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6221673004"
+   },
+   {
+    "title": "Workplace Experience Specialist - NYC",
+    "location": "New York, NY",
+    "updated": "2026-10-28T14:13:34-04:00",
+    "url": "https://job-boards.greenhouse.io/mercury/jobs/6232781004"
+   }
+  ]
+ }
+}

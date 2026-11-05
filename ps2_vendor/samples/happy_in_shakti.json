@@ -1,0 +1,52 @@
+{
+  "submission_id": "SUB-2026-1042",
+  "submitted_at": "2026-10-24",
+  "resubmission_of": null,
+  "vendor_type": "company",
+  "category": "goods",
+  "company": {
+    "legal_name": "Shakti Precision Components Pvt. Ltd.",
+    "trading_name": "Shakti Precision",
+    "registration_number": "U29100MH2015PTC264813",
+    "country": "IN",
+    "address": {
+      "line1": "Plot 42, MIDC Bhosari",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "postal_code": "411026"
+    },
+    "website": "https://shaktiprecision.in"
+  },
+  "tax": {
+    "tax_id": "27AAKCS4821M1ZW"
+  },
+  "contact": {
+    "name": "Rohan Kulkarni",
+    "title": "Accounts Manager",
+    "email": "rohan.k@shaktiprecision.in",
+    "phone": "+91 20 5555 0199"
+  },
+  "bank": {
+    "account_holder": "SHAKTI PRECISION COMPONENTS PRIVATE LIMITED",
+    "bank_name": "HDFC Bank",
+    "bank_country": "IN",
+    "currency": "INR",
+    "account_number": "50200012345678",
+    "ifsc": "HDFC0001234",
+    "swift": "HDFCINBB"
+  },
+  "documents": [
+    {
+      "type": "tax_document",
+      "file": "docs/shakti/gst_certificate.pdf"
+    },
+    {
+      "type": "bank_proof",
+      "file": "docs/shakti/cancelled_cheque_scan.pdf"
+    },
+    {
+      "type": "incorporation",
+      "file": "docs/shakti/certificate_of_incorporation.pdf"
+    }
+  ]
+}

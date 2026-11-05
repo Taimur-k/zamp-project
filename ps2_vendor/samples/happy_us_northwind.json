@@ -1,0 +1,56 @@
+{
+  "submission_id": "SUB-2026-1041",
+  "submitted_at": "2026-10-21",
+  "resubmission_of": null,
+  "vendor_type": "company",
+  "category": "professional_services",
+  "company": {
+    "legal_name": "Northwind Analytics LLC",
+    "trading_name": "Northwind Analytics",
+    "registration_number": "7731905",
+    "country": "US",
+    "address": {
+      "line1": "1450 Market Street, Suite 800",
+      "city": "San Francisco",
+      "state": "CA",
+      "postal_code": "94103"
+    },
+    "website": "https://www.northwindanalytics.io"
+  },
+  "tax": {
+    "tax_id": "47-3829105"
+  },
+  "contact": {
+    "name": "Priya Raman",
+    "title": "Head of Finance",
+    "email": "priya.raman@northwindanalytics.io",
+    "phone": "+1 415 555 0142"
+  },
+  "bank": {
+    "account_holder": "Northwind Analytics LLC",
+    "bank_name": "Wells Fargo Bank, N.A.",
+    "bank_country": "US",
+    "currency": "USD",
+    "account_number": "4417092235",
+    "routing_number": "121000248",
+    "swift": "WFBIUS6S"
+  },
+  "documents": [
+    {
+      "type": "tax_document",
+      "file": "docs/northwind/w9.pdf"
+    },
+    {
+      "type": "bank_proof",
+      "file": "docs/northwind/bank_letter.pdf"
+    },
+    {
+      "type": "insurance",
+      "file": "docs/northwind/certificate_of_insurance.pdf"
+    },
+    {
+      "type": "incorporation",
+      "file": "docs/northwind/certificate_of_formation.pdf"
+    }
+  ]
+}

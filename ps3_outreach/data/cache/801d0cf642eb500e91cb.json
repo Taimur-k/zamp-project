@@ -1,0 +1,8 @@
+{
+ "key": "lever|mercury",
+ "url": "https://api.lever.co/v0/postings/mercury?mode=json",
+ "fetched_at": "2026-11-05T17:20:02+00:00",
+ "data": {
+  "exists": false
+ }
+}

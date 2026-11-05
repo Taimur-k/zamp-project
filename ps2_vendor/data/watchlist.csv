@@ -1,0 +1,11 @@
+list_id,name,aliases,country,program,listed_on,notes
+WL-0001,VOLKOV INDUSTRIAL SUPPLY LLC,Volkov Industrial Supply OOO|VIS Trading,RU,DEMO-SDN (mock sanctions list),2024-02-23,Dual-use industrial equipment procurement network
+WL-0002,ORIENT STAR SHIPPING CO,Orient Star Maritime,IR,DEMO-SDN (mock sanctions list),2019-09-04,Vessel operator
+WL-0003,KORYO TECHNICAL TRADING,Koryo Tech,KP,DEMO-SDN (mock sanctions list),2017-06-01,Front company
+WL-0004,AL-NOOR GENERAL TRADING FZE,Al Noor Gen Trading,AE,DEMO-SDN (mock sanctions list),2022-11-15,Procurement agent
+WL-0005,BLACK SEA METALS HOLDING,BSM Holding,RU,DEMO-EU (mock EU consolidated list),2022-04-08,
+WL-0006,CARIBE FINANCIAL SERVICES SA,,VE,DEMO-SDN (mock sanctions list),2020-03-26,
+WL-0007,GOLDEN CRESCENT EXCHANGE,Golden Crescent FX,AF,DEMO-UN (mock UN list),2021-08-30,Money service business
+WL-0008,NOVATEK DRILLING SERVICES LTD,,CY,DEMO-UK (mock UK list),2023-05-19,
+WL-0009,SINO-PACIFIC ELECTRONICS COMPONENTS LTD,SPEC Ltd,HK,DEMO-BIS (mock entity list),2023-10-11,Export-control entity list
+WL-0010,DAMASCUS INDUSTRIAL CONTRACTING,,SY,DEMO-SDN (mock sanctions list),2016-12-12,

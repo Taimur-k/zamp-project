@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendor Onboarding</title>
+  <link rel="stylesheet" href="/common/shell.css" />
+  <style>
+    .req { margin: 0; padding-left: 20px; }
+    .req li { margin-bottom: 10px; }
+    .req .why { color: var(--muted); font-size: 12.5px; }
+    details.grp { border: 1px solid var(--border); border-radius: 9px; margin-bottom: 8px; background: var(--panel); }
+    details.grp > summary { padding: 9px 12px; cursor: pointer; font-weight: 600; display: flex; gap: 8px; align-items: center; list-style: none; }
+    details.grp > summary::-webkit-details-marker { display: none; }
+    details.grp > summary::before { content: "▸"; color: var(--faint); width: 10px; }
+    details.grp[open] > summary::before { content: "▾"; }
+    details.grp > summary .cnt { margin-left: auto; font-weight: 500; font-size: 12px; color: var(--muted); }
+    details.grp .body { padding: 0 12px 6px 12px; border-top: 1px solid var(--border); }
+    .notes { margin: 0; padding-left: 18px; font-size: 13px; }
+    .notes li { margin-bottom: 6px; }
+    .resub { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .resub div { border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; }
+    .resub b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 4px; }
+    .files .frow { display: flex; gap: 8px; align-items: center; margin-top: 6px; font-size: 12.5px; }
+    .files .frow span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .files .frow select { width: 210px; flex: none; padding: 4px 6px; }
+    .err { color: var(--bad); font-size: 12.5px; margin-top: 6px; }
+    .hint { color: var(--muted); font-size: 12px; margin-top: 4px; }
+    .stats { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+    .stats b { color: var(--text); }
+    #sub-json { min-height: 340px; }
+  </style>
+</head>
+<body>
+  <script src="/common/shell.js"></script>
+  <script>
+    const esc = (s) => Shell.esc(s);
+    const DOC_LABELS = {
+      tax_document: "Tax registration (W-9 / VAT / GST)",
+      bank_proof: "Bank letter / cancelled cheque",
+      incorporation: "Certificate of incorporation",
+      insurance: "Certificate of insurance",
+    };
+    const TONE = { APPROVED: "good", PENDING: "warn", MANUAL_REVIEW: "info", REJECTED: "bad" };
+    const LABEL = { APPROVED: "Approved", PENDING: "Pending vendor", MANUAL_REVIEW: "Manual review", REJECTED: "Rejected" };
+    const fileUrl = (p) => "/api/file/" + String(p || "").split("/").map(encodeURIComponent).join("/");
+
+    function guessType(name) {
+      const n = name.toLowerCase();
+      if (/bank|cheque|check|iban|account/.test(n)) return "bank_proof";
+      if (/insur|coi|liabil/.test(n)) return "insurance";
+      if (/incorp|formation|handels|register|companies|cin/.test(n)) return "incorporation";
+      return "tax_document";
+    }
+
+    // ------------------------------------------------------------ custom input
+    function renderCustomInput(el, ctx) {
+      const opts = ctx.meta.scenarios.map((s) => `<option value="${esc(s.id)}">${esc(s.title)}</option>`).join("");
+      el.innerHTML = `
+        <label class="f">Start from a prepared submission</label>
+        <select id="tpl">${opts}</select>
+        <label class="f">Submission (JSON - edit any field)</label>
+        <textarea id="sub-json" spellcheck="false"></textarea>
+        <div class="hint">Try: change one digit of <code>routing_number</code>, set <code>account_holder</code> to a person's name, or change <code>country</code>. Use a new <code>submission_id</code> for a new case, or set <code>resubmission_of</code> to an earlier one.</div>
+        <label class="f">Replace / add documents (optional)</label>
+        <div class="drop" id="drop">Drop PDFs or images here, or click to choose</div>
+        <input type="file" id="file" multiple accept=".pdf,.png,.jpg,.jpeg" class="hidden" />
+        <div class="files" id="files"></div>
+        <div class="hint">An uploaded file replaces the document of the same type in the JSON.</div>
+        <div id="err" class="err"></div>
+        <div style="margin-top:12px; display:flex; gap:8px">
+          <button class="btn primary" id="go">Run onboarding checks</button>
+          <button class="btn" id="fmt">Format JSON</button>
+        </div>`;
+      const ta = el.querySelector("#sub-json"), tpl = el.querySelector("#tpl"), err = el.querySelector("#err");
+      let files = [];
+      const load = async () => {
+        const data = await (await fetch(`/api/scenarios/${tpl.value}/input`)).json();
+        ta.value = JSON.stringify(data, null, 2);
+        err.textContent = "";
+      };
+      tpl.onchange = load;
+      load();
+      const drawFiles = () => {
+        el.querySelector("#files").innerHTML = files.map((f, i) => `
+          <div class="frow"><span title="${esc(f.file.name)}">${esc(f.file.name)}</span>
+            <select data-i="${i}">${Object.entries(DOC_LABELS).map(([k, v]) => `<option value="${k}" ${k === f.type ? "selected" : ""}>${esc(v)}</option>`).join("")}</select>
+            <button class="btn sm" data-x="${i}">✕</button></div>`).join("");
+        el.querySelectorAll("#files select").forEach((s) => (s.onchange = () => (files[+s.dataset.i].type = s.value)));
+        el.querySelectorAll("#files button[data-x]").forEach((b) => (b.onclick = () => { files.splice(+b.dataset.x, 1); drawFiles(); }));
+      };
+      const add = (list) => { for (const f of list) files.push({ file: f, type: guessType(f.name) }); drawFiles(); };
+      const drop = el.querySelector("#drop"), inp = el.querySelector("#file");
+      drop.onclick = () => inp.click();
+      inp.onchange = () => { add(inp.files); inp.value = ""; };
+      drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
+      drop.ondragleave = () => drop.classList.remove("over");
+      drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); add(e.dataTransfer.files); };
+      el.querySelector("#fmt").onclick = () => {
+        try { ta.value = JSON.stringify(JSON.parse(ta.value), null, 2); err.textContent = ""; } catch (e) { err.textContent = "Invalid JSON: " + e.message; }
+      };
+      el.querySelector("#go").onclick = () => {
+        let parsed;
+        try { parsed = JSON.parse(ta.value); } catch (e) { err.textContent = "Invalid JSON: " + e.message; return; }
+        err.textContent = "";
+        const fd = new FormData();
+        fd.append("submission", JSON.stringify(parsed));
+        fd.append("doc_types", JSON.stringify(files.map((f) => f.type)));
+        files.forEach((f) => fd.append("files", f.file));
+        ctx.startRun(fetch("/api/submit", { method: "POST", body: fd }));
+      };
+    }
+
+    // ------------------------------------------------------------ result
+    function renderResult(el, run) {
+      const r = run.result || {};
+      const d = run.decision;
+      const v = r.vendor || {};
+      const st = r.stats || {};
+      let h = `
+        <div class="result-banner ${TONE[d] || "info"}">
+          <div style="min-width:0">
+            <div class="rb-title">${esc(LABEL[d] || d)}${r.vendor_id ? ` · supplier ${esc(r.vendor_id)}` : ""}</div>
+            <div class="rb-sub"><b>${esc(r.headline || run.summary)}</b></div>
+            <div class="rb-sub">${esc(r.reason || "")}</div>
+            <div class="stats"><span><b>${st.passed ?? 0}</b> passed</span><span><b>${st.failed ?? 0}</b> failed</span><span><b>${st.warnings ?? 0}</b> warnings</span>
+              <span>risk score <b>${r.risk ? r.risk.score : 0}</b></span><span>${esc(v.legal_name || "")} · ${esc(v.country || "")}</span></div>
+          </div>
+        </div>`;
+
+      if (r.resubmission) {
+        const rs = r.resubmission;
+        const li = (a) => a.length ? a.map((x) => `<div>• ${esc(x)}</div>`).join("") : `<div class="muted">none</div>`;
+        h += `<div class="section"><h4>Resubmission - compared with <a href="#/run/${esc(rs.previous_run)}">run ${esc(rs.previous_run)}</a> (${esc(LABEL[rs.previous_decision] || rs.previous_decision)})</h4>
+          <div class="resub"><div><b style="color:var(--good)">Resolved</b>${li(rs.resolved)}</div><div><b style="color:var(--warn)">Still open</b>${li(rs.still_open)}</div><div><b>New</b>${li(rs.new)}</div></div></div>`;
+      }
+
+      if ((r.vendor_requests || []).length) {
+        h += `<div class="section"><h4>What we need from the vendor</h4><ol class="req">${r.vendor_requests.map((q) => `
+          <li><b>${esc(q.title)}</b><div>${esc(q.request)}</div><div class="why">Why: ${esc(q.why)}</div></li>`).join("")}</ol></div>`;
+      }
+
+      if (d !== "APPROVED" || (r.reviewer_notes || []).some((n) => n.startsWith("[NOTE]"))) {
+        h += `<div class="section"><h4>Internal reviewer notes <span class="muted small">(never sent to the vendor)</span></h4>
+          <ul class="notes">${(r.reviewer_notes || []).map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>`;
+      }
+
+      if (r.email) {
+        h += `<div class="section"><h4>Email to vendor <span class="muted small">(${esc(r.email.engine || "")})</span></h4>
+          <div class="msg-box"><div class="mh"><div>To: <b>${esc(r.email.to)}</b></div><div>Subject: <b>${esc(r.email.subject)}</b></div></div>
+          <div class="mb">${esc(r.email.body)}</div></div></div>`;
+      }
+      if (r.internal_email) {
+        h += `<div class="section"><h4>Internal escalation</h4>
+          <div class="msg-box"><div class="mh"><div>To: <b>${esc(r.internal_email.to)}</b></div><div>Subject: <b>${esc(r.internal_email.subject)}</b></div></div>
+          <div class="mb">${esc(r.internal_email.body)}</div></div></div>`;
+      }
+
+      // checks grouped by stage
+      const groups = [];
+      (r.checks || []).forEach((c) => {
+        let g = groups.find((x) => x.key === c.stage);
+        if (!g) groups.push((g = { key: c.stage, title: c.stage_title, items: [] }));
+        g.items.push(c);
+      });
+      h += `<div class="section"><h4>All checks, by stage</h4>${groups.map((g) => {
+        const f = g.items.filter((c) => c.status === "fail").length, w = g.items.filter((c) => c.status === "warn").length;
+        const p = g.items.filter((c) => c.status === "pass").length;
+        const badge = f ? `<span class="pill bad">${f} failed</span>` : w ? `<span class="pill warn">${w} warning${w > 1 ? "s" : ""}</span>` : `<span class="pill good">all passed</span>`;
+        return `<details class="grp" ${f || w ? "open" : ""}><summary>${esc(g.title)} ${badge}<span class="cnt">${p}/${g.items.length} passed</span></summary>
+          <div class="body">${Shell.checks(g.items.map((c) => ({ status: c.status === "info" ? "na" : c.status, name: c.name, detail: c.detail })))}</div></details>`;
+      }).join("")}</div>`;
+
+      if ((r.documents || []).length) {
+        h += `<div class="section"><h4>Documents read</h4><div style="overflow-x:auto"><table class="t"><thead><tr><th>File</th><th>Uploaded as</th><th>Content looks like</th><th>How read</th></tr></thead><tbody>
+          ${r.documents.map((x) => `<tr><td>${x.path ? `<a href="${fileUrl(x.path)}" target="_blank">${esc(x.file.split("/").pop())}</a>` : esc(x.file)}</td>
+            <td class="small">${esc(DOC_LABELS[x.declared] || x.declared)}</td>
+            <td class="small">${x.detected === x.declared ? "✓ same" : `<b style="color:var(--bad)">${esc(DOC_LABELS[x.detected] || "unrecognised")}</b>`}</td>
+            <td class="small muted">${esc(x.method)}</td></tr>`).join("")}</tbody></table></div></div>`;
+      }
+
+      if ((r.outputs || []).length) {
+        h += `<div class="section"><h4>Outputs written</h4>${r.outputs.map((o) => `<div class="small" style="margin-bottom:4px">${esc(o.label)} - <a href="${fileUrl(o.path)}" target="_blank"><code>${esc(o.path)}</code></a></div>`).join("")}</div>`;
+      }
+      el.innerHTML = h;
+    }
+
+    // ------------------------------------------------------------ dashboard KPIs
+    function kpis(runs) {
+      const ok = runs.filter((r) => r.status === "completed");
+      const approved = ok.filter((r) => r.decision === "APPROVED").length;
+      const counts = {};
+      ok.forEach((r) => ((r.result && r.result.issues) || []).forEach((i) => {
+        if (i.severity !== "warn") counts[i.title] = (counts[i.title] || 0) + 1;
+      }));
+      const top = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+      const held = ok.filter((r) => r.decision === "REJECTED" || r.decision === "MANUAL_REVIEW").length;
+      const emails = ok.filter((r) => r.result && r.result.email).length;
+      return [
+        { label: "Auto-approval rate", val: ok.length ? Math.round((100 * approved) / ok.length) + "%" : "—", sub: `${approved} of ${ok.length} approved without a human` },
+        { label: "Most common blocker", val: top ? `${top[1]}×` : "—", sub: top ? top[0] : "no blockers yet" },
+        { label: "Held for fraud / compliance", val: held, sub: "rejected or manual review" },
+        { label: "Vendor emails written", val: emails, sub: "in ps2_vendor/outbox/" },
+      ];
+    }
+
+    Shell.init({
+      mark: "VO",
+      decisionTone: TONE,
+      decisionLabel: LABEL,
+      customTitle: "Custom submission",
+      renderCustomInput,
+      renderResult,
+      kpis,
+    });
+  </script>
+</body>
+</html>

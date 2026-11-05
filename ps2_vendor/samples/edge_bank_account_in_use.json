@@ -1,0 +1,56 @@
+{
+  "submission_id": "SUB-2026-1044",
+  "submitted_at": "2026-10-30",
+  "resubmission_of": null,
+  "vendor_type": "company",
+  "category": "logistics",
+  "company": {
+    "legal_name": "Brightline Logistics Inc",
+    "trading_name": "",
+    "registration_number": "0450918273",
+    "country": "US",
+    "address": {
+      "line1": "2200 Commerce Blvd",
+      "city": "Newark",
+      "state": "NJ",
+      "postal_code": "07114"
+    },
+    "website": "https://brightline-logistics.com"
+  },
+  "tax": {
+    "tax_id": "84-2290471"
+  },
+  "contact": {
+    "name": "Mark Delaney",
+    "title": "Owner",
+    "email": "mark.delaney.logistics@gmail.com",
+    "phone": "+1 973 555 0110"
+  },
+  "bank": {
+    "account_holder": "Brightline Logistics Inc",
+    "bank_name": "JPMorgan Chase Bank, N.A.",
+    "bank_country": "US",
+    "currency": "USD",
+    "account_number": "483920117",
+    "routing_number": "021000021",
+    "swift": "CHASUS33"
+  },
+  "documents": [
+    {
+      "type": "tax_document",
+      "file": "docs/brightline/w9.pdf"
+    },
+    {
+      "type": "bank_proof",
+      "file": "docs/brightline/bank_letter.pdf"
+    },
+    {
+      "type": "insurance",
+      "file": "docs/brightline/certificate_of_insurance.pdf"
+    },
+    {
+      "type": "incorporation",
+      "file": "docs/brightline/certificate_of_incorporation.pdf"
+    }
+  ]
+}

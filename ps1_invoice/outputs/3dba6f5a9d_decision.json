@@ -1,0 +1,20 @@
+{
+  "run_id": "3dba6f5a9d",
+  "decided_at": "2026-11-05T22:42:08",
+  "decision": "APPROVE",
+  "file": "02_apex_scanned_APX-56102.pdf",
+  "sha256": "bfaa1c58c77a9d89",
+  "vendor_id": "V002",
+  "invoice_number": "APX-56102",
+  "invoice_date": "2026-10-24",
+  "po_number": "PO-4500-0217",
+  "currency": "GBP",
+  "net": 2085.0,
+  "tax": 417.0,
+  "total": 2502.0,
+  "issues": [],
+  "payment_due": "2026-12-08",
+  "actions": [
+    "Posted to AP ledger (data/ledger_posted.csv) and scheduled payment for 2026-12-08"
+  ]
+}

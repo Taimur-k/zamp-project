@@ -1,0 +1,5 @@
+account,domain,contact_name,status,owner,note
+Samsara,samsara.com,,customer,Priya Nair (Account Manager),"Sample CRM row: existing customer since 2025 - expansion goes through the account team, not cold outreach"
+Northwind Traders,northwindtraders.com,,open_opportunity,Leo Park (AE),"Sample CRM row: open opportunity in Stage 3"
+Contoso Ltd,contoso.com,,do_not_contact,Legal,"Sample CRM row: company asked not to be contacted"
+,,Jamie Rivera-Example,do_not_contact,Marketing Ops,"Sample CRM row: person unsubscribed / opted out"

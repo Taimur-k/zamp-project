@@ -1,0 +1,38 @@
+{
+  "run_id": "b34d8ba062",
+  "decided_at": "2026-11-05T22:21:56",
+  "decision": "RETURN_TO_VENDOR",
+  "file": "05_quantum_statement_no_number.pdf",
+  "sha256": "380cedc93dc612f6",
+  "vendor_id": "V004",
+  "invoice_number": null,
+  "invoice_date": null,
+  "po_number": "PO-4500-0230",
+  "currency": "USD",
+  "net": 18000.0,
+  "tax": null,
+  "total": 18000.0,
+  "issues": [
+    {
+      "severity": "return",
+      "code": "MISSING_INVOICE_NUMBER",
+      "message": "Invoice number is missing from the invoice.",
+      "stage": "validate"
+    },
+    {
+      "severity": "return",
+      "code": "MISSING_INVOICE_DATE_RAW",
+      "message": "Invoice date is missing from the invoice.",
+      "stage": "validate"
+    },
+    {
+      "severity": "review",
+      "code": "PO_INFERRED",
+      "message": "No PO on invoice; inferred PO-4500-0230 (Managed IT support Q3 2026). A buyer must confirm.",
+      "stage": "po"
+    }
+  ],
+  "actions": [
+    "Drafted vendor email to finance@quantumcloud.io (outbox/b34d8ba062_V004.eml) \u2014 address taken from vendor master, not the invoice"
+  ]
+}
