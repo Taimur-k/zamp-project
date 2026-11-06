@@ -45,8 +45,16 @@ Submission (form JSON + PDFs/scans)
                                  email domain, cross-border account, newly incorporated -> risk score
   7 Decision .................. any REJECT -> REJECTED; else any REVIEW -> MANUAL_REVIEW; else any VENDOR item -> PENDING; else APPROVED
   8 Notify & write outputs .... vendor email (.eml) in outbox/; internal escalation for review/reject;
-                                 approved -> new row in data/vendor_master_approved.csv (idempotent)
+                                 approved -> new row in data/vendor_master_approved.csv (idempotent);
+                                 audit entry in data/audit_log.jsonl; PENDING -> reply-by date + follow-up schedule
+  ── human in the loop (review.py) ──────────────────────────────────────────────────────────────
+  9 Reviewer decision ......... MANUAL_REVIEW / REJECTED -> named reviewer: approve | request info (-> PENDING) | reject
+                                 guardrails enforced server-side; vendor email + audit entry written
+ 10 Follow-up ................. open-case queue on the dashboard: who acts next, age, reply-by, reminders;
+                                 one-click reminder email listing what is still outstanding
 ```
+
+Every case ends as **approved, pending or rejected**, as the brief asks. `MANUAL_REVIEW` is a holding state that only a named human can close.
 
 **Key design choice:** all eight stages run even after a problem is found. The vendor gets **one** email that lists everything to fix, so there's no back-and-forth over five rounds. Each finding is tagged with *who has to act*:
 
@@ -83,6 +91,31 @@ Submission (form JSON + PDFs/scans)
 | Risk | Same tax ID as a different vendor (could be a rename) / same company already on file | review |
 | Risk | Free webmail contact +15; email domain different from website +20; no website +5 | warn → review at 40 or more |
 
+## Human in the loop: reviewer decisions, follow-up, audit
+
+The brief notes that "the follow-up is manual and the only audit trail is whatever's in someone's inbox". The process covers both.
+
+**Reviewer decision** (result panel of any `MANUAL_REVIEW` or `REJECTED` run). The reviewer enters their name and a reason, then picks one action:
+
+| Action | Result | Vendor gets |
+|---|---|---|
+| Approve | APPROVED, vendor record created (idempotent per case) | Approval email with supplier ID |
+| Request info | PENDING, the reviewer's question is added to the open items | "Action needed" email listing it, with a reply-by date |
+| Reject | REJECTED | Neutral decline (no reason disclosed) |
+
+The guardrails are enforced by the API, not just by the buttons:
+- An **exact sanctions match or an embargoed country can never be approved**; it can only be confirmed as rejected.
+- **Approve is blocked while the vendor still owes something.** The reviewer has to use "Request info".
+- A name and a reason of at least 15 characters are required.
+- Each run is reviewed once, and concurrent clicks are serialised.
+- A resubmission after "request info" **goes back to a reviewer** (`REVIEWER_FOLLOWUP`). The rules can't judge whether a human's question was answered, so the earlier question is never shown as "resolved" automatically.
+
+**Follow-up queue** (dashboard, "Open cases"). This shows the latest run of every case still waiting on someone: the vendor (PENDING) or a reviewer (MANUAL_REVIEW). For a PENDING case, a reminder is due after 3 days of silence, escalation to the internal requester after 7, and the case is overdue after the reply-by date (10 days). "Send reminder now" writes a reminder `.eml` listing exactly what is still outstanding. A reminder is refused for a case that has been superseded by a resubmission.
+
+**Audit log** (`data/audit_log.jsonl`, append-only). There is one line per automated decision, reviewer decision and reminder. Each line records who acted, the outcome before and after, the reason, the finding codes and the emails written. The result panel shows the full trail for the case across resubmissions.
+
+API: `GET/POST /api/runs/{id}/review`, `GET /api/followups`, `POST /api/runs/{id}/remind`.
+
 ## Prepared scenarios (one click each in the UI)
 
 | Scenario | What's tricky | Expected |
@@ -96,6 +129,8 @@ Submission (form JSON + PDFs/scans)
 | **Volkov Industrial Supplies GmbH** (DE) | 92% name match with a watch-listed Russian entity; everything else is clean | MANUAL_REVIEW. Not auto-rejected. The reviewer gets the evidence and what to verify; the vendor gets a neutral "routine check" email |
 
 `test_scenarios.py` also runs some extra checks:
+- the reviewer flow: Volkov approved by a reviewer; an exact sanctions match can't be approved; approve is blocked while documents are missing; request info → PENDING → reminder → resubmission goes back to review; the follow-up queue and overdue logic
+- malformed document entries don't crash a run; a group company named as account holder isn't mistaken for a personal account
 - a routing number with one digit wrong goes to PENDING
 - an EIN with the unassigned prefix 07 goes to PENDING
 - an exact sanctions name goes to REJECTED
@@ -114,11 +149,12 @@ Submission (form JSON + PDFs/scans)
 - Tax ID re-use by a different name is a review, not a reject: a rename or acquisition is legitimate and common. Bank account re-use by a different company is a reject, because that is where the money goes.
 - Fuzzy sanctions matches are never auto-rejected. Auto-rejecting on a name similarity score would turn away legitimate vendors and still need a human to confirm.
 - Neither rejected nor manual-review emails reveal the reason (avoiding tipping off).
+- A fraud hold (bank account already used by another vendor) can be overturned by a reviewer. Shared accounts are sometimes legitimate (payment agents, factoring). The UI asks for independent verification first, and the reason is audited. Sanctions and embargo hard stops can't be overturned.
 
 ## What I'd build next
 
 1. A vendor-facing portal with field-level validation as they type: most PENDINGs are typos the checksums catch instantly.
 2. Real verification APIs: IRS TIN matching, HMRC VAT check / VIES, GSTN public search, bank account verification (e.g. penny-drop / Confirmation of Payee). They would sit alongside the offline checksums.
-3. Reminders and SLA tracking for PENDING cases (follow up automatically on day 3 and day 7), and a reviewer queue with approve/override buttons that records who decided and why.
+3. Send reminders on a scheduler instead of a button (the due logic already exists in `review.followups`), add real SMTP, and add reviewer authentication with roles. Today the reviewer name is typed in, which is fine for a demo but not for production; a fraud-hold override should also need a second approver.
 4. Ongoing monitoring after approval: insurance renewal reminders, periodic re-screening against the watch list, and bank-change requests going through the same pipeline with phone call-back verification.
 5. LLM extraction for any document layout, with the rules kept as the cross-checking layer.

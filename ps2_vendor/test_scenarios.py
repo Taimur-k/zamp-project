@@ -9,6 +9,7 @@ import copy
 import os
 import sys
 import tempfile
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 os.environ["PACE"] = "0"
@@ -17,12 +18,14 @@ sys.path.insert(0, str(APP_DIR.parent))
 
 from common.runstore import RunStore, start_run  # noqa: E402
 from ps2_vendor import pipeline as P  # noqa: E402
+from ps2_vendor import review as R  # noqa: E402
 
 
 def main() -> int:
     tmp = Path(tempfile.mkdtemp(prefix="ps2_test_"))
     P.APPROVED_CSV = tmp / "vendor_master_approved.csv"
     P.OUTBOX = tmp / "outbox"
+    P.AUDIT_LOG = tmp / "audit_log.jsonl"
     store = RunStore(str(tmp / "runs.db"))
     failures = 0
 
@@ -112,6 +115,78 @@ def main() -> int:
     d["documents"][1]["type"] = "insurance"
     d["documents"][2]["type"] = "bank_proof"
     dec(d, "bank letter and insurance certificate swapped", "PENDING")
+
+    d = P.load_scenario("happy_us_northwind")
+    d["submission_id"] = "SUB-MALFORMED"
+    d["documents"] = d["documents"] + ["samples/docs/northwind/w9.pdf", 42]
+    r = run(d, "custom")
+    check(r["status"] == "completed", f"malformed document entries don't crash the run ({r['status']})")
+    d = P.load_scenario("happy_us_northwind")
+    d["bank"]["account_holder"] = "Northwind Group Holdings"
+    r = dec(d, "holder is a group company without a legal suffix", "PENDING")
+    check(any(i["code"] == "BANK_HOLDER_MISMATCH" for i in r["result"]["issues"]), "  ...treated as another company, not a personal account")
+
+    # ---------------------------------------------------------- human in the loop
+    print("\nreviewer decisions, follow-ups, audit:")
+
+    def err_of(fn):
+        try:
+            fn()
+        except R.ReviewError as e:
+            return str(e)
+        return None
+
+    vol = results["edge_sanctions_near_match"]
+    check(err_of(lambda: R.resolve(store, vol["id"], "approve", "Ana", "short")) is not None, "reviewer must give a real reason")
+    check(err_of(lambda: R.resolve(store, vol["id"], "approve", "", "Checked the register extract.")) is not None, "reviewer must give a name")
+    done = R.resolve(store, vol["id"], "approve", "Ana Lopez",
+                     "Handelsregister HRB 148213: directors and owners differ from the listed Russian LLC. False positive.")
+    check(done["decision"] == "APPROVED" and bool(done["result"]["vendor_id"]),
+          f"Volkov near-match approved by reviewer -> {done['result'].get('vendor_id')}")
+    check(done["result"]["review"]["email"]["subject"].startswith("You're set up"), "  ...vendor gets the approval email")
+    check([h["by"] for h in done["result"]["decision_history"]] == ["automated rules", "Ana Lopez"], "  ...decision history: rules, then reviewer")
+    check(err_of(lambda: R.resolve(store, vol["id"], "reject", "Bob", "Changed my mind about it.")) is not None, "a run can be reviewed only once")
+    trail = R.audit_trail(done["result"]["root_submission_id"])
+    check([e["event"] for e in trail][-2:] == ["automated_decision", "reviewer_decision"], f"audit log has both events ({len(trail)} entries)")
+
+    d = P.load_scenario("happy_us_northwind")
+    d["company"]["legal_name"] = "Orient Star Shipping Co"
+    d["submission_id"] = "SUB-SANCTIONED"
+    r = run(d, "custom")
+    msg = err_of(lambda: R.resolve(store, r["id"], "approve", "Ana Lopez", "Looks fine to me, approving anyway."))
+    check(r["decision"] == "REJECTED" and bool(msg) and "cannot be overridden" in msg, f"exact sanctions match can't be approved: {msg}")
+    check(R.resolve(store, r["id"], "reject", "Ana Lopez", "Confirmed exact SDN match, escalated to legal.")["decision"] == "REJECTED",
+          "  ...but can be confirmed as rejected")
+
+    d = P.load_scenario("edge_sanctions_near_match")
+    d["submission_id"] = "SUB-VOLKOV-2"
+    d["documents"] = d["documents"][:2]
+    r = run(d, "custom")
+    msg = err_of(lambda: R.resolve(store, r["id"], "approve", "Ana Lopez", "Name match is a false positive."))
+    check(r["decision"] == "MANUAL_REVIEW" and bool(msg) and "Request info" in msg, f"approve blocked while the vendor owes documents: {msg}")
+    r = R.resolve(store, r["id"], "request_info", "Ana Lopez", "Need ownership proof before deciding on the name match.",
+                  "Please send a current register extract listing your managing directors and shareholders.")
+    check(r["decision"] == "PENDING" and len(r["result"]["vendor_requests"]) == 2,
+          f"request info -> PENDING, email lists missing doc + reviewer question ({len(r['result']['vendor_requests'])} items)")
+    fu = {f["case_id"]: f for f in R.followups(store)}
+    check("SUB-VOLKOV-2" in fu and fu["SUB-VOLKOV-2"]["waiting_on"] == "vendor", "follow-up queue: Volkov-2 waits on the vendor")
+    check("SUB-2026-1045" in fu and "SUB-2026-1043" not in fu, "follow-up queue: Meridian open, Kestrel closed by its resubmission")
+    rem = R.send_reminder(store, r["id"])
+    check(rem["reminder"] == 1 and (APP_DIR.parent / rem["email"]["path"]).exists() or Path(rem["email"]["path"]).exists(), "reminder .eml written")
+    kestrel_first = results["edge_parent_account_expired_insurance"]["id"]
+    check(err_of(lambda: R.send_reminder(store, kestrel_first)) is not None, "no reminder for a case already superseded by a resubmission")
+    later = R.followups(store, now=datetime.now(timezone.utc) + timedelta(days=11))
+    check(any(f["case_id"] == "SUB-2026-1045" and f["tone"] == "bad" for f in later), "11 days later Meridian shows as overdue")
+
+    d = P.load_scenario("edge_sanctions_near_match")
+    d["submission_id"] = "SUB-VOLKOV-2-R1"
+    d["resubmission_of"] = "SUB-VOLKOV-2"
+    r = run(d, "custom")
+    codes = {i["code"] for i in r["result"]["issues"]}
+    check(r["decision"] == "MANUAL_REVIEW" and "REVIEWER_FOLLOWUP" in codes,
+          f"resubmission after 'request info' goes back to a reviewer ({r['decision']}, {sorted(codes)})")
+    check("Additional information requested by reviewer" not in r["result"]["resubmission"]["resolved"],
+          "  ...reviewer's question not auto-marked resolved")
 
     print(f"\n{'ALL PASSED' if not failures else f'{failures} FAILURE(S)'}  (temp dir {tmp})")
     return 1 if failures else 0

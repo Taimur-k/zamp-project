@@ -16,7 +16,8 @@ import csv
 import json
 import re
 import sqlite3
-from datetime import date, datetime, timedelta
+import threading
+from datetime import date, datetime, timedelta, timezone
 from email.message import EmailMessage
 from email.utils import format_datetime
 from pathlib import Path
@@ -34,6 +35,8 @@ UPLOADS = APP_DIR / "uploads"
 MASTER_CSV = DATA / "vendor_master.csv"
 APPROVED_CSV = DATA / "vendor_master_approved.csv"
 WATCHLIST_CSV = DATA / "watchlist.csv"
+AUDIT_LOG = DATA / "audit_log.jsonl"
+_WRITE_LOCK = threading.Lock()  # vendor-ID allocation and audit appends must not interleave
 
 BUYER = "Acme Industries"
 FROM_ADDR = "Supplier Onboarding <supplier-onboarding@acme-industries.example>"
@@ -89,6 +92,9 @@ TAX_LABEL = {"US": "EIN (Employer Identification Number)", "GB": "VAT registrati
 RISK_REVIEW_THRESHOLD = 40
 INSURANCE_WARN_DAYS = 30
 NEW_ENTITY_DAYS = 180
+REPLY_DAYS = 10        # vendor is asked to reply within this many days
+REMINDER_DAYS = 3      # first automatic reminder due after this many days of silence
+ESCALATE_DAYS = 7      # after this, the internal requester is asked to chase the vendor
 
 
 # ====================================================================== context
@@ -269,8 +275,13 @@ def pipeline(run, raw: dict) -> dict:
         for ch in changes:
             st.log("Normalised " + ch)
         resolved = []
-        for d in sub["documents"]:
-            p = resolve_doc(d.get("file", ""))
+        for d in sub["documents"] if isinstance(sub["documents"], list) else []:
+            if isinstance(d, str):
+                d = {"file": d, "type": "unknown"}
+            if not isinstance(d, dict):
+                st.log(f"Ignored a malformed document entry: {d!r}", "warn")
+                continue
+            p = resolve_doc(str(d.get("file") or ""))
             resolved.append({"declared": d.get("type") or "unknown", "file": d.get("file"), "path": p})
             st.log(f"Attachment: {d.get('file')} declared as '{d.get('type')}'" + ("" if p else "  -> FILE NOT FOUND"), "info" if p else "warn")
         ctx.facts["attachments"] = resolved
@@ -323,6 +334,8 @@ def pipeline(run, raw: dict) -> dict:
             req += [("iban", "IBAN"), ("swift", "SWIFT/BIC")]
         if bcountry and country and bcountry != country:
             req.append(("swift", "SWIFT/BIC (cross-border account)"))
+        seen: set = set()
+        req = [(k, lab) for k, lab in req if not (k in seen or seen.add(k))]  # e.g. SWIFT required twice (EU + cross-border)
         missing = [lab for k, lab in req if not s.get(k)]
         for k, lab in req:
             if not s.get(k):
@@ -650,6 +663,15 @@ def pipeline(run, raw: dict) -> dict:
 
     # ------------------------------------------------------------------ 7. decision
     with run.stage("decision", STAGE_TITLES["decision"]) as st:
+        prev = ctx.facts.get("prev")
+        prev_review = ((prev or {}).get("result") or {}).get("review")
+        if prev_review:
+            st.log(f"Previous run was decided by reviewer {prev_review['reviewer']}: {prev_review['action']} - \"{prev_review['note']}\"", "info")
+            if prev_review["action"] == "request_info":
+                # Only the human who asked can judge whether the answer is good enough; the rules can't.
+                ctx.issue("REVIEWER_FOLLOWUP", "decision", "review", "Reviewer asked for more information on the previous submission",
+                          f"{prev_review['reviewer']} asked the vendor: \"{prev_review.get('vendor_message') or prev_review['note']}\"",
+                          internal=f"Confirm this resubmission answers the question before approving. Reviewer's note: {prev_review['note']}")
         rej, rev, ven = ctx.by("reject"), ctx.by("review"), ctx.by("vendor")
         n_checks = len(ctx.checks)
         n_pass = sum(1 for c in ctx.checks if c["status"] == "pass")
@@ -677,9 +699,9 @@ def pipeline(run, raw: dict) -> dict:
             st.log(f"[{i['severity'].upper()}] {i['title']}: {i['detail']}", "error" if i["severity"] == "reject" else "warn")
         st.log(f"Decision: {decision} - {headline}", "ok" if decision == "APPROVED" else "warn")
         resub = None
-        prev = ctx.facts.get("prev")
         if prev:
-            prev_issues = {i["code"]: i for i in (prev["result"] or {}).get("issues", [])}
+            # reviewer requests can't be "resolved" by the rules - they are carried as REVIEWER_FOLLOWUP above
+            prev_issues = {i["code"]: i for i in (prev["result"] or {}).get("issues", []) if not i["code"].startswith("REVIEWER_")}
             now = {i["code"] for i in ctx.issues}
             resub = {"previous_run": prev["run_id"], "previous_decision": prev["decision"],
                      "resolved": [prev_issues[c]["title"] for c in prev_issues if c not in now],
@@ -725,11 +747,23 @@ def pipeline(run, raw: dict) -> dict:
             internal_email = _write_eml(OUTBOX / f"{stamp}_internal.eml", team, isubj, ibody)
             outputs.append({"label": f"Internal escalation to {team.split('<')[0].strip()} (.eml)", "path": internal_email["path"]})
             st.log(f"Escalated to {team} -> {internal_email['path']}", "warn")
-        st.data(outputs=outputs, email_engine=engine)
+        reply_by = (today + timedelta(days=REPLY_DAYS)).isoformat() if decision == "PENDING" else None
+        audit({"event": "automated_decision", "run_id": run.id, "case_id": ctx.facts["root"], "submission_id": s["submission_id"],
+               "vendor": s["legal_name"], "decision": decision, "by": "automated rules",
+               "findings": [f"{i['severity']}:{i['code']}" for i in ctx.issues], "vendor_id": vendor_id,
+               "emails": [e["path"] for e in (email, internal_email) if e]})
+        outputs.append({"label": "Audit log entry (append-only)", "path": _rel(AUDIT_LOG)})
+        st.log(f"Audit entry appended to {_rel(AUDIT_LOG)}", "ok")
+        if reply_by:
+            st.log(f"Follow-up scheduled: reminder after {REMINDER_DAYS} days, escalation after {ESCALATE_DAYS}, reply due {reply_by}")
+        st.data(outputs=outputs, email_engine=engine, reply_by=reply_by)
         st.note(f"{len(outputs)} output(s) written" + (f" · vendor ID {vendor_id}" if vendor_id else ""))
 
     summary = headline
     return {
+        "normalised_submission": {k: v for k, v in s.items() if k != "documents"},
+        "reply_by": reply_by,
+        "decision_history": [{"decision": decision, "by": "automated rules", "at": _utc_now(), "note": headline}],
         "decision": decision, "summary": summary, "headline": headline, "reason": reason,
         "vendor": {k: s[k] for k in ("submission_id", "legal_name", "trading_name", "country", "category", "contact_name", "contact_email")}
                   | {"bank_country": bcountry, "account": mask(s["iban"] or s["account_number"])},
@@ -887,8 +921,7 @@ def _holder_check(ctx: Ctx, chk):
     src, h, sim = worst
     form_h = s["account_holder"]
     hidden = src != "form" and V.name_similarity(form_h, legal) >= 0.9
-    personal = (s["contact_name"] and V.name_similarity(h, s["contact_name"]) >= 0.85) or (
-        len(h.split()) in (2, 3) and not set(h.lower().replace(".", "").split()) & V.LEGAL_SUFFIXES)
+    personal = bool(s["contact_name"] and V.name_similarity(h, s["contact_name"]) >= 0.85) or V.looks_personal(h)
     if personal:
         ctx.issue("BANK_HOLDER_PERSONAL", "bank", "vendor", "Bank account appears to be a personal account",
                   f"Account holder '{h}' (from {src}) looks like an individual, not '{legal}'.",
@@ -939,7 +972,7 @@ def _vendor_email(decision: str, s: dict, ven: list[dict], vendor_id: str | None
                 f"{s['legal_name']}, we're unable to proceed with setting you up as a supplier at this time.\n\n"
                 f"If you believe this is in error, please contact the {BUYER} colleague who invited you to register, quoting reference {ref}." + sign)
         return subj, body
-    deadline = today + timedelta(days=10)
+    deadline = today + timedelta(days=REPLY_DAYS)
     items = "\n\n".join(f"{n}. {i['request']}\n   Why we need this: {i['why']}" for n, i in enumerate(ven, 1))
     if decision == "PENDING":
         subj = f"Action needed: {len(ven)} item{'s' if len(ven) > 1 else ''} to complete your supplier registration ({ref})"
@@ -1012,20 +1045,45 @@ APPROVED_COLS = ["vendor_id", "legal_name", "trading_name", "country", "tax_id",
 
 
 def _append_approved(s: dict, root: str, run_id: str) -> str:
-    rows = []
-    if APPROVED_CSV.exists():
-        with APPROVED_CSV.open(newline="", encoding="utf-8") as f:
-            rows = list(csv.DictReader(f))
-    nums = [int(r["vendor_id"].split("-")[1]) for r in rows if r.get("vendor_id", "").startswith("V-")]
-    vid = f"V-{max(nums + [2000]) + 1}"
-    exists = APPROVED_CSV.exists()
-    with APPROVED_CSV.open("a", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=APPROVED_COLS, extrasaction="ignore")
-        if not exists:
-            w.writeheader()
-        w.writerow({**s, "vendor_id": vid, "status": "active", "onboarded_on": date.today().isoformat(),
-                    "root_submission_id": root, "run_id": run_id})
-    return vid
+    """Create the vendor record. Idempotent per onboarding case: a case that already has a record gets that ID back."""
+    with _WRITE_LOCK:
+        existing = find_approved(root)
+        if existing:
+            return existing["vendor_id"]
+        rows = []
+        if APPROVED_CSV.exists():
+            with APPROVED_CSV.open(newline="", encoding="utf-8") as f:
+                rows = list(csv.DictReader(f))
+        nums = [int(r["vendor_id"].split("-")[1]) for r in rows if r.get("vendor_id", "").startswith("V-")]
+        vid = f"V-{max(nums + [2000]) + 1}"
+        exists = APPROVED_CSV.exists()
+        with APPROVED_CSV.open("a", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=APPROVED_COLS, extrasaction="ignore")
+            if not exists:
+                w.writeheader()
+            w.writerow({**s, "vendor_id": vid, "status": "active", "onboarded_on": date.today().isoformat(),
+                        "root_submission_id": root, "run_id": run_id})
+        return vid
+
+
+def find_approved(root: str) -> dict | None:
+    """The vendor record already created for this onboarding case, if any."""
+    if not root or not APPROVED_CSV.exists():
+        return None
+    with APPROVED_CSV.open(newline="", encoding="utf-8") as f:
+        return next((r for r in csv.DictReader(f) if r.get("root_submission_id") == root), None)
+
+
+def audit(event: dict) -> None:
+    """Append one line to the audit log. Never rewritten: every automated and human decision is kept."""
+    with _WRITE_LOCK:
+        AUDIT_LOG.parent.mkdir(parents=True, exist_ok=True)
+        with AUDIT_LOG.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"at": _utc_now(), **event}, default=str) + "\n")
+
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
 def _rel(p: Path) -> str:

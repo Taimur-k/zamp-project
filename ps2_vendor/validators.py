@@ -17,6 +17,21 @@ LEGAL_SUFFIXES = {
 }
 
 
+# Words that mark a name as an organisation even without a legal suffix ("Kestrel Group Holdings").
+BUSINESS_WORDS = {
+    "holdings", "holding", "group", "services", "service", "solutions", "trading", "traders", "industries", "industrial",
+    "enterprises", "enterprise", "international", "global", "partners", "associates", "logistics", "systems", "technologies",
+    "technology", "consulting", "capital", "ventures", "supplies", "supply", "manufacturing", "exports", "imports", "bank",
+    "trust", "foundation", "agency", "studio", "labs", "works", "engineering", "management", "facilities",
+}
+
+
+def looks_personal(name: str) -> bool:
+    """Heuristic: 2-3 plain words, no legal suffix, no business word -> probably an individual."""
+    toks = re.sub(r"[^\w\s]", " ", (name or "").lower()).split()
+    return len(toks) in (2, 3) and not set(toks) & (LEGAL_SUFFIXES | BUSINESS_WORDS)
+
+
 def normalize_name(name: str) -> str:
     """Lower-case, '&'->'and', drop punctuation and legal-form suffixes.
 

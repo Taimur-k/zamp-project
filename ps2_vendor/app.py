@@ -13,12 +13,16 @@ ROOT = APP_DIR.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from fastapi import File, Form, HTTPException, UploadFile  # noqa: E402
+from fastapi import Body, File, Form, HTTPException, UploadFile  # noqa: E402
 from fastapi.responses import FileResponse  # noqa: E402
 
 from common.runstore import RunStore, start_run  # noqa: E402
 from common.webapp import create_app  # noqa: E402
 from ps2_vendor import pipeline as P  # noqa: E402
+from ps2_vendor import review as R  # noqa: E402
+
+UPLOAD_TYPES = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff", ".bmp"}
+UPLOAD_MAX_BYTES = 15 * 1024 * 1024
 
 store = RunStore(str(APP_DIR / "runs.db"))
 
@@ -75,14 +79,54 @@ async def submit(submission: str = Form(...), files: list[UploadFile] = File(def
     for i, f in enumerate(files or []):
         if not f.filename:
             continue
+        if Path(f.filename).suffix.lower() not in UPLOAD_TYPES:
+            raise HTTPException(400, f"'{f.filename}': only PDF or image files are accepted")
+        content = await f.read()
+        if len(content) > UPLOAD_MAX_BYTES:
+            raise HTTPException(400, f"'{f.filename}' is larger than {UPLOAD_MAX_BYTES // (1024 * 1024)} MB")
         safe = re.sub(r"[^A-Za-z0-9._-]", "_", Path(f.filename).name)[-80:]
         dest = up_dir / f"{uuid.uuid4().hex[:8]}_{safe}"
-        dest.write_bytes(await f.read())
+        dest.write_bytes(content)
         t = types[i] if i < len(types) and types[i] else "tax_document"
         docs = [d for d in docs if d.get("type") != t]
         docs.append({"type": t, "file": f"uploads/{dest.name}"})
     data["documents"] = docs
     return {"run_id": start_run(store, P.pipeline, P.PLAN, data, _label(data), "custom")}
+
+
+@app.get("/api/runs/{run_id}/review")
+def review_options(run_id: str):
+    """Which reviewer actions are allowed on this run (and why the others aren't), plus the case's audit trail."""
+    run = store.get(run_id)
+    if not run:
+        raise HTTPException(404, "run not found")
+    case = (run.get("result") or {}).get("root_submission_id")
+    return R.options(run) | {"audit": R.audit_trail(case) if case else []}
+
+
+@app.post("/api/runs/{run_id}/review")
+def review_decide(run_id: str, payload: dict = Body(...)):
+    """A named reviewer closes a MANUAL_REVIEW / REJECTED case: approve, reject or request info."""
+    try:
+        run = R.resolve(store, run_id, payload.get("action", ""), payload.get("reviewer", ""), payload.get("note", ""),
+                        payload.get("vendor_message", ""))
+    except R.ReviewError as e:
+        raise HTTPException(400, str(e))
+    return {"ok": True, "decision": run["decision"], "summary": run["summary"]}
+
+
+@app.get("/api/followups")
+def followups():
+    """Open cases waiting on the vendor or a reviewer, most urgent first."""
+    return R.followups(store)
+
+
+@app.post("/api/runs/{run_id}/remind")
+def remind(run_id: str):
+    try:
+        return R.send_reminder(store, run_id)
+    except R.ReviewError as e:
+        raise HTTPException(400, str(e))
 
 
 @app.get("/api/file/{path:path}")

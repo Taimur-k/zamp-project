@@ -1,0 +1,2 @@
+vendor_id,legal_name,trading_name,country,tax_id,registration_number,account_holder,bank_name,bank_country,currency,iban,account_number,routing_number,ifsc,sort_code,swift,contact_name,contact_email,status,onboarded_on,root_submission_id,submission_id,run_id
+V-2001,Northwind Analytics LLC,Northwind Analytics,US,47-3829105,7731905,Northwind Analytics LLC,"Wells Fargo Bank, N.A.",US,USD,,4417092235,121000248,,,WFBIUS6S,Priya Raman,priya.raman@northwindanalytics.io,active,2026-11-06,SUB-2026-1041,SUB-2026-1041,c95471111b

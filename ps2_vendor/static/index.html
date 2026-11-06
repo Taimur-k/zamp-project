@@ -29,6 +29,21 @@
     .stats { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
     .stats b { color: var(--text); }
     #sub-json { min-height: 340px; }
+    .rv { border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: var(--panel); }
+    .rv .row { display: grid; grid-template-columns: 1fr; gap: 8px; }
+    .rv input, .rv textarea { width: 100%; box-sizing: border-box; }
+    .rv textarea { min-height: 64px; }
+    .rv .acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .rv .blocked { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    .rv .blocked div { margin-bottom: 3px; }
+    .btn.good { background: var(--good); color: #fff; border-color: var(--good); }
+    .btn.bad { background: var(--bad); color: #fff; border-color: var(--bad); }
+    .btn[disabled] { opacity: .45; cursor: not-allowed; }
+    .hist { margin: 0; padding-left: 18px; font-size: 12.5px; }
+    .hist li { margin-bottom: 5px; }
+    .fu-tone { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .fu-tone.bad { background: var(--bad); } .fu-tone.warn { background: #f59e0b; } .fu-tone.info { background: var(--info); }
+    .ok-msg { color: var(--good); font-size: 12.5px; margin-top: 6px; }
   </style>
 </head>
 <body>
@@ -128,6 +143,30 @@
           </div>
         </div>`;
 
+      if (r.review) {
+        const rv = r.review;
+        h += `<div class="section"><h4>Reviewer decision</h4>
+          <div class="small"><b>${esc(rv.reviewer)}</b> changed <b>${esc(LABEL[rv.previous_decision] || rv.previous_decision)}</b> →
+            <b>${esc(LABEL[rv.new_decision] || rv.new_decision)}</b> at ${esc(new Date(rv.at).toLocaleString())}</div>
+          <div class="small" style="margin-top:4px">Reason: ${esc(rv.note)}</div>
+          ${rv.vendor_message ? `<div class="small" style="margin-top:4px">Asked the vendor: “${esc(rv.vendor_message)}”</div>` : ""}
+          ${(rv.overrode || []).length ? `<div class="small muted" style="margin-top:4px">Findings the reviewer ruled on: ${esc(rv.overrode.join("; "))}</div>` : ""}
+          ${rv.email ? `<div class="msg-box" style="margin-top:8px"><div class="mh"><div>To: <b>${esc(rv.email.to)}</b></div><div>Subject: <b>${esc(rv.email.subject)}</b></div></div>
+            <div class="mb">${esc(rv.email.body)}</div></div>` : ""}</div>`;
+      }
+
+      // reviewer actions + audit trail are loaded after render (they depend on server-side rules)
+      h += `<div id="review-slot"></div>`;
+
+      if (d === "PENDING") {
+        const rem = r.reminders || [];
+        h += `<div class="section"><h4>Follow-up with the vendor</h4>
+          <div class="small">Reply due <b>${esc(r.reply_by || "—")}</b> · reminder after 3 days of silence, escalation to the requester after 7 ·
+            ${rem.length} reminder(s) sent${rem.length ? ` (last ${esc(new Date(rem[rem.length - 1].at).toLocaleString())})` : ""}</div>
+          <div style="margin-top:8px"><button class="btn sm" id="remind">Send reminder now</button></div>
+          <div id="remind-msg"></div></div>`;
+      }
+
       if (r.resubmission) {
         const rs = r.resubmission;
         const li = (a) => a.length ? a.map((x) => `<div>• ${esc(x)}</div>`).join("") : `<div class="muted">none</div>`;
@@ -183,12 +222,97 @@
         h += `<div class="section"><h4>Outputs written</h4>${r.outputs.map((o) => `<div class="small" style="margin-bottom:4px">${esc(o.label)} - <a href="${fileUrl(o.path)}" target="_blank"><code>${esc(o.path)}</code></a></div>`).join("")}</div>`;
       }
       el.innerHTML = h;
+
+      const remind = el.querySelector("#remind");
+      if (remind) remind.onclick = async () => {
+        remind.disabled = true;
+        const msg = el.querySelector("#remind-msg");
+        const res = await fetch(`/api/runs/${run.id}/remind`, { method: "POST" });
+        const body = await res.json();
+        if (res.ok) { msg.className = "ok-msg"; msg.textContent = `Reminder ${body.reminder} written to ${body.email.path}`; setTimeout(() => reopen(run.id), 900); }
+        else { msg.className = "err"; msg.textContent = body.detail; remind.disabled = false; }
+      };
+      loadReview(el.querySelector("#review-slot"), run);
+    }
+
+    // Show the run again with fresh data (decision pill in the header included).
+    function reopen(id) {
+      const target = `#/run/${id}`;
+      if (location.hash === target) location.reload(); else location.hash = target;
+    }
+
+    const EVENT_LABEL = { automated_decision: "Automated decision", reviewer_decision: "Reviewer decision", reminder_sent: "Reminder sent" };
+
+    async function loadReview(slot, run) {
+      if (!slot) return;
+      let o;
+      try { o = await (await fetch(`/api/runs/${run.id}/review`)).json(); } catch { return; }
+      let h = "";
+      if (o.reviewable) {
+        const a = o.actions || {};
+        const blocked = Object.entries(a).filter(([, why]) => why);
+        const nice = { approve: "Approve", reject: "Reject", request_info: "Request info" };
+        h += `<div class="section"><h4>Reviewer decision needed</h4><div class="rv">
+          <div class="small muted" style="margin-bottom:8px">${run.decision === "REJECTED"
+            ? "Automatic fraud / compliance hold. A reviewer confirms the rejection or, after independent verification (e.g. a call-back on the number already on file), overturns it."
+            : "The rules stopped short of a final answer."} The decision, reason and vendor email are recorded against the reviewer's name in the audit log.</div>
+          <div class="row">
+            <div><label class="f">Reviewer</label><input id="rv-name" placeholder="Your name" /></div>
+            <div><label class="f">Reason for the decision (internal, audit log)</label><textarea id="rv-note" placeholder="e.g. Called V-1007 on the number on file; they confirmed the account change is genuine (ticket #4471)."></textarea></div>
+            <div><label class="f">Message to the vendor (only for “Request info”)</label><textarea id="rv-msg" placeholder="e.g. Please send the register extract listing your managing directors and shareholders."></textarea></div>
+          </div>
+          <div class="acts">
+            <button class="btn good" data-a="approve" ${a.approve ? "disabled" : ""}>Approve</button>
+            <button class="btn" data-a="request_info" ${a.request_info ? "disabled" : ""}>Request info → pending</button>
+            <button class="btn bad" data-a="reject" ${a.reject ? "disabled" : ""}>Reject</button>
+          </div>
+          ${blocked.length ? `<div class="blocked">${blocked.map(([k, why]) => `<div><b>${esc(nice[k])}:</b> ${esc(why)}</div>`).join("")}</div>` : ""}
+          <div id="rv-err"></div></div></div>`;
+      }
+      if ((o.audit || []).length) {
+        h += `<div class="section"><h4>Audit trail for this case <span class="muted small">(data/audit_log.jsonl, append-only)</span></h4><ol class="hist">${o.audit.map((e) => `
+          <li><b>${esc(EVENT_LABEL[e.event] || e.event)}</b> · ${esc(new Date(e.at).toLocaleString())} · by ${esc(e.by)} ·
+            ${esc(LABEL[e.decision] || e.decision || "")}${e.run_id ? ` · <a href="#/run/${esc(e.run_id)}">run ${esc(e.run_id)}</a>` : ""}
+            ${e.note ? `<div class="muted">${esc(e.note)}</div>` : ""}</li>`).join("")}</ol></div>`;
+      }
+      slot.innerHTML = h;
+      slot.querySelectorAll("button[data-a]").forEach((b) => (b.onclick = async () => {
+        const err = slot.querySelector("#rv-err");
+        const payload = { action: b.dataset.a, reviewer: slot.querySelector("#rv-name").value,
+                          note: slot.querySelector("#rv-note").value, vendor_message: slot.querySelector("#rv-msg").value };
+        if (b.dataset.a !== "request_info" && !confirm(`${b.textContent.trim()} this vendor? This is recorded against your name.`)) return;
+        slot.querySelectorAll("button[data-a]").forEach((x) => (x.disabled = true));
+        const res = await fetch(`/api/runs/${run.id}/review`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+        const body = await res.json();
+        if (res.ok) { reopen(run.id); return; }
+        err.className = "err"; err.textContent = body.detail;
+        slot.querySelectorAll("button[data-a]").forEach((x) => (x.disabled = !!(o.actions || {})[x.dataset.a]));
+      }));
+    }
+
+    // ------------------------------------------------------------ dashboard: follow-up queue
+    async function dashboardExtra(el) {
+      let items = [];
+      try { items = await (await fetch("/api/followups")).json(); } catch { return; }
+      el.innerHTML = `<div class="card" style="margin-bottom:16px">
+        <div class="card-h"><h2>Open cases - who has to act next</h2><span class="muted small" style="margin-left:auto">${items.length} open · latest run of each case</span></div>
+        <div style="overflow-x:auto"><table class="t"><thead><tr><th>Vendor</th><th>Waiting on</th><th>Status</th><th>Open items</th><th class="num">Age</th><th>Reply by</th><th class="num">Reminders</th></tr></thead><tbody>
+        ${items.map((f) => `<tr class="click" data-id="${esc(f.run_id)}">
+            <td><b>${esc(f.vendor)}</b><div class="small muted">${esc(f.case_id)}</div></td>
+            <td>${f.waiting_on === "vendor" ? "Vendor" : "Reviewer"}</td>
+            <td class="small"><span class="fu-tone ${esc(f.tone)}"></span>${esc(f.status)}</td>
+            <td class="small"><div class="ellipsis" title="${esc(f.open_items.join("; "))}">${esc(f.open_items.join("; "))}</div></td>
+            <td class="num small">${f.age_days} d</td><td class="small">${esc(f.reply_by || "—")}</td><td class="num small">${f.reminders_sent}</td></tr>`).join("")
+          || `<tr><td colspan="7" class="empty">Nothing open - every case is approved or rejected.</td></tr>`}
+        </tbody></table></div></div>`;
+      el.querySelectorAll("tr[data-id]").forEach((tr) => (tr.onclick = () => (location.hash = "#/run/" + tr.dataset.id)));
     }
 
     // ------------------------------------------------------------ dashboard KPIs
     function kpis(runs) {
       const ok = runs.filter((r) => r.status === "completed");
-      const approved = ok.filter((r) => r.decision === "APPROVED").length;
+      const approved = ok.filter((r) => r.decision === "APPROVED" && !(r.result && r.result.review)).length;
+      const reviewed = ok.filter((r) => r.result && r.result.review).length;
       const counts = {};
       ok.forEach((r) => ((r.result && r.result.issues) || []).forEach((i) => {
         if (i.severity !== "warn") counts[i.title] = (counts[i.title] || 0) + 1;
@@ -200,6 +324,7 @@
         { label: "Auto-approval rate", val: ok.length ? Math.round((100 * approved) / ok.length) + "%" : "—", sub: `${approved} of ${ok.length} approved without a human` },
         { label: "Most common blocker", val: top ? `${top[1]}×` : "—", sub: top ? top[0] : "no blockers yet" },
         { label: "Held for fraud / compliance", val: held, sub: "rejected or manual review" },
+        { label: "Closed by a reviewer", val: reviewed, sub: "human decisions, all in the audit log" },
         { label: "Vendor emails written", val: emails, sub: "in ps2_vendor/outbox/" },
       ];
     }
@@ -212,6 +337,7 @@
       renderCustomInput,
       renderResult,
       kpis,
+      dashboardExtra,
     });
   </script>
 </body>

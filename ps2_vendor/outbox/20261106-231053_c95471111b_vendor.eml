@@ -1,0 +1,24 @@
+From: Supplier Onboarding <supplier-onboarding@acme-industries.example>
+To: priya.raman@northwindanalytics.io
+Subject: You're set up as a supplier to Acme Industries (V-2001)
+Date: Fri, 06 Nov 2026 23:10:54 +0530
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+
+Dear Priya,
+
+Good news - Northwind Analytics LLC has been approved as a supplier to Acme Industries.
+
+Supplier ID: V-2001
+Payments to: account ending 2235 (Wells Fargo Bank, N.A.)
+Reference: SUB-2026-1041
+
+Please quote your supplier ID on every invoice.
+
+One important note: we will never change your bank details based on an email alone. If your details change, we will confirm by calling the number we already hold for you.
+
+Kind regards,
+Supplier Onboarding Team
+Acme Industries
+supplier-onboarding@acme-industries.example

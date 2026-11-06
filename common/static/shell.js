@@ -6,6 +6,7 @@
  *   renderCustomInput(el, ctx)  -> optional; build a custom-input form. ctx.startRun(fetchPromise)
  *   renderResult(el, run)       -> render run.result (called when the run completes)
  *   kpis(runs)                  -> optional extra KPI tiles [{label, val, sub}]
+ *   dashboardExtra(el, runs)    -> optional; render extra dashboard content above run history
  */
 (function () {
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -220,6 +221,7 @@
         <div class="kpi"><div class="k-label">Avg. run time</div><div class="k-val">${fmtMs(Math.round(avg)) || "—"}</div><div class="k-sub">input → decision</div></div>
         ${extra.map((k) => `<div class="kpi"><div class="k-label">${esc(k.label)}</div><div class="k-val">${esc(k.val)}</div><div class="k-sub">${esc(k.sub || "")}</div></div>`).join("")}
       </div>
+      <div id="dash-extra"></div>
       <div class="card">
         <div class="card-h">
           <h2>Run history</h2>
@@ -249,6 +251,7 @@
       </div>`;
     main.querySelectorAll("tr[data-id]").forEach((tr) => (tr.onclick = () => (location.hash = "#/run/" + tr.dataset.id)));
     main.querySelectorAll(".chip").forEach((c) => (c.onclick = () => { dashFilter = c.dataset.f; renderDashboard(); }));
+    if (CFG.dashboardExtra) { try { CFG.dashboardExtra($("#dash-extra"), done); } catch (e) { console.error(e); } }
     $("#refresh").onclick = renderDashboard;
     $("#clear").onclick = async () => { if (confirm("Delete all run history?")) { await fetch("/api/runs", { method: "DELETE" }); renderDashboard(); } };
     if (runs.some((r) => r.status === "running")) pollTimer = setTimeout(() => location.hash.startsWith("#/runs") && renderDashboard(), 1500);

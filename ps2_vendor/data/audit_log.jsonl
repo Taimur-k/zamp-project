@@ -1,0 +1,1 @@
+{"at": "2026-11-06T17:40:54+00:00", "event": "automated_decision", "run_id": "c95471111b", "case_id": "SUB-2026-1041", "submission_id": "SUB-2026-1041", "vendor": "Northwind Analytics LLC", "decision": "APPROVED", "by": "automated rules", "findings": [], "vendor_id": "V-2001", "emails": ["ps2_vendor/outbox/20261106-231053_c95471111b_vendor.eml"]}
